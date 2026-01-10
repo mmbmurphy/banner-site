@@ -8,6 +8,11 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import FeatureGrid from "@/components/FeatureGrid";
 import FAQ from "@/components/FAQ";
 import VideoModal from "@/components/VideoModal";
+import MetricsBar from "@/components/MetricsBar";
+import TrustBadges from "@/components/TrustBadges";
+import HowItWorks from "@/components/HowItWorks";
+import ResourcesSection from "@/components/ResourcesSection";
+import HeroImage from "@/components/HeroImage";
 
 const integrationLogos = [
   { src: "/images/l1.png", alt: "Integration 1" },
@@ -79,8 +84,11 @@ export default function Home() {
                       <div className="margin-top margin-medium">
                         <div className="button-group is-center">
                           <Link href="/contact" className="button w-button">
-                            Get started today
+                            Book a demo
                           </Link>
+                          <a href="#how-it-works" className="button is-secondary w-button">
+                            See how it works
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -89,20 +97,10 @@ export default function Home() {
                 <div className="spacer-huge"></div>
                 <ScrollReveal delay={200}>
                   <div className="div-block">
-                    <img
-                      src="/images/hero-bg-pill-large.png"
-                      loading="lazy"
-                      sizes="(max-width: 2584px) 100vw, 2584px"
-                      srcSet="/images/hero-bg-pill-large-p-500.png 500w, /images/hero-bg-pill-large-p-800.png 800w, /images/hero-bg-pill-large-p-1080.png 1080w, /images/hero-bg-pill-large-p-1600.png 1600w, /images/hero-bg-pill-large.png 2584w"
-                      alt=""
-                      className="hero-bg-pill"
-                    />
-                    <ParallaxImage
+                    <HeroImage
                       src="/images/dashboard.png"
                       srcSet="/images/dashboard-p-500.png 500w, /images/dashboard-p-800.png 800w, /images/dashboard-p-1080.png 1080w, /images/dashboard-p-1600.png 1600w, /images/dashboard-p-2000.png 2000w, /images/dashboard-p-2600.png 2600w, /images/dashboard-p-3200.png 3200w, /images/dashboard.png 4400w"
                       alt="Banner Dashboard"
-                      className="hero-dashboard-image"
-                      speed={0.2}
                     />
                   </div>
                 </ScrollReveal>
@@ -111,6 +109,9 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      {/* Metrics Bar */}
+      <MetricsBar />
 
       {/* Logos Section */}
       <section className="section-logos is-white">
@@ -134,6 +135,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Trust Badges */}
+      <TrustBadges />
 
       {/* Pain Points Section */}
       <section className="section_layout238">
@@ -305,6 +309,11 @@ export default function Home() {
       {/* Features Tabs Section */}
       <FeatureTabs />
 
+      {/* How It Works Section */}
+      <div id="how-it-works">
+        <HowItWorks />
+      </div>
+
       {/* Integrations Section */}
       <section className="section-logos">
         <div className="padding-section-medium">
@@ -355,6 +364,10 @@ export default function Home() {
                         <img src="/images/Frame-34375601.png" loading="lazy" alt="" className="card-icon" />
                         <h3 className="heading-style-h5-3">Multifamily</h3>
                       </div>
+                      <div className="solution-stat">
+                        <span className="solution-stat-number">50K+</span>
+                        <span className="solution-stat-label">units managed</span>
+                      </div>
                       <div className="margin-bottom margin-small">
                         <p className="paragraph-4">
                           Real-time portfolio visibility and cost control to protect NOI
@@ -372,6 +385,10 @@ export default function Home() {
                         <img src="/images/Frame-34375601_1.png" loading="lazy" alt="" className="card-icon" />
                         <h3 className="heading-style-h5-3">Commercial</h3>
                       </div>
+                      <div className="solution-stat">
+                        <span className="solution-stat-number">$2B+</span>
+                        <span className="solution-stat-label">in commercial CapEx</span>
+                      </div>
                       <div className="margin-bottom margin-small">
                         <p className="paragraph-4">
                           CapEx clarity and governance across complex commercial portfolios.
@@ -387,6 +404,10 @@ export default function Home() {
                       <div className="card-icon-wrap">
                         <img src="/images/Frame-34375601_2.png" loading="lazy" alt="" className="card-icon" />
                         <h3 className="heading-style-h5-3">Developers</h3>
+                      </div>
+                      <div className="solution-stat">
+                        <span className="solution-stat-number">1,000+</span>
+                        <span className="solution-stat-label">projects tracked</span>
                       </div>
                       <div className="margin-bottom margin-small">
                         <p className="paragraph-4">
@@ -492,6 +513,9 @@ export default function Home() {
 
       {/* FAQ Section */}
       <FAQ />
+
+      {/* Resources Section */}
+      <ResourcesSection />
 
       {/* CTA Section */}
       <header className="section-cta-main">

@@ -365,7 +365,7 @@ export default function Home() {
                         <h3 className="heading-style-h5-3">Multifamily</h3>
                       </div>
                       <div className="solution-stat">
-                        <span className="solution-stat-number">50K+</span>
+                        <span className="solution-stat-number">1M+</span>
                         <span className="solution-stat-label">units managed</span>
                       </div>
                       <div className="margin-bottom margin-small">
@@ -386,7 +386,7 @@ export default function Home() {
                         <h3 className="heading-style-h5-3">Commercial</h3>
                       </div>
                       <div className="solution-stat">
-                        <span className="solution-stat-number">$2B+</span>
+                        <span className="solution-stat-number">$10B+</span>
                         <span className="solution-stat-label">in commercial CapEx</span>
                       </div>
                       <div className="margin-bottom margin-small">
@@ -406,8 +406,8 @@ export default function Home() {
                         <h3 className="heading-style-h5-3">Developers</h3>
                       </div>
                       <div className="solution-stat">
-                        <span className="solution-stat-number">1,000+</span>
-                        <span className="solution-stat-label">projects tracked</span>
+                        <span className="solution-stat-number">$10B+</span>
+                        <span className="solution-stat-label">in development spend</span>
                       </div>
                       <div className="margin-bottom margin-small">
                         <p className="paragraph-4">

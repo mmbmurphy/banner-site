@@ -2427,3 +2427,489 @@ details[open] .faq4_icon-wrappper {
     font-size: 0.9375rem;
   }
 }
+
+/* ========================================
+   About Page Styles
+   ======================================== */
+
+.about-page {
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.about-hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 10rem 0 5rem;
+}
+
+.about-hero-content {
+  max-width: 800px;
+}
+
+.about-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(242, 94, 83, 0.15);
+  border: 1px solid rgba(242, 94, 83, 0.3);
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-hero-badge span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #f25e53;
+}
+
+.about-hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+}
+
+.about-hero-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Stats Section */
+.about-stats {
+  background: #f25e53;
+  padding: 3rem 0;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.about-stat-item {
+  text-align: center;
+}
+
+.about-stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.about-stat-label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Story Section */
+.about-story {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.about-story-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem 0;
+}
+
+.about-story-lead {
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin: 0 0 1.5rem 0;
+}
+
+.about-story-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin: 0 0 1rem 0;
+}
+
+.about-story-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-story-image {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Timeline Section */
+.about-timeline {
+  padding: 6rem 0;
+  background: #f9f9f9;
+}
+
+.about-timeline-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-section-subtitle {
+  font-size: 1.125rem;
+  color: #666666;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.about-timeline-item {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-timeline-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-timeline-year {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f25e53;
+  margin-bottom: 0.75rem;
+}
+
+.about-timeline-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+}
+
+.about-timeline-description {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0;
+}
+
+/* Values Section */
+.about-values {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.about-values-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.about-value-card {
+  padding: 2rem;
+  border-radius: 12px;
+  background: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.about-value-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: #f25e53;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.about-value-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem 0;
+}
+
+.about-value-description {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0;
+}
+
+/* Platform Section */
+.about-platform {
+  padding: 6rem 0;
+  background: #f9f9f9;
+}
+
+.about-platform-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-platform-image {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.about-platform-features {
+  margin: 1.5rem 0 2rem;
+}
+
+.about-platform-feature {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+.about-platform-feature:last-child {
+  margin-bottom: 0;
+}
+
+.about-feature-check {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(242, 94, 83, 0.1);
+  color: #f25e53;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-platform-feature strong {
+  color: #1a1a1a;
+}
+
+.about-platform-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-platform-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f25e53;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.about-platform-link:hover {
+  color: #d94d43;
+}
+
+/* Backed By Section */
+.about-backed {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.about-backed-content {
+  text-align: center;
+}
+
+.about-logos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.about-logo-item {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.about-logo-item:hover {
+  opacity: 1;
+}
+
+.about-logo-item img {
+  height: 40px;
+  width: auto;
+}
+
+/* CTA Section */
+.about-cta {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.about-cta-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+}
+
+.about-cta-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 2rem 0;
+}
+
+.about-cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-cta-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.about-cta-link:hover {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .about-hero {
+    padding: 8rem 0 4rem;
+  }
+
+  .about-hero-title {
+    font-size: 2.75rem;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-story-content,
+  .about-platform-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .about-hero {
+    padding: 7rem 0 3rem;
+  }
+
+  .about-hero-title {
+    font-size: 2.25rem;
+  }
+
+  .about-hero-description {
+    font-size: 1.125rem;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-stat-value {
+    font-size: 2rem;
+  }
+
+  .about-section-title {
+    font-size: 1.75rem;
+  }
+
+  .about-timeline-grid,
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-story,
+  .about-timeline,
+  .about-values,
+  .about-platform,
+  .about-backed,
+  .about-cta {
+    padding: 4rem 0;
+  }
+
+  .about-logos-grid {
+    gap: 2rem;
+  }
+
+  .about-cta-title {
+    font-size: 1.75rem;
+  }
+
+  .about-cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .about-hero-title {
+    font-size: 1.875rem;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

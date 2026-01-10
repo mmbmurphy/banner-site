@@ -632,24 +632,3 @@ details[open] .faq4_icon-wrappper {
     min-height: 700px;
   }
 }
-
-/* Navbar - 20% smaller */
-.nav_component {
-  min-height: 6.5rem !important;
-}
-
-.navbar1_logo {
-  width: 107px !important;
-  height: auto !important;
-}
-
-.navbar1_dropdown-toggle,
-.navbar1_link {
-  padding: 0.4rem 0.8rem !important;
-  font-size: 15px !important;
-}
-
-.button.is-small {
-  padding: 0.5rem 1.25rem !important;
-  font-size: 14px !important;
-}

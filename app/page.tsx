@@ -6,6 +6,7 @@ import LogoMarquee from "@/components/LogoMarquee";
 import ParallaxImage from "@/components/ParallaxImage";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FeatureGrid from "@/components/FeatureGrid";
+import FAQ from "@/components/FAQ";
 
 const integrationLogos = [
   { src: "/images/l1.png", alt: "Integration 1" },
@@ -488,6 +489,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* CTA Section */}
       <header className="section-cta-main">

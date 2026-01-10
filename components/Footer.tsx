@@ -68,7 +68,7 @@ export default function Footer() {
               <div className="footer2_bottom-wrapper">
                 <div className="w-layout-grid footer2_legal-list">
                   <div className="footer2_credit-text">
-                    © {new Date().getFullYear()} Banner, All Rights Reserved
+                    © {new Date().getFullYear()} Banner Technologies, Inc. All Rights Reserved.
                   </div>
                 </div>
               </div>

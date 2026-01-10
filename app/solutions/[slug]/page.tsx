@@ -4,6 +4,23 @@ import { getSolution, getAllSolutions } from "@/lib/content";
 import LogoMarquee from "@/components/LogoMarquee";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import DashboardMockup, { type MockupVariant } from "@/components/DashboardMockup";
+
+// Mockup variants for each solution page
+const solutionMockups: Record<string, { hero: MockupVariant; features: MockupVariant[] }> = {
+  multifamily: {
+    hero: "multifamily-portfolio",
+    features: ["project-timeline", "financial-budget", "vendor-management"],
+  },
+  commercial: {
+    hero: "commercial-overview",
+    features: ["approvals", "bidding", "project-status"],
+  },
+  developers: {
+    hero: "developers-draw",
+    features: ["financial-forecasting", "project-timeline", "approvals"],
+  },
+};
 
 // Client logos for marquee
 const clientLogos = [
@@ -173,11 +190,15 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <div className="sol-hero-image-wrapper">
-                  <img
-                    src={solution.heroImage}
-                    alt={solution.title}
-                    className="sol-hero-image"
-                  />
+                  {solutionMockups[slug] ? (
+                    <DashboardMockup variant={solutionMockups[slug].hero} />
+                  ) : (
+                    <img
+                      src={solution.heroImage}
+                      alt={solution.title}
+                      className="sol-hero-image"
+                    />
+                  )}
                 </div>
               </ScrollReveal>
             </div>
@@ -266,11 +287,15 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                     </ul>
                   </div>
                   <div className="sol-feature-image-wrapper">
-                    <img
-                      src={feature.image}
-                      alt={feature.title}
-                      className="sol-feature-image"
-                    />
+                    {solutionMockups[slug]?.features[index] ? (
+                      <DashboardMockup variant={solutionMockups[slug].features[index]} />
+                    ) : (
+                      <img
+                        src={feature.image}
+                        alt={feature.title}
+                        className="sol-feature-image"
+                      />
+                    )}
                   </div>
                 </div>
               </ScrollReveal>

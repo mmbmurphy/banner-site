@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import DashboardMockup from "@/components/DashboardMockup";
 
 export const metadata = {
   title: "Project Management | Banner",
@@ -165,11 +166,7 @@ export default function ProjectManagementPage() {
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <div className="fp-hero-image-wrapper">
-                  <img
-                    src="/images/Imagery.png"
-                    alt="Project Management Dashboard"
-                    className="fp-hero-image"
-                  />
+                  <DashboardMockup variant="project-timeline" />
                 </div>
               </ScrollReveal>
             </div>
@@ -255,11 +252,7 @@ export default function ProjectManagementPage() {
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <div className="fp-benefits-image-wrapper">
-                  <img
-                    src="/images/Imagery.png"
-                    alt="Project Management Benefits"
-                    className="fp-benefits-image"
-                  />
+                  <DashboardMockup variant="project-status" />
                 </div>
               </ScrollReveal>
             </div>

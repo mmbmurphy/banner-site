@@ -6738,3 +6738,916 @@ button.lay-tab-link {
     height: 30px;
   }
 }
+
+/* ============================================
+   DASHBOARD MOCKUP COMPONENTS
+   ============================================ */
+
+.dm-container {
+  background: linear-gradient(135deg, #e8f4f8 0%, #d4e8ed 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+.dm-layout {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.dm-layout-split {
+  flex-wrap: wrap;
+}
+
+.dm-layout-split > * {
+  flex: 1;
+  min-width: 280px;
+}
+
+.dm-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Cards */
+.dm-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.dm-card-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+/* Budget Card */
+.dm-remaining-box {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 0.875rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid #e5e7eb;
+}
+
+.dm-remaining-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.dm-remaining-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Progress Bars */
+.dm-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dm-progress-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.dm-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dm-progress-label {
+  font-size: 0.8125rem;
+  color: #4b5563;
+}
+
+.dm-progress-value {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.dm-progress-track {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dm-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* Buttons */
+.dm-button-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.dm-btn {
+  flex: 1;
+  padding: 0.625rem 1rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.dm-btn-primary {
+  background: #0c3054;
+  color: white;
+}
+
+.dm-btn-primary:hover {
+  background: #164872;
+}
+
+.dm-btn-secondary {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+.dm-btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+/* Donut Chart */
+.dm-donut-wrapper {
+  position: relative;
+  margin: 0 auto 1rem;
+}
+
+.dm-donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.dm-donut-label {
+  font-size: 0.625rem;
+  color: #6b7280;
+}
+
+.dm-donut-value {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Status Card Content */
+.dm-status-content {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Search Box */
+.dm-search-box {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.dm-search-all {
+  color: #6b7280;
+  padding-right: 0.5rem;
+  border-right: 1px solid #e5e7eb;
+  margin-right: 0.5rem;
+}
+
+.dm-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.8125rem;
+  color: #9ca3af;
+}
+
+.dm-search-icons {
+  display: flex;
+  gap: 0.5rem;
+  color: #9ca3af;
+}
+
+/* Property List */
+.dm-property-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dm-property-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.dm-property-item:hover {
+  background: #f8f9fa;
+}
+
+.dm-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 3px;
+  position: relative;
+}
+
+.dm-checkbox.checked {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.dm-checkbox.checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 10px;
+}
+
+.dm-property-name {
+  font-size: 0.8125rem;
+  color: #374151;
+}
+
+/* Project Card */
+.dm-project-card {
+  padding: 1rem;
+}
+
+.dm-project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.dm-project-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.dm-status-badge {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.dm-project-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.dm-project-progress .dm-progress-track {
+  flex: 1;
+}
+
+.dm-progress-percent {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.dm-project-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dm-meta-item {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Timeline */
+.dm-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.dm-timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: #e5e7eb;
+}
+
+.dm-timeline-item {
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.dm-timeline-dot {
+  position: absolute;
+  left: -1.5rem;
+  top: 0.75rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  border: 2px solid white;
+  z-index: 1;
+}
+
+.dm-timeline-completed .dm-timeline-dot {
+  background: #22c55e;
+}
+
+.dm-timeline-in-progress .dm-timeline-dot {
+  background: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.dm-timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.dm-timeline-date {
+  font-size: 0.6875rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.dm-timeline-title {
+  font-size: 0.8125rem;
+  color: #374151;
+}
+
+/* Activity List */
+.dm-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dm-activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.dm-activity-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.dm-activity-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.dm-activity-title {
+  font-size: 0.8125rem;
+  color: #374151;
+}
+
+.dm-activity-time {
+  font-size: 0.6875rem;
+  color: #9ca3af;
+}
+
+/* Metric Cards */
+.dm-summary-grid,
+.dm-portfolio-stats,
+.dm-rfp-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.dm-metric-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 0.875rem;
+  text-align: center;
+}
+
+.dm-metric-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.dm-metric-label {
+  display: block;
+  font-size: 0.6875rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.dm-metric-trend {
+  display: block;
+  font-size: 0.6875rem;
+  margin-top: 0.25rem;
+}
+
+.dm-metric-trend.up {
+  color: #22c55e;
+}
+
+.dm-metric-trend.down {
+  color: #ef4444;
+}
+
+/* Bar Chart */
+.dm-forecast-chart {
+  height: 120px;
+  margin: 1rem 0;
+}
+
+.dm-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+  gap: 0.5rem;
+}
+
+.dm-bar-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.dm-bar {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  transition: height 0.5s ease;
+}
+
+.dm-bar-label {
+  font-size: 0.625rem;
+  color: #9ca3af;
+  margin-top: 0.375rem;
+}
+
+.dm-forecast-legend {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.dm-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.dm-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Vendor List */
+.dm-vendor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dm-vendor-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem;
+  border-radius: 6px;
+  background: #f8f9fa;
+}
+
+.dm-vendor-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dm-vendor-name {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.dm-vendor-type {
+  font-size: 0.6875rem;
+  color: #6b7280;
+}
+
+.dm-vendor-rating {
+  color: #fbbf24;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.dm-vendor-projects {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* TI List */
+.dm-ti-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dm-ti-item {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.dm-ti-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.dm-ti-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.dm-ti-tenant {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.dm-ti-floor {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.dm-ti-amounts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.375rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.dm-ti-remaining {
+  color: #22c55e;
+}
+
+/* Draw Card */
+.dm-draw-status {
+  margin-bottom: 1rem;
+}
+
+.dm-draw-details {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dm-draw-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dm-draw-row:last-child {
+  border-bottom: none;
+}
+
+.dm-draw-label {
+  font-size: 0.8125rem;
+  color: #6b7280;
+}
+
+.dm-draw-value {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.dm-draw-net {
+  color: #22c55e;
+}
+
+.dm-draw-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dm-draw-amounts {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-align: right;
+}
+
+/* Cost Breakdown */
+.dm-cost-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dm-cost-row {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.dm-cost-category {
+  flex: 1;
+  font-size: 0.8125rem;
+  color: #374151;
+}
+
+.dm-cost-amount {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-right: 1rem;
+}
+
+.dm-cost-percent {
+  font-size: 0.75rem;
+  color: #6b7280;
+  min-width: 30px;
+  text-align: right;
+}
+
+/* Approval List */
+.dm-approval-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dm-approval-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.dm-priority-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dm-priority-dot.priority-high {
+  background: #ef4444;
+}
+
+.dm-priority-dot.priority-medium {
+  background: #f97316;
+}
+
+.dm-priority-dot.priority-low {
+  background: #22c55e;
+}
+
+.dm-approval-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.dm-approval-type {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.dm-approval-vendor {
+  font-size: 0.6875rem;
+  color: #6b7280;
+}
+
+.dm-approval-amount {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.dm-approval-actions {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.dm-btn-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dm-btn-approve {
+  background: #dcfce7;
+  color: #22c55e;
+}
+
+.dm-btn-reject {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+/* Workflow */
+.dm-workflow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.dm-workflow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dm-workflow-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.dm-workflow-step.completed .dm-workflow-icon {
+  background: #dcfce7;
+  color: #22c55e;
+}
+
+.dm-workflow-step.active .dm-workflow-icon {
+  background: #dbeafe;
+  color: #3b82f6;
+}
+
+.dm-workflow-label {
+  font-size: 0.6875rem;
+  color: #6b7280;
+}
+
+.dm-workflow-line {
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 0 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.dm-workflow-line.completed {
+  background: #22c55e;
+}
+
+.dm-workflow-line.active {
+  background: linear-gradient(90deg, #22c55e 0%, #3b82f6 100%);
+}
+
+/* Bid Table */
+.dm-bid-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dm-bid-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.dm-bid-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
+  gap: 0.5rem;
+  padding: 0.625rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  align-items: center;
+}
+
+.dm-bid-row.recommended {
+  background: #dbeafe;
+  border: 1px solid #3b82f6;
+}
+
+.dm-bid-vendor {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.dm-bid-amount {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.dm-bid-score {
+  font-weight: 700;
+  color: #22c55e;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .dm-container {
+    padding: 1rem;
+  }
+
+  .dm-layout-split > * {
+    min-width: 100%;
+  }
+
+  .dm-summary-grid,
+  .dm-portfolio-stats,
+  .dm-rfp-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dm-bid-header,
+  .dm-bid-row {
+    grid-template-columns: 1.5fr 1fr 0.75fr 0.5fr;
+    font-size: 0.75rem;
+  }
+}

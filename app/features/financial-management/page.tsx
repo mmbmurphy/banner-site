@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import DashboardMockup from "@/components/DashboardMockup";
 
 export const metadata = {
   title: "Financial Management | Banner",
@@ -160,11 +161,7 @@ export default function FinancialManagementPage() {
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <div className="fp-hero-image-wrapper">
-                  <img
-                    src="/images/Imagery.png"
-                    alt="Financial Management Dashboard"
-                    className="fp-hero-image"
-                  />
+                  <DashboardMockup variant="financial-budget" />
                 </div>
               </ScrollReveal>
             </div>
@@ -250,11 +247,7 @@ export default function FinancialManagementPage() {
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <div className="fp-benefits-image-wrapper">
-                  <img
-                    src="/images/Imagery.png"
-                    alt="Financial Management Benefits"
-                    className="fp-benefits-image"
-                  />
+                  <DashboardMockup variant="financial-forecasting" />
                 </div>
               </ScrollReveal>
             </div>

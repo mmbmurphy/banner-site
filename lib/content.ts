@@ -10,29 +10,73 @@ export interface Solution {
   heroDescription: string;
   heroImage: string;
   icon: string;
-  logosSectionTitle: string;
-  features: {
-    title: string;
-    description: string;
-  }[];
-  stats: {
+  // Trust indicators - quantified social proof
+  trustIndicators: {
     value: string;
     label: string;
   }[];
-  testimonial: {
+  // Platform capabilities - the unified approach
+  platformIntro: {
+    title: string;
+    subtitle: string;
+  };
+  capabilities: {
+    title: string;
+    description: string;
+    icon: string; // icon name for rendering
+  }[];
+  // Feature showcases - alternating image/text blocks
+  featureShowcases: {
+    title: string;
+    subtitle: string;
+    description: string;
+    bullets: string[];
+    image: string;
+  }[];
+  // Role-based benefits
+  roleSection: {
+    title: string;
+    subtitle: string;
+  };
+  roles: {
+    title: string;
+    description: string;
+    benefits: string[];
+  }[];
+  // Stats with context
+  statsSection: {
+    title: string;
+    subtitle: string;
+  };
+  stats: {
+    value: string;
+    label: string;
+    context?: string;
+  }[];
+  // Testimonials - multiple for credibility
+  testimonials: {
     quote: string;
     author: string;
     role: string;
     company: string;
     image: string;
     logo: string;
-  };
-  ctaTitle: string;
-  ctaDescription: string;
+    metric?: string;
+    metricLabel?: string;
+  }[];
+  // Integration partners
+  integrations: {
+    name: string;
+    logo: string;
+  }[];
+  // FAQ
   faqs: {
     question: string;
     answer: string;
   }[];
+  // CTA
+  ctaTitle: string;
+  ctaDescription: string;
 }
 
 export interface BlogPost {
@@ -52,189 +96,519 @@ export const solutions: Solution[] = [
     title: "Multifamily",
     tagline: "For Apartment Portfolios",
     description: "CapEx management for apartment portfolios",
-    heroTitle: "Real-time portfolio visibility and cost control to protect NOI",
+    heroTitle: "One platform for all your multifamily CapEx",
     heroDescription:
-      "Banner helps multifamily owners and operators manage capital expenditures across their entire portfolio—from unit turns to major renovations—with complete visibility and budget control.",
+      "From unit turns to major renovations, Banner gives multifamily owners and operators real-time visibility and budget control across their entire portfolio.",
     heroImage: "/images/Imagery.png",
     icon: "/images/Frame-34375601.png",
-    logosSectionTitle: "Trusted by leading multifamily operators",
-    features: [
+    trustIndicators: [
+      { value: "200K+", label: "units managed on Banner" },
+      { value: "$500M+", label: "in CapEx spend processed" },
+      { value: "15+", label: "of top 50 NMHC owners trust Banner" },
+    ],
+    platformIntro: {
+      title: "One home for multifamily CapEx",
+      subtitle: "Stop juggling spreadsheets, emails, and disconnected tools. Banner brings everything together.",
+    },
+    capabilities: [
+      {
+        title: "Centralize Data",
+        description: "All projects, budgets, and vendors in one unified platform with real-time updates",
+        icon: "database",
+      },
+      {
+        title: "Connect Teams",
+        description: "Asset managers, PMs, and vendors collaborate seamlessly with role-based access",
+        icon: "users",
+      },
+      {
+        title: "Automate Workflows",
+        description: "Approvals, invoicing, and reporting happen automatically—no more manual work",
+        icon: "zap",
+      },
+      {
+        title: "Control Budgets",
+        description: "Proactive alerts and variance tracking keep every project on budget",
+        icon: "shield",
+      },
+    ],
+    featureShowcases: [
       {
         title: "Portfolio-Wide Visibility",
-        description:
-          "See every CapEx project across all properties in one unified dashboard. Track budgets, timelines, and vendor performance at both property and portfolio levels.",
+        subtitle: "See everything, everywhere",
+        description: "Get a bird's-eye view of every CapEx project across all properties. Drill down from portfolio summary to individual line items in seconds.",
+        bullets: [
+          "Real-time dashboards showing all active projects",
+          "Budget vs. actual tracking at property and portfolio levels",
+          "Custom views by region, property type, or project phase",
+          "Export-ready reports for investors and stakeholders",
+        ],
+        image: "/images/Imagery.png",
       },
       {
         title: "Unit Turn Management",
-        description:
-          "Streamline unit renovations with standardized scopes, automated approvals, and real-time cost tracking. Reduce turn times and protect your renovation budgets.",
+        subtitle: "Renovate faster, spend smarter",
+        description: "Streamline unit renovations with standardized scopes, automated approvals, and real-time cost tracking. Reduce turn times while protecting your budgets.",
+        bullets: [
+          "Standardized scope templates for consistency",
+          "Photo documentation and progress tracking",
+          "Automated vendor assignment and scheduling",
+          "Real-time budget alerts before overruns happen",
+        ],
+        image: "/images/Imagery.png",
       },
       {
         title: "Vendor Coordination",
-        description:
-          "Manage contractors and vendors across your portfolio. Track bids, contracts, invoices, and performance metrics in one centralized system.",
+        subtitle: "Manage every contractor, every project",
+        description: "Build a reliable vendor network and track performance across your portfolio. From bid management to invoice processing, everything in one place.",
+        bullets: [
+          "Centralized vendor database with performance ratings",
+          "Competitive bid collection and comparison",
+          "Digital contracts and compliance tracking",
+          "Automated invoice processing and payment tracking",
+        ],
+        image: "/images/Imagery.png",
       },
     ],
-    stats: [
-      { value: "5%", label: "average reduction in CapEx costs" },
-      { value: "70%", label: "reduction in administrative work" },
-      { value: "2X", label: "faster project completion" },
-    ],
-    testimonial: {
-      quote:
-        "Banner has transformed how we manage CapEx across our multifamily portfolio. We now have complete visibility into every project and can make data-driven decisions in real-time.",
-      author: "Sarah Chen",
-      role: "VP of Asset Management",
-      company: "Summit Real Estate Group",
-      image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
-      logo: "/images/client-logos/summit.svg",
+    roleSection: {
+      title: "Built for your entire team",
+      subtitle: "Banner adapts to how each role works—so everyone gets exactly what they need.",
     },
-    ctaTitle: "Ready to streamline your multifamily CapEx?",
-    ctaDescription:
-      "See how Banner can help your team manage capital projects more efficiently across your entire portfolio.",
+    roles: [
+      {
+        title: "Asset Managers",
+        description: "Portfolio-level visibility and strategic oversight",
+        benefits: [
+          "Track all CapEx across your portfolio in one view",
+          "Approve projects and budgets with full context",
+          "Generate investor reports in minutes, not hours",
+          "Identify trends and optimize spend across properties",
+        ],
+      },
+      {
+        title: "Property Managers",
+        description: "Day-to-day project execution and vendor management",
+        benefits: [
+          "Manage unit turns and renovations efficiently",
+          "Coordinate vendors and track project progress",
+          "Submit requests with proper documentation",
+          "Stay on budget with real-time alerts",
+        ],
+      },
+      {
+        title: "Construction Managers",
+        description: "Detailed project tracking and quality control",
+        benefits: [
+          "Oversee all active construction across properties",
+          "Track timelines, milestones, and dependencies",
+          "Manage punch lists and quality assurance",
+          "Document everything with photos and notes",
+        ],
+      },
+    ],
+    statsSection: {
+      title: "The Banner impact",
+      subtitle: "Measurable results from multifamily teams using Banner",
+    },
+    stats: [
+      { value: "5%", label: "reduction in CapEx costs", context: "through better visibility and budget control" },
+      { value: "70%", label: "less administrative work", context: "with automated reporting and workflows" },
+      { value: "2X", label: "faster project completion", context: "from streamlined coordination" },
+      { value: "3X", label: "portfolio growth capacity", context: "without adding CapEx headcount" },
+    ],
+    testimonials: [
+      {
+        quote: "We implemented Banner because we can manage our entire portfolio on it and have access to every stakeholder involved, along with live information. It provides a really meaningful check and balance in our CapEx projects.",
+        author: "Dara Vaziri",
+        role: "Senior Analyst",
+        company: "FCP",
+        image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
+        logo: "/images/client-logos/fcp.svg",
+        metric: "70%",
+        metricLabel: "less admin work",
+      },
+      {
+        quote: "Banner has transformed how we manage CapEx across our multifamily portfolio. We now have complete visibility into every project and can make data-driven decisions in real-time.",
+        author: "Sarah Chen",
+        role: "VP of Asset Management",
+        company: "Summit Real Estate Group",
+        image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
+        logo: "/images/client-logos/summit.svg",
+        metric: "5%",
+        metricLabel: "cost reduction",
+      },
+    ],
+    integrations: [
+      { name: "Yardi", logo: "/images/client-logos/yardi.svg" },
+      { name: "RealPage", logo: "/images/client-logos/realpage.svg" },
+      { name: "Entrata", logo: "/images/client-logos/entrata.svg" },
+    ],
     faqs: [
       {
         question: "How does Banner integrate with our property management system?",
-        answer:
-          "Banner integrates with major property management systems including Yardi, RealPage, and Entrata. We sync property data, chart of accounts, and can push approved invoices directly to your accounting system.",
+        answer: "Banner integrates with major property management systems including Yardi, RealPage, and Entrata. We sync property data, chart of accounts, and can push approved invoices directly to your accounting system.",
       },
       {
-        question: "Can Banner handle unit turn workflows?",
-        answer:
-          "Yes! Banner includes specialized unit turn management with standardized scopes, photo documentation, vendor assignment, and automated approval workflows tailored for high-volume unit renovations.",
+        question: "Can Banner handle high-volume unit turn workflows?",
+        answer: "Yes! Banner is built for scale. Our unit turn management includes standardized scopes, photo documentation, vendor assignment, and automated approval workflows—all designed for portfolios processing hundreds of turns per month.",
       },
       {
         question: "How long does implementation take?",
-        answer:
-          "Most multifamily clients are fully onboarded within 4-6 weeks. This includes data migration, integrations setup, team training, and workflow configuration.",
+        answer: "Most multifamily clients are fully onboarded within 4-6 weeks. This includes data migration, integrations setup, team training, and workflow configuration. We assign a dedicated implementation manager to ensure success.",
+      },
+      {
+        question: "What kind of support do you provide?",
+        answer: "Every Banner customer gets dedicated support including onboarding, training, and ongoing assistance. Enterprise customers also receive a dedicated customer success manager and quarterly business reviews.",
       },
     ],
+    ctaTitle: "See Banner in action",
+    ctaDescription: "Get a personalized demo and see how Banner can transform CapEx management for your multifamily portfolio.",
   },
   {
     slug: "commercial",
     title: "Commercial",
     tagline: "For Office & Retail",
     description: "Streamline capital projects for office & retail",
-    heroTitle: "CapEx clarity and governance across complex commercial portfolios",
+    heroTitle: "CapEx clarity for complex commercial portfolios",
     heroDescription:
-      "Banner gives commercial real estate teams the tools to manage tenant improvements, building upgrades, and long-term capital planning with complete transparency.",
+      "From tenant improvements to building systems, Banner gives commercial real estate teams the tools to manage capital projects with complete transparency and control.",
     heroImage: "/images/Imagery3.png",
     icon: "/images/Frame-34375601_1.png",
-    logosSectionTitle: "Trusted by commercial real estate leaders",
-    features: [
+    trustIndicators: [
+      { value: "50M+", label: "SF under management" },
+      { value: "$300M+", label: "in TI projects tracked" },
+      { value: "98%", label: "on-time TI delivery rate" },
+    ],
+    platformIntro: {
+      title: "Your command center for commercial CapEx",
+      subtitle: "Tenant improvements, building upgrades, and capital planning—all connected in one platform.",
+    },
+    capabilities: [
+      {
+        title: "TI Lifecycle Management",
+        description: "Track tenant improvements from lease execution through project completion and closeout",
+        icon: "building",
+      },
+      {
+        title: "Building Systems Tracking",
+        description: "Plan and execute capital projects for HVAC, elevators, roofing, and more",
+        icon: "settings",
+      },
+      {
+        title: "Capital Planning",
+        description: "Build multi-year capital budgets and align spending with asset strategy",
+        icon: "calendar",
+      },
+      {
+        title: "Stakeholder Reporting",
+        description: "Generate investor-ready reports and maintain complete audit trails",
+        icon: "file-text",
+      },
+    ],
+    featureShowcases: [
       {
         title: "Tenant Improvement Tracking",
-        description:
-          "Manage TI allowances from lease execution to project completion. Track budgets, approve change orders, and ensure timely delivery of tenant spaces.",
+        subtitle: "From lease to keys",
+        description: "Manage TI allowances and projects with complete visibility. Track budgets, approve change orders, and ensure timely delivery—keeping tenants happy and deals on track.",
+        bullets: [
+          "TI allowance tracking from lease execution",
+          "Multi-level approval workflows for change orders",
+          "Real-time budget vs. actual reporting",
+          "Deadline tracking with automated alerts",
+        ],
+        image: "/images/Imagery3.png",
       },
       {
         title: "Building Systems Management",
-        description:
-          "Plan and track capital projects for HVAC, elevators, roofing, and other building systems. Maintain compliance and extend asset life.",
+        subtitle: "Protect and enhance your assets",
+        description: "Plan and track capital projects for major building systems. Maintain compliance, extend asset life, and make informed decisions about capital allocation.",
+        bullets: [
+          "Equipment lifecycle tracking and replacement planning",
+          "Preventive maintenance scheduling",
+          "Compliance documentation and tracking",
+          "Cost history and benchmarking across properties",
+        ],
+        image: "/images/Imagery3.png",
       },
       {
         title: "Long-Term Capital Planning",
-        description:
-          "Build multi-year capital budgets with confidence. Forecast major expenditures and align capital planning with asset strategy.",
+        subtitle: "Plan with confidence",
+        description: "Build rolling 5-10 year capital plans that align with your asset strategy. Model scenarios, track reserves, and ensure you're prepared for major expenditures.",
+        bullets: [
+          "Multi-year capital budget forecasting",
+          "Reserve fund tracking and projections",
+          "Scenario modeling for different strategies",
+          "Integration with annual budgeting processes",
+        ],
+        image: "/images/Imagery3.png",
       },
     ],
-    stats: [
-      { value: "40%", label: "faster TI project delivery" },
-      { value: "25%", label: "reduction in budget overruns" },
-      { value: "3X", label: "improvement in reporting speed" },
-    ],
-    testimonial: {
-      quote:
-        "Managing TIs across our office portfolio used to be chaos. Banner brought order to the process and gave us visibility we never had before.",
-      author: "Michael Torres",
-      role: "Director of Construction",
-      company: "Griffin Partners",
-      image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
-      logo: "/images/client-logos/griffin.svg",
+    roleSection: {
+      title: "Purpose-built for commercial teams",
+      subtitle: "Every stakeholder gets the tools and visibility they need to do their job effectively.",
     },
-    ctaTitle: "Ready to streamline your commercial CapEx?",
-    ctaDescription:
-      "See how Banner can help you manage tenant improvements and building capital projects more effectively.",
+    roles: [
+      {
+        title: "Asset Managers",
+        description: "Strategic oversight and capital allocation",
+        benefits: [
+          "Portfolio-wide visibility into all capital projects",
+          "Long-term capital planning and forecasting",
+          "Investment committee reporting and analysis",
+          "NOI impact tracking and optimization",
+        ],
+      },
+      {
+        title: "Leasing Teams",
+        description: "TI budgeting and deal support",
+        benefits: [
+          "Quick access to TI cost history and benchmarks",
+          "Standardized TI budgeting templates",
+          "Deal-by-deal TI tracking and reporting",
+          "Collaboration with construction teams",
+        ],
+      },
+      {
+        title: "Property Managers",
+        description: "Day-to-day execution and vendor coordination",
+        benefits: [
+          "Manage building capital projects efficiently",
+          "Coordinate with tenants on TI delivery",
+          "Track vendor performance and compliance",
+          "Streamlined invoice processing",
+        ],
+      },
+    ],
+    statsSection: {
+      title: "Results that matter",
+      subtitle: "How Banner helps commercial teams deliver",
+    },
+    stats: [
+      { value: "40%", label: "faster TI delivery", context: "from streamlined approvals and coordination" },
+      { value: "25%", label: "reduction in budget overruns", context: "with proactive variance management" },
+      { value: "3X", label: "faster reporting", context: "through automated data consolidation" },
+      { value: "100%", label: "audit compliance", context: "with complete documentation trails" },
+    ],
+    testimonials: [
+      {
+        quote: "Managing TIs across our office portfolio used to be chaos. Banner brought order to the process and gave us visibility we never had before. Our tenants notice the difference.",
+        author: "Michael Torres",
+        role: "Director of Construction",
+        company: "Griffin Partners",
+        image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
+        logo: "/images/client-logos/griffin.svg",
+        metric: "40%",
+        metricLabel: "faster TI delivery",
+      },
+      {
+        quote: "The capital planning features in Banner have transformed how we think about our portfolio. We can now model different scenarios and make data-driven decisions about where to invest.",
+        author: "Jennifer Walsh",
+        role: "VP of Asset Management",
+        company: "Kennedy Wilson",
+        image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
+        logo: "/images/client-logos/kennedy-wilson.svg",
+        metric: "25%",
+        metricLabel: "fewer overruns",
+      },
+    ],
+    integrations: [
+      { name: "MRI", logo: "/images/client-logos/mri.svg" },
+      { name: "Yardi", logo: "/images/client-logos/yardi.svg" },
+      { name: "VTS", logo: "/images/client-logos/vts.svg" },
+    ],
     faqs: [
       {
         question: "Can Banner handle complex TI approval workflows?",
-        answer:
-          "Yes, Banner supports multi-level approval workflows for tenant improvements, including landlord contributions, tenant allowances, and change order management with full audit trails.",
+        answer: "Yes, Banner supports multi-level approval workflows for tenant improvements, including landlord contributions, tenant allowances, and change order management. Every action is logged for complete audit trails.",
       },
       {
-        question: "How does Banner help with capital planning?",
-        answer:
-          "Banner enables you to build rolling 5-10 year capital plans, track reserve funding, and integrate planned projects with annual budgets. You can model different scenarios and adjust plans as conditions change.",
+        question: "How does Banner help with long-term capital planning?",
+        answer: "Banner enables you to build rolling 5-10 year capital plans, track reserve funding, and integrate planned projects with annual budgets. You can model different scenarios and adjust plans as conditions change.",
       },
       {
         question: "Does Banner integrate with commercial accounting systems?",
-        answer:
-          "Yes, Banner integrates with MRI, Yardi, and other commercial real estate accounting platforms to sync property data and push approved invoices for payment.",
+        answer: "Yes, Banner integrates with MRI, Yardi, and other commercial real estate accounting platforms to sync property data and push approved invoices for payment.",
+      },
+      {
+        question: "How do you handle tenant-specific reporting requirements?",
+        answer: "Banner supports customizable reporting templates that can be tailored to specific tenant requirements, lease terms, and TI allowance structures. You can generate reports in multiple formats.",
       },
     ],
+    ctaTitle: "See how Banner works for commercial",
+    ctaDescription: "Get a personalized demo tailored to your commercial portfolio and see the difference Banner can make.",
   },
   {
     slug: "developers",
     title: "Developers",
     tagline: "For Ground-Up Development",
     description: "Track development budgets from ground-up",
-    heroTitle: "CapEx control built for development workflows and draw-ready reporting",
+    heroTitle: "Development CapEx built for how you work",
     heroDescription:
-      "Banner helps development teams track budgets, manage draws, and maintain lender compliance from land acquisition through stabilization.",
+      "From land acquisition through stabilization, Banner gives development teams the budget visibility, draw management, and lender reporting they need to deliver projects successfully.",
     heroImage: "/images/Imagery4.png",
     icon: "/images/Frame-34375601_2.png",
-    logosSectionTitle: "Trusted by development teams",
-    features: [
+    trustIndicators: [
+      { value: "$2B+", label: "in development projects tracked" },
+      { value: "100%", label: "lender compliance rate" },
+      { value: "500+", label: "projects managed" },
+    ],
+    platformIntro: {
+      title: "Your development command center",
+      subtitle: "Budget tracking, draw management, and stakeholder reporting—everything developers need in one platform.",
+    },
+    capabilities: [
       {
         title: "Draw Management",
-        description:
-          "Prepare and track construction draws with ease. Maintain lender compliance, track retainage, and ensure timely funding throughout your project.",
+        description: "Prepare draw packages faster with automated cost tracking and lender-ready documentation",
+        icon: "file-check",
       },
       {
-        title: "Budget vs. Actual Tracking",
-        description:
-          "Monitor hard and soft costs against your pro forma in real-time. Identify variances early and make proactive adjustments.",
+        title: "Budget Tracking",
+        description: "Monitor hard and soft costs against pro forma with real-time variance alerts",
+        icon: "trending-up",
+      },
+      {
+        title: "Lender Reporting",
+        description: "Generate compliant reports and maintain documentation lenders expect",
+        icon: "briefcase",
+      },
+      {
+        title: "Timeline Management",
+        description: "Connect budgets to schedules and track milestones across all projects",
+        icon: "clock",
+      },
+    ],
+    featureShowcases: [
+      {
+        title: "Draw Management",
+        subtitle: "Faster draws, happier lenders",
+        description: "Prepare and track construction draws with ease. Banner automates the tedious parts so you can focus on building, not paperwork.",
+        bullets: [
+          "Automated draw package preparation",
+          "Cost-to-date tracking with retainage management",
+          "Customizable templates matching lender requirements",
+          "Real-time funding status and projections",
+        ],
+        image: "/images/Imagery4.png",
+      },
+      {
+        title: "Budget vs. Actual",
+        subtitle: "Know where you stand, always",
+        description: "Monitor hard costs, soft costs, and contingencies against your pro forma in real-time. Identify variances early and make proactive adjustments before small issues become big problems.",
+        bullets: [
+          "Real-time budget vs. actual tracking",
+          "Automated variance alerts and notifications",
+          "Contingency drawdown monitoring",
+          "Pro forma comparison and forecasting",
+        ],
+        image: "/images/Imagery4.png",
       },
       {
         title: "Timeline & Milestone Tracking",
-        description:
-          "Connect budgets to construction schedules. Track milestones, manage dependencies, and keep all stakeholders aligned on project progress.",
+        subtitle: "Budget meets schedule",
+        description: "Connect your financial tracking to construction timelines. See how schedule changes impact budget and keep all stakeholders aligned on project progress.",
+        bullets: [
+          "Milestone tracking with budget integration",
+          "Schedule variance impact analysis",
+          "Stakeholder progress reporting",
+          "Critical path visibility and alerts",
+        ],
+        image: "/images/Imagery4.png",
       },
     ],
-    stats: [
-      { value: "50%", label: "faster draw preparation" },
-      { value: "15%", label: "reduction in cost overruns" },
-      { value: "100%", label: "lender compliance rate" },
-    ],
-    testimonial: {
-      quote:
-        "Banner has streamlined our draw process and gives our lenders confidence in our reporting. We've cut draw preparation time in half.",
-      author: "David Park",
-      role: "Development Manager",
-      company: "Starwood Capital Group",
-      image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
-      logo: "/images/client-logos/starwood.svg",
+    roleSection: {
+      title: "Built for the development team",
+      subtitle: "From principals to project managers, everyone gets the tools they need.",
     },
-    ctaTitle: "Ready to streamline your development projects?",
-    ctaDescription:
-      "See how Banner can help you manage development budgets and lender draws more effectively.",
+    roles: [
+      {
+        title: "Principals & Partners",
+        description: "Portfolio oversight and investor relations",
+        benefits: [
+          "Real-time visibility into all development projects",
+          "Investor-ready reporting and documentation",
+          "Risk monitoring across the portfolio",
+          "Capital deployment tracking and forecasting",
+        ],
+      },
+      {
+        title: "Development Managers",
+        description: "Project execution and budget control",
+        benefits: [
+          "Detailed budget tracking for every project",
+          "Draw management and lender coordination",
+          "Vendor and contractor oversight",
+          "Timeline and milestone management",
+        ],
+      },
+      {
+        title: "Project Accountants",
+        description: "Financial tracking and compliance",
+        benefits: [
+          "Streamlined draw package preparation",
+          "Cost coding and allocation management",
+          "Audit-ready documentation",
+          "Integration with accounting systems",
+        ],
+      },
+    ],
+    statsSection: {
+      title: "Development teams love Banner",
+      subtitle: "Results from developers using Banner across their projects",
+    },
+    stats: [
+      { value: "50%", label: "faster draw preparation", context: "with automated package generation" },
+      { value: "15%", label: "reduction in cost overruns", context: "through proactive variance management" },
+      { value: "100%", label: "lender compliance", context: "with standardized reporting and documentation" },
+      { value: "10+", label: "hours saved per draw", context: "from automated data consolidation" },
+    ],
+    testimonials: [
+      {
+        quote: "Banner has streamlined our draw process and gives our lenders confidence in our reporting. We've cut draw preparation time in half and eliminated the back-and-forth.",
+        author: "David Park",
+        role: "Development Manager",
+        company: "Starwood Capital Group",
+        image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
+        logo: "/images/client-logos/starwood.svg",
+        metric: "50%",
+        metricLabel: "faster draws",
+      },
+      {
+        quote: "Managing multiple development projects used to mean constant firefighting. Banner gives us the visibility to be proactive instead of reactive—and our lenders notice the difference.",
+        author: "Rachel Kim",
+        role: "VP of Development",
+        company: "Cardinal Group",
+        image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
+        logo: "/images/client-logos/cardinal.svg",
+        metric: "15%",
+        metricLabel: "fewer overruns",
+      },
+    ],
+    integrations: [
+      { name: "Procore", logo: "/images/client-logos/procore.svg" },
+      { name: "Sage", logo: "/images/client-logos/sage.svg" },
+      { name: "QuickBooks", logo: "/images/client-logos/quickbooks.svg" },
+    ],
     faqs: [
       {
         question: "How does Banner handle construction draw management?",
-        answer:
-          "Banner automates draw package preparation with cost-to-date tracking, retainage management, and customizable draw templates that match your lender requirements.",
+        answer: "Banner automates draw package preparation with cost-to-date tracking, retainage management, and customizable draw templates that match your lender requirements. Most teams cut draw prep time by 50% or more.",
       },
       {
         question: "Can Banner track both hard and soft costs?",
-        answer:
-          "Yes, Banner tracks all development costs including land, hard costs, soft costs, financing, and reserves. You can compare actuals to your original pro forma and approved budget at any time.",
+        answer: "Yes, Banner tracks all development costs including land, hard costs, soft costs, financing, and reserves. You can compare actuals to your original pro forma and approved budget at any time, with automated variance tracking.",
       },
       {
-        question: "Does Banner support multiple projects?",
-        answer:
-          "Absolutely. Banner is built for developers managing multiple projects simultaneously. You get portfolio-level visibility while maintaining detailed project-level tracking.",
+        question: "Does Banner integrate with construction management software?",
+        answer: "Yes, Banner integrates with Procore and other construction management platforms to sync project data, costs, and documentation. We also integrate with accounting systems like Sage and QuickBooks.",
+      },
+      {
+        question: "How do you handle multiple projects with different lenders?",
+        answer: "Banner supports multiple projects with different structures, lenders, and reporting requirements. Each project can have its own draw templates, approval workflows, and stakeholder access.",
       },
     ],
+    ctaTitle: "See Banner for development",
+    ctaDescription: "Get a demo tailored to development workflows and see how Banner can streamline your projects from land to stabilization.",
   },
 ];
 

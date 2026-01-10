@@ -969,3 +969,760 @@ details[open] .faq4_icon-wrappper {
 .hubspot-embed-container {
   min-height: 600px;
 }
+
+/* ========================================
+   SOLUTION PAGES - Best in Class Design
+   ======================================== */
+
+.solution-page {
+  background: #ffffff;
+}
+
+/* Hero Section */
+.sol-hero {
+  padding: 6rem 0 4rem;
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.sol-hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sol-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sol-hero-badge {
+  display: inline-flex;
+  align-self: flex-start;
+}
+
+.sol-badge-text {
+  display: inline-block;
+  background: rgba(242, 94, 83, 0.1);
+  color: #f25e53;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.sol-hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.sol-hero-description {
+  font-size: 1.25rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sol-hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.sol-hero-link {
+  color: #1a1a1a;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.sol-hero-link:hover {
+  color: #f25e53;
+}
+
+.sol-hero-link span {
+  transition: transform 0.2s ease;
+}
+
+.sol-hero-link:hover span {
+  transform: translateX(4px);
+}
+
+.sol-hero-image-wrapper {
+  position: relative;
+}
+
+.sol-hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12);
+}
+
+/* Trust Indicators */
+.sol-trust-section {
+  padding: 3rem 0;
+  background: #1a1a1a;
+}
+
+.sol-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.sol-trust-item {
+  text-align: center;
+  padding: 1rem;
+}
+
+.sol-trust-value {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: #f25e53;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.sol-trust-label {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+
+/* Logo Section */
+.sol-logos-section {
+  padding: 3rem 0;
+  background: #f8f9fa;
+}
+
+.sol-logos-wrapper {
+  opacity: 0.7;
+}
+
+/* Platform Capabilities */
+.sol-platform-section {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.sol-platform-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.sol-platform-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.sol-platform-subtitle {
+  font-size: 1.125rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.sol-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.sol-capability-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sol-capability-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.sol-capability-icon {
+  width: 56px;
+  height: 56px;
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: #f25e53;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.sol-capability-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+}
+
+.sol-capability-description {
+  font-size: 0.9375rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Feature Showcases */
+.sol-features-section {
+  padding: 3rem 0;
+  background: #ffffff;
+}
+
+.sol-feature-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 4rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sol-feature-block:last-child {
+  border-bottom: none;
+}
+
+.sol-feature-block.sol-feature-reverse {
+  direction: rtl;
+}
+
+.sol-feature-block.sol-feature-reverse > * {
+  direction: ltr;
+}
+
+.sol-feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sol-feature-eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f25e53;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sol-feature-title {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sol-feature-description {
+  font-size: 1.0625rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.sol-feature-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sol-feature-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: #444;
+}
+
+.sol-feature-bullet svg {
+  flex-shrink: 0;
+  color: #4caf50;
+  margin-top: 2px;
+}
+
+.sol-feature-image-wrapper {
+  position: relative;
+}
+
+.sol-feature-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats Section */
+.sol-stats-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.sol-stats-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sol-stats-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.sol-stats-subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.sol-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.sol-stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.sol-stat-value {
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #f25e53;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.sol-stat-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.sol-stat-context {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.4;
+}
+
+/* Roles Section */
+.sol-roles-section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.sol-roles-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.sol-roles-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.sol-roles-subtitle {
+  font-size: 1.125rem;
+  color: #666;
+  margin: 0;
+}
+
+.sol-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.sol-role-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sol-role-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.sol-role-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+}
+
+.sol-role-description {
+  font-size: 0.9375rem;
+  color: #666;
+  margin: 0 0 1.5rem 0;
+}
+
+.sol-role-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.sol-role-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  color: #444;
+}
+
+.sol-role-benefit svg {
+  flex-shrink: 0;
+  color: #4caf50;
+  margin-top: 2px;
+}
+
+/* Testimonials Section */
+.sol-testimonials-section {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.sol-testimonials-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sol-testimonials-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.sol-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.sol-testimonial-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sol-testimonial-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.sol-metric-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f25e53;
+  line-height: 1;
+}
+
+.sol-metric-label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.sol-testimonial-quote {
+  font-size: 1.0625rem;
+  font-style: italic;
+  color: #333;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.sol-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.sol-author-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sol-author-info {
+  flex: 1;
+}
+
+.sol-author-name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.sol-author-role {
+  font-size: 0.8125rem;
+  color: #666;
+}
+
+.sol-author-logo {
+  height: 24px;
+  width: auto;
+  opacity: 0.6;
+}
+
+/* FAQ Section */
+.sol-faq-section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.sol-faq-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sol-faq-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.sol-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sol-faq-item {
+  background: #ffffff;
+  border-radius: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.sol-faq-item:first-child {
+  border-radius: 12px 12px 0 0;
+}
+
+.sol-faq-item:last-child {
+  border-radius: 0 0 12px 12px;
+  border-bottom: none;
+}
+
+.sol-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.sol-faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.sol-faq-icon {
+  flex-shrink: 0;
+  color: #999;
+  transition: transform 0.3s ease;
+}
+
+.sol-faq-item[open] .sol-faq-icon {
+  transform: rotate(45deg);
+}
+
+.sol-faq-answer {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.sol-faq-answer p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* CTA Section */
+.sol-cta-section {
+  padding: 5rem 0 6rem;
+  background: #ffffff;
+}
+
+.sol-cta-wrapper {
+  background: linear-gradient(135deg, #f25e53 0%, #e04a3f 100%);
+  border-radius: 24px;
+  padding: 4rem;
+  text-align: center;
+}
+
+.sol-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sol-cta-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+}
+
+.sol-cta-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.sol-cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sol-cta-section .button.w-button {
+  background: #ffffff;
+  color: #f25e53;
+}
+
+.sol-cta-section .button.w-button:hover {
+  background: #f8f8f8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.sol-cta-link {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.sol-cta-link:hover {
+  opacity: 0.8;
+}
+
+/* Solution Page Responsive */
+@media (max-width: 991px) {
+  .sol-hero {
+    padding: 4rem 0 3rem;
+  }
+
+  .sol-hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .sol-hero-image-wrapper {
+    order: -1;
+  }
+
+  .sol-trust-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .sol-capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sol-feature-block {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 0;
+  }
+
+  .sol-feature-block.sol-feature-reverse {
+    direction: ltr;
+  }
+
+  .sol-feature-image-wrapper {
+    order: -1;
+  }
+
+  .sol-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sol-roles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sol-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sol-cta-wrapper {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .sol-trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sol-capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sol-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sol-hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 479px) {
+  .sol-cta-buttons {
+    flex-direction: column;
+  }
+}

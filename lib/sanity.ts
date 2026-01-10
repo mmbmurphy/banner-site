@@ -1,24 +1,43 @@
-import { createClient } from "next-sanity";
+import { createClient, type SanityClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { PortableTextBlock } from "@portabletext/types";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SanityImageSource = any;
 
-export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "";
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2024-01-01";
 
-export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: process.env.NODE_ENV === "production",
-});
+// Only create client if projectId is configured
+const isSanityConfigured = !!projectId;
 
-const builder = imageUrlBuilder(client);
+export const client: SanityClient | null = isSanityConfigured
+  ? createClient({
+      projectId,
+      dataset,
+      apiVersion,
+      useCdn: process.env.NODE_ENV === "production",
+    })
+  : null;
+
+const builder = client ? imageUrlBuilder(client) : null;
+
+// Placeholder builder for when Sanity is not configured
+const placeholderBuilder = {
+  width: () => placeholderBuilder,
+  height: () => placeholderBuilder,
+  url: () => "/images/blog-placeholder.jpg",
+  format: () => placeholderBuilder,
+  fit: () => placeholderBuilder,
+  crop: () => placeholderBuilder,
+  auto: () => placeholderBuilder,
+};
 
 export function urlFor(source: SanityImageSource) {
+  if (!builder || !source) {
+    return placeholderBuilder;
+  }
   return builder.image(source);
 }
 
@@ -185,31 +204,38 @@ export const relatedPostsQuery = `*[_type == "post" && slug.current != $slug && 
   }
 }`;
 
-// Fetch functions
+// Fetch functions - return empty arrays when Sanity is not configured
 export async function getPosts(): Promise<Post[]> {
+  if (!client) return [];
   return client.fetch(postsQuery);
 }
 
 export async function getFeaturedPosts(): Promise<Post[]> {
+  if (!client) return [];
   return client.fetch(featuredPostsQuery);
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
+  if (!client) return null;
   return client.fetch(postBySlugQuery, { slug });
 }
 
 export async function getPostSlugs(): Promise<string[]> {
+  if (!client) return [];
   return client.fetch(postSlugsQuery);
 }
 
 export async function getCategories(): Promise<Category[]> {
+  if (!client) return [];
   return client.fetch(categoriesQuery);
 }
 
 export async function getPostsByCategory(category: string): Promise<Post[]> {
+  if (!client) return [];
   return client.fetch(postsByCategoryQuery, { category });
 }
 
 export async function getRelatedPosts(slug: string, category: string): Promise<Post[]> {
+  if (!client) return [];
   return client.fetch(relatedPostsQuery, { slug, category });
 }

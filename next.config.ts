@@ -2,10 +2,16 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    unoptimized: true, // Use unoptimized images for static export compatibility
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+    ],
   },
-  // Enable static export for Vercel
-  output: "export",
+  // Remove static export to enable dynamic routes for CMS
+  // Vercel will handle this automatically with ISR
 };
 
 export default nextConfig;

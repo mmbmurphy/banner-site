@@ -7,6 +7,7 @@ import ParallaxImage from "@/components/ParallaxImage";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FeatureGrid from "@/components/FeatureGrid";
 import FAQ from "@/components/FAQ";
+import VideoModal from "@/components/VideoModal";
 
 const integrationLogos = [
   { src: "/images/l1.png", alt: "Integration 1" },
@@ -421,12 +422,11 @@ export default function Home() {
                 <div className="fcp-wrapp">
                   <div className="w-layout-grid grid">
                     <div className="layout2_lightbox">
-                      <img
-                        className="layout2_lightbox-image"
-                        src="/images/portrait-casestudy-banner.webp"
-                        alt=""
-                        loading="lazy"
-                        srcSet="/images/portrait-casestudy-banner-p-500.webp 500w, /images/portrait-casestudy-banner-p-800.webp 800w, /images/portrait-casestudy-banner-p-1080.webp 1080w, /images/portrait-casestudy-banner-p-1600.webp 1600w, /images/portrait-casestudy-banner-p-2000.webp 2000w, /images/portrait-casestudy-banner.webp 2048w"
+                      <VideoModal
+                        videoUrl="https://banner-web-assets.nyc3.cdn.digitaloceanspaces.com/videos/FCP%20Testimonial_FINAL.mp4"
+                        thumbnailSrc="/images/portrait-casestudy-banner.webp"
+                        thumbnailSrcSet="/images/portrait-casestudy-banner-p-500.webp 500w, /images/portrait-casestudy-banner-p-800.webp 800w, /images/portrait-casestudy-banner-p-1080.webp 1080w, /images/portrait-casestudy-banner-p-1600.webp 1600w, /images/portrait-casestudy-banner-p-2000.webp 2000w, /images/portrait-casestudy-banner.webp 2048w"
+                        alt="Watch FCP testimonial video"
                       />
                     </div>
                     <div className="fcp-content">

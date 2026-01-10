@@ -25,20 +25,19 @@ const testimonials = [
     image: "/images/portrait-casestudy-banner.webp",
     quote:
       "We implemented Banner because we can manage our entire portfolio on it and have access to every stakeholder involved, along with live information. It provides a really meaningful check and balance in our CapEx projects.",
-    name: "Dara Vaziri",
-    position: "Senior Analyst",
+    name: "Jeff Robertson",
+    position: "SVP Asset Management",
     company: "FCP",
     logo: "/images/client-logos/fcp.svg",
   },
   {
-    image: "/images/client-logos/greystar.svg",
+    image: "/images/dave-ruth.png",
     quote:
       "Banner gives us the visibility we need to make confident capital decisions across our entire portfolio. The real-time forecasting has transformed how we approach budgeting.",
-    name: "Asset Management Team",
-    position: "Portfolio Operations",
-    company: "Greystar",
-    logo: "/images/client-logos/greystar.svg",
-    isPlaceholder: true,
+    name: "Dave Ruth",
+    position: "VP - Construction",
+    company: "Livcor",
+    logo: "/images/client-logos/livcor.svg",
   },
 ];
 

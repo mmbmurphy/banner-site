@@ -27,6 +27,7 @@ interface BudgetCardProps {
   remainingValue: string;
   items: ProgressBarData[];
   buttons?: { primary: string; secondary: string };
+  compact?: boolean;
 }
 
 interface StatusCardProps {
@@ -35,6 +36,19 @@ interface StatusCardProps {
   centerLabel?: string;
   centerValue?: string;
   properties?: PropertyItem[];
+  searchPlaceholder?: string;
+  compact?: boolean;
+}
+
+interface MiniStatusCardProps {
+  title: string;
+  segments: DonutSegment[];
+  sideLabel?: string;
+  sideValue?: string;
+}
+
+interface PropertyCardProps {
+  properties: PropertyItem[];
   searchPlaceholder?: string;
 }
 
@@ -143,9 +157,9 @@ function ProgressBar({ label, value, max, color }: ProgressBarData) {
 }
 
 // Budget Card Component
-function BudgetCard({ title, remainingLabel = "Budget Remaining", remainingValue, items, buttons }: BudgetCardProps) {
+function BudgetCard({ title, remainingLabel = "Budget Remaining", remainingValue, items, buttons, compact }: BudgetCardProps) {
   return (
-    <div className="dm-card dm-budget-card">
+    <div className={`dm-card dm-budget-card ${compact ? "dm-card-compact" : ""}`}>
       <h3 className="dm-card-title">{title}</h3>
       <div className="dm-remaining-box">
         <span className="dm-remaining-label">{remainingLabel}</span>
@@ -166,14 +180,60 @@ function BudgetCard({ title, remainingLabel = "Budget Remaining", remainingValue
   );
 }
 
-// Status Card with Donut Chart
-function StatusCard({ title, segments, centerLabel, centerValue, properties, searchPlaceholder }: StatusCardProps) {
+// Mini Status Card - Compact card with horizontal donut + value
+function MiniStatusCard({ title, segments, sideLabel, sideValue }: MiniStatusCardProps) {
   return (
-    <div className="dm-card dm-status-card">
+    <div className="dm-card dm-card-compact dm-mini-status-card">
+      <h3 className="dm-card-title">{title}</h3>
+      <div className="dm-donut-horizontal">
+        <DonutChart segments={segments} size={56} strokeWidth={8} />
+        {(sideLabel || sideValue) && (
+          <div className="dm-donut-side-label">
+            {sideLabel && <span className="dm-donut-label">{sideLabel}</span>}
+            {sideValue && <span className="dm-donut-value">{sideValue}</span>}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// Property Card - Compact card with property list
+function PropertyCard({ properties, searchPlaceholder }: PropertyCardProps) {
+  return (
+    <div className="dm-card dm-card-compact dm-property-card">
+      {searchPlaceholder && (
+        <div className="dm-search-box">
+          <span className="dm-search-all">All</span>
+          <input type="text" placeholder={searchPlaceholder} className="dm-search-input" readOnly />
+          <span className="dm-search-icons">
+            <span className="dm-search-x">×</span>
+            <span className="dm-search-icon">⌕</span>
+          </span>
+        </div>
+      )}
+      <div className="dm-property-list">
+        {properties.map((property, index) => (
+          <div key={index} className="dm-property-item">
+            <span className={`dm-checkbox ${property.checked ? "checked" : ""}`} />
+            <span className="dm-property-name">{property.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Status Card with Donut Chart
+function StatusCard({ title, segments, centerLabel, centerValue, properties, searchPlaceholder, compact }: StatusCardProps) {
+  return (
+    <div className={`dm-card dm-status-card ${compact ? "dm-card-compact" : ""}`}>
       <h3 className="dm-card-title">{title}</h3>
       <div className="dm-status-content">
         <DonutChart
           segments={segments}
+          size={compact ? 64 : 80}
+          strokeWidth={compact ? 9 : 12}
           centerLabel={centerLabel}
           centerValue={centerValue}
         />
@@ -204,8 +264,12 @@ function StatusCard({ title, segments, centerLabel, centerValue, properties, sea
   );
 }
 
+interface ProjectCardFullProps extends ProjectCardProps {
+  compact?: boolean;
+}
+
 // Project Card Component
-function ProjectCard({ title, status, progress, budget, spent, dueDate }: ProjectCardProps) {
+function ProjectCard({ title, status, progress, budget, spent, dueDate, compact }: ProjectCardFullProps) {
   const statusColors = {
     "on-track": colors.green,
     "at-risk": colors.orange,
@@ -221,7 +285,7 @@ function ProjectCard({ title, status, progress, budget, spent, dueDate }: Projec
   };
 
   return (
-    <div className="dm-card dm-project-card">
+    <div className={`dm-card dm-project-card ${compact ? "dm-card-compact" : ""}`}>
       <div className="dm-project-header">
         <h4 className="dm-project-title">{title}</h4>
         <span className="dm-status-badge" style={{ backgroundColor: `${statusColors[status]}20`, color: statusColors[status] }}>
@@ -312,7 +376,7 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
     switch (variant) {
       case "financial-budget":
         return (
-          <div className="dm-layout dm-layout-split">
+          <div className="dm-layout dm-layout-asymmetric">
             <BudgetCard
               title="Budget vs Forecasting"
               remainingValue="$35,000.00"
@@ -323,33 +387,38 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 { label: "Invoiced", value: 4950, max: 50000, color: colors.blue },
               ]}
               buttons={{ primary: "Review", secondary: "Change Data" }}
+              compact
             />
-            <StatusCard
-              title="Project by Status"
-              segments={[
-                { value: 45, color: colors.teal },
-                { value: 25, color: colors.red },
-                { value: 20, color: colors.blue },
-                { value: 10, color: colors.gray },
-              ]}
-              centerLabel="Budget Remaining"
-              centerValue="$35,000.00"
-              properties={[
-                { name: "All", checked: true },
-                { name: "River Apartments", checked: true },
-                { name: "Banner Lofts", checked: true },
-                { name: "Example Apartments - Partner 1", checked: true },
-                { name: "Example Apartments", checked: true },
-              ]}
-              searchPlaceholder="Search Properties"
-            />
+            <div className="dm-right-stack">
+              <MiniStatusCard
+                title="Project by Status"
+                segments={[
+                  { value: 45, color: colors.teal },
+                  { value: 25, color: colors.red },
+                  { value: 20, color: colors.blue },
+                  { value: 10, color: colors.gray },
+                ]}
+                sideLabel="Budget Remaining"
+                sideValue="$35,000.00"
+              />
+              <PropertyCard
+                properties={[
+                  { name: "All", checked: true },
+                  { name: "River Apartments", checked: true },
+                  { name: "Banner Lofts", checked: true },
+                  { name: "Example Apartments - Partner 1", checked: true },
+                  { name: "Example Apartments", checked: true },
+                ]}
+                searchPlaceholder="Search Properties"
+              />
+            </div>
           </div>
         );
 
       case "financial-forecasting":
         return (
-          <div className="dm-layout dm-layout-split">
-            <div className="dm-card dm-forecast-card">
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact dm-forecast-card">
               <h3 className="dm-card-title">Cash Flow Forecast</h3>
               <div className="dm-forecast-chart">
                 <div className="dm-bar-chart">
@@ -366,7 +435,7 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 <span className="dm-legend-item"><span className="dm-legend-dot" style={{ backgroundColor: colors.green }} /> Actual</span>
               </div>
             </div>
-            <div className="dm-card">
+            <div className="dm-card dm-card-compact">
               <h3 className="dm-card-title">Capital Summary</h3>
               <div className="dm-summary-grid">
                 <MetricCard label="Total Budget" value="$2.4M" />
@@ -380,8 +449,8 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
 
       case "project-timeline":
         return (
-          <div className="dm-layout dm-layout-split">
-            <div className="dm-card dm-timeline-card">
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact dm-timeline-card">
               <h3 className="dm-card-title">Project Schedule</h3>
               <Timeline
                 items={[
@@ -393,7 +462,7 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 ]}
               />
             </div>
-            <div className="dm-stack">
+            <div className="dm-right-stack">
               <ProjectCard
                 title="Unit 204 Renovation"
                 status="on-track"
@@ -401,6 +470,7 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 budget="$45,000"
                 spent="$32,400"
                 dueDate="Mar 15"
+                compact
               />
               <ProjectCard
                 title="Lobby Modernization"
@@ -409,6 +479,7 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 budget="$120,000"
                 spent="$68,000"
                 dueDate="Apr 1"
+                compact
               />
             </div>
           </div>
@@ -416,19 +487,8 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
 
       case "project-status":
         return (
-          <div className="dm-layout dm-layout-split">
-            <StatusCard
-              title="Projects by Status"
-              segments={[
-                { value: 12, color: colors.green, label: "On Track" },
-                { value: 5, color: colors.orange, label: "At Risk" },
-                { value: 2, color: colors.red, label: "Delayed" },
-                { value: 8, color: colors.blue, label: "Completed" },
-              ]}
-              centerLabel="Active"
-              centerValue="27"
-            />
-            <div className="dm-card">
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact">
               <h3 className="dm-card-title">Recent Activity</h3>
               <div className="dm-activity-list">
                 <div className="dm-activity-item">
@@ -454,13 +514,24 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 </div>
               </div>
             </div>
+            <MiniStatusCard
+              title="Projects by Status"
+              segments={[
+                { value: 12, color: colors.green },
+                { value: 5, color: colors.orange },
+                { value: 2, color: colors.red },
+                { value: 8, color: colors.blue },
+              ]}
+              sideLabel="Active"
+              sideValue="27"
+            />
           </div>
         );
 
       case "multifamily-portfolio":
         return (
-          <div className="dm-layout dm-layout-split">
-            <div className="dm-card">
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact">
               <h3 className="dm-card-title">Portfolio Overview</h3>
               <div className="dm-portfolio-stats">
                 <MetricCard label="Total Units" value="12,450" />
@@ -469,29 +540,33 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 <MetricCard label="Avg Turn Time" value="14 days" trend="2 days" trendUp={true} />
               </div>
             </div>
-            <StatusCard
-              title="Units by Renovation Status"
-              segments={[
-                { value: 156, color: colors.green },
-                { value: 42, color: colors.blue },
-                { value: 28, color: colors.orange },
-              ]}
-              centerLabel="In Progress"
-              centerValue="226"
-              properties={[
-                { name: "Riverside Commons", checked: true },
-                { name: "Oak Park Village", checked: true },
-                { name: "Metro Heights", checked: true },
-                { name: "Sunset Gardens", checked: false },
-              ]}
-              searchPlaceholder="Search Properties"
-            />
+            <div className="dm-right-stack">
+              <MiniStatusCard
+                title="Units by Renovation Status"
+                segments={[
+                  { value: 156, color: colors.green },
+                  { value: 42, color: colors.blue },
+                  { value: 28, color: colors.orange },
+                ]}
+                sideLabel="In Progress"
+                sideValue="226"
+              />
+              <PropertyCard
+                properties={[
+                  { name: "Riverside Commons", checked: true },
+                  { name: "Oak Park Village", checked: true },
+                  { name: "Metro Heights", checked: true },
+                  { name: "Sunset Gardens", checked: false },
+                ]}
+                searchPlaceholder="Search Properties"
+              />
+            </div>
           </div>
         );
 
       case "commercial-overview":
         return (
-          <div className="dm-layout dm-layout-split">
+          <div className="dm-layout dm-layout-asymmetric">
             <BudgetCard
               title="CapEx by Asset Class"
               remainingLabel="Total Allocated"
@@ -502,8 +577,9 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 { label: "Industrial", value: 4100000, max: 25000000, color: colors.orange },
                 { label: "Mixed-Use", value: 1700000, max: 25000000, color: colors.purple },
               ]}
+              compact
             />
-            <div className="dm-card">
+            <div className="dm-card dm-card-compact">
               <h3 className="dm-card-title">TI Allowance Tracker</h3>
               <div className="dm-ti-list">
                 <div className="dm-ti-item">
@@ -539,8 +615,8 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
 
       case "developers-draw":
         return (
-          <div className="dm-layout dm-layout-split">
-            <div className="dm-card">
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact">
               <h3 className="dm-card-title">Draw Request #7</h3>
               <div className="dm-draw-status">
                 <span className="dm-status-badge" style={{ backgroundColor: `${colors.orange}20`, color: colors.orange }}>
@@ -569,7 +645,7 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 <span className="dm-draw-amounts">$18.6M / $30M drawn</span>
               </div>
             </div>
-            <div className="dm-card">
+            <div className="dm-card dm-card-compact">
               <h3 className="dm-card-title">Cost Breakdown</h3>
               <div className="dm-cost-breakdown">
                 {[
@@ -591,8 +667,8 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
 
       case "approvals":
         return (
-          <div className="dm-layout dm-layout-split">
-            <div className="dm-card">
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact">
               <h3 className="dm-card-title">Pending Approvals</h3>
               <div className="dm-approval-list">
                 {[
@@ -615,7 +691,7 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 ))}
               </div>
             </div>
-            <div className="dm-card">
+            <div className="dm-card dm-card-compact">
               <h3 className="dm-card-title">Approval Workflow</h3>
               <div className="dm-workflow">
                 <div className="dm-workflow-step completed">
@@ -644,8 +720,8 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
 
       case "bidding":
         return (
-          <div className="dm-layout dm-layout-split">
-            <div className="dm-card">
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact">
               <h3 className="dm-card-title">Bid Comparison</h3>
               <div className="dm-bid-table">
                 <div className="dm-bid-header">
@@ -668,7 +744,7 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 ))}
               </div>
             </div>
-            <div className="dm-card">
+            <div className="dm-card dm-card-compact">
               <h3 className="dm-card-title">RFP Status</h3>
               <div className="dm-rfp-stats">
                 <MetricCard label="Sent" value="12" />
@@ -682,8 +758,8 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
 
       case "vendor-management":
         return (
-          <div className="dm-layout dm-layout-split">
-            <div className="dm-card">
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact">
               <h3 className="dm-card-title">Top Vendors</h3>
               <div className="dm-vendor-list">
                 <VendorRow name="ABC Construction" type="General Contractor" rating={5} activeProjects={8} />
@@ -692,15 +768,15 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                 <VendorRow name="HVAC Masters" type="HVAC" rating={4} activeProjects={3} />
               </div>
             </div>
-            <StatusCard
+            <MiniStatusCard
               title="Vendor Performance"
               segments={[
-                { value: 72, color: colors.green, label: "On Time" },
-                { value: 18, color: colors.orange, label: "Minor Delays" },
-                { value: 10, color: colors.red, label: "Issues" },
+                { value: 72, color: colors.green },
+                { value: 18, color: colors.orange },
+                { value: 10, color: colors.red },
               ]}
-              centerLabel="Avg Rating"
-              centerValue="4.5★"
+              sideLabel="Avg Rating"
+              sideValue="4.5★"
             />
           </div>
         );
@@ -711,7 +787,7 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
   };
 
   return (
-    <div className="dm-container">
+    <div className="dm-container dm-compact">
       {renderVariant()}
     </div>
   );

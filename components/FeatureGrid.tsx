@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 interface Feature {
   name: string;
   icon: React.ReactNode;
@@ -192,31 +194,40 @@ interface FeatureGroupProps {
   description: string;
   features: Feature[];
   accentColor: string;
+  href: string;
 }
 
-function FeatureGroup({ title, description, features, accentColor }: FeatureGroupProps) {
+function FeatureGroup({ title, description, features, accentColor, href }: FeatureGroupProps) {
   return (
     <div className="feature-group">
-      <div className="feature-group-header">
-        <div className="feature-group-icon-wrapper" style={{ backgroundColor: accentColor }}>
-          {title === "Financial Management" ? (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="12" y1="1" x2="12" y2="23" />
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      <Link href={href} className="feature-group-header-link">
+        <div className="feature-group-header">
+          <div className="feature-group-icon-wrapper" style={{ backgroundColor: accentColor }}>
+            {title === "Financial Management" ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+            )}
+          </div>
+          <div className="feature-group-text">
+            <h3 className="feature-group-title">{title}</h3>
+            <p className="feature-group-description">{description}</p>
+          </div>
+          <div className="feature-group-arrow" style={{ color: accentColor }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
             </svg>
-          ) : (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="12 2 2 7 12 12 22 7 12 2" />
-              <polyline points="2 17 12 22 22 17" />
-              <polyline points="2 12 12 17 22 12" />
-            </svg>
-          )}
+          </div>
         </div>
-        <div className="feature-group-text">
-          <h3 className="feature-group-title">{title}</h3>
-          <p className="feature-group-description">{description}</p>
-        </div>
-      </div>
+      </Link>
       <div className="feature-group-grid">
         {features.map((feature, index) => (
           <div key={index} className="feature-item">
@@ -234,6 +245,11 @@ function FeatureGroup({ title, description, features, accentColor }: FeatureGrou
           border: 1px solid #f0f0f0;
         }
 
+        .feature-group :global(.feature-group-header-link) {
+          text-decoration: none;
+          display: block;
+        }
+
         .feature-group-header {
           display: flex;
           align-items: flex-start;
@@ -241,6 +257,25 @@ function FeatureGroup({ title, description, features, accentColor }: FeatureGrou
           margin-bottom: 1.5rem;
           padding-bottom: 1.5rem;
           border-bottom: 1px solid #f0f0f0;
+          transition: all 0.2s ease;
+        }
+
+        .feature-group :global(.feature-group-header-link):hover .feature-group-header {
+          transform: translateX(4px);
+        }
+
+        .feature-group :global(.feature-group-header-link):hover .feature-group-arrow {
+          transform: translateX(4px);
+        }
+
+        .feature-group-arrow {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: auto;
+          margin-top: 0.5rem;
+          transition: transform 0.2s ease;
+          flex-shrink: 0;
         }
 
         .feature-group-icon-wrapper {
@@ -353,12 +388,14 @@ export default function FeatureGrid() {
                 description="Planning, controlling, and reconciling money across CapEx and OpEx"
                 features={financialFeatures}
                 accentColor="#f25e53"
+                href="/features/financial-management"
               />
               <FeatureGroup
                 title="Project Management"
                 description="Executing work, coordinating people, timelines, and assets"
                 features={projectFeatures}
                 accentColor="#1a1a1a"
+                href="/features/project-management"
               />
             </div>
           </div>

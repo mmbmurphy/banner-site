@@ -1726,3 +1726,554 @@ details[open] .faq4_icon-wrappper {
     flex-direction: column;
   }
 }
+
+/* ========================================
+   FEATURE PAGES - Financial & Project Management
+   ======================================== */
+
+.feature-page {
+  background: #ffffff;
+}
+
+/* Hero Section */
+.fp-hero {
+  padding: 6rem 0 4rem;
+  background: linear-gradient(180deg, #fff5f4 0%, #ffffff 100%);
+}
+
+.fp-hero-dark {
+  background: linear-gradient(180deg, #f5f5f5 0%, #ffffff 100%);
+}
+
+.fp-hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.fp-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fp-hero-badge {
+  display: inline-flex;
+  align-self: flex-start;
+}
+
+.fp-badge-text {
+  display: inline-block;
+  background: rgba(242, 94, 83, 0.1);
+  color: #f25e53;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.fp-badge-dark .fp-badge-text {
+  background: rgba(26, 26, 26, 0.1);
+  color: #1a1a1a;
+}
+
+.fp-hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.fp-hero-description {
+  font-size: 1.25rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.fp-hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.fp-hero-link {
+  color: #1a1a1a;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.fp-hero-link:hover {
+  color: #f25e53;
+}
+
+.fp-hero-link span {
+  transition: transform 0.2s ease;
+}
+
+.fp-hero-link:hover span {
+  transform: translateX(4px);
+}
+
+.fp-hero-image-wrapper {
+  position: relative;
+}
+
+.fp-hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12);
+}
+
+/* Stats Section */
+.fp-stats-section {
+  padding: 3rem 0;
+  background: #f25e53;
+}
+
+.fp-stats-dark {
+  background: #1a1a1a;
+}
+
+.fp-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.fp-stat-item {
+  text-align: center;
+  padding: 1rem;
+}
+
+.fp-stat-value {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.fp-stat-value-dark {
+  color: #f25e53;
+}
+
+.fp-stat-label {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+/* Features Grid */
+.fp-features-section {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.fp-features-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.fp-features-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.fp-features-subtitle {
+  font-size: 1.125rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.fp-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.fp-feature-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.fp-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(242, 94, 83, 0.12);
+  border-color: rgba(242, 94, 83, 0.2);
+}
+
+.fp-feature-card-dark:hover {
+  box-shadow: 0 12px 32px rgba(26, 26, 26, 0.12);
+  border-color: rgba(26, 26, 26, 0.2);
+}
+
+.fp-feature-icon {
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: #f25e53;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.fp-feature-icon-dark {
+  color: #1a1a1a;
+}
+
+.fp-feature-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+}
+
+.fp-feature-description {
+  font-size: 0.9375rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Benefits Section */
+.fp-benefits-section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.fp-benefits-alt {
+  background: #ffffff;
+}
+
+.fp-benefits-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.fp-benefits-reverse {
+  direction: rtl;
+}
+
+.fp-benefits-reverse > * {
+  direction: ltr;
+}
+
+.fp-benefits-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fp-benefits-title {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.fp-benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fp-benefit-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.fp-benefit-check {
+  width: 32px;
+  height: 32px;
+  background: #e8f5e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4caf50;
+  flex-shrink: 0;
+}
+
+.fp-benefit-check-dark {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+.fp-benefit-content {
+  flex: 1;
+}
+
+.fp-benefit-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.25rem 0;
+}
+
+.fp-benefit-description {
+  font-size: 0.9375rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.fp-benefits-image-wrapper {
+  position: relative;
+}
+
+.fp-benefits-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonial Section */
+.fp-testimonial-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f25e53 0%, #e04a3f 100%);
+}
+
+.fp-testimonial-dark {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.fp-testimonial-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fp-quote-mark {
+  font-size: 6rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3);
+  line-height: 1;
+  margin-bottom: -1.5rem;
+}
+
+.fp-testimonial-quote {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+  font-style: italic;
+}
+
+.fp-testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.fp-author-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.fp-author-info {
+  text-align: left;
+}
+
+.fp-author-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.fp-author-role {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.fp-author-logo {
+  height: 24px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* CTA Section */
+.fp-cta-section {
+  padding: 5rem 0 6rem;
+  background: #f8f9fa;
+}
+
+.fp-cta-dark {
+  background: #ffffff;
+}
+
+.fp-cta-wrapper {
+  background: linear-gradient(135deg, #f25e53 0%, #e04a3f 100%);
+  border-radius: 24px;
+  padding: 4rem;
+  text-align: center;
+}
+
+.fp-cta-wrapper-dark {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.fp-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.fp-cta-title {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.fp-cta-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.fp-cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fp-cta-section .button.w-button {
+  background: #ffffff;
+  color: #f25e53;
+}
+
+.fp-cta-dark .button.w-button {
+  color: #1a1a1a;
+}
+
+.fp-cta-section .button.w-button:hover {
+  background: #f8f8f8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.fp-cta-link {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.fp-cta-link:hover {
+  opacity: 0.8;
+}
+
+/* Feature Page Responsive */
+@media (max-width: 991px) {
+  .fp-hero {
+    padding: 4rem 0 3rem;
+  }
+
+  .fp-hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .fp-hero-image-wrapper {
+    order: -1;
+  }
+
+  .fp-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fp-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fp-benefits-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .fp-benefits-reverse {
+    direction: ltr;
+  }
+
+  .fp-benefits-image-wrapper {
+    order: -1;
+  }
+
+  .fp-cta-wrapper {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .fp-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .fp-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fp-hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fp-testimonial-author {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .fp-author-info {
+    text-align: center;
+  }
+
+  .fp-author-logo {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+@media (max-width: 479px) {
+  .fp-cta-buttons {
+    flex-direction: column;
+  }
+}

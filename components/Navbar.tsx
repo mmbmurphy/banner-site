@@ -181,7 +181,7 @@ export default function Navbar() {
                     <div className="mega-menu-section-header">FEATURED</div>
                     <div className="mega-menu-featured-card">
                       <img
-                        src="/images/portrait-casestudy-banner.webp"
+                        src="/images/fcp-case-study.jpg"
                         alt="FCP Case Study"
                         className="mega-menu-featured-img"
                       />

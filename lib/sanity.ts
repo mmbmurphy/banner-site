@@ -59,7 +59,7 @@ export interface Post {
 }
 
 // GROQ Queries
-export const postsQuery = `*[_type == "post"] | order(publishedAt desc) {
+export const postsQuery = `*[_type == "post" && isInfoPost != true] | order(publishedAt desc) {
   _id,
   title,
   slug,
@@ -83,7 +83,7 @@ export const postsQuery = `*[_type == "post"] | order(publishedAt desc) {
   }
 }`;
 
-export const featuredPostsQuery = `*[_type == "post" && featured == true] | order(publishedAt desc)[0...3] {
+export const featuredPostsQuery = `*[_type == "post" && featured == true && isInfoPost != true] | order(publishedAt desc)[0...3] {
   _id,
   title,
   slug,
@@ -106,7 +106,7 @@ export const featuredPostsQuery = `*[_type == "post" && featured == true] | orde
   }
 }`;
 
-export const postBySlugQuery = `*[_type == "post" && slug.current == $slug][0] {
+export const postBySlugQuery = `*[_type == "post" && isInfoPost != true && slug.current == $slug][0] {
   _id,
   title,
   slug,
@@ -136,9 +136,9 @@ export const postBySlugQuery = `*[_type == "post" && slug.current == $slug][0] {
   }
 }`;
 
-export const postSlugsQuery = `*[_type == "post" && defined(slug.current)][].slug.current`;
+export const postSlugsQuery = `*[_type == "post" && isInfoPost != true && defined(slug.current)][].slug.current`;
 
-export const categoriesQuery = `*[_type == "category"] | order(title asc) {
+export const categoriesQuery = `*[_type == "category" && isInfoCategory != true] | order(title asc) {
   _id,
   title,
   slug,
@@ -146,7 +146,7 @@ export const categoriesQuery = `*[_type == "category"] | order(title asc) {
   color
 }`;
 
-export const postsByCategoryQuery = `*[_type == "post" && category->slug.current == $category] | order(publishedAt desc) {
+export const postsByCategoryQuery = `*[_type == "post" && isInfoPost != true && category->slug.current == $category] | order(publishedAt desc) {
   _id,
   title,
   slug,
@@ -169,7 +169,7 @@ export const postsByCategoryQuery = `*[_type == "post" && category->slug.current
   }
 }`;
 
-export const relatedPostsQuery = `*[_type == "post" && slug.current != $slug && category->slug.current == $category] | order(publishedAt desc)[0...3] {
+export const relatedPostsQuery = `*[_type == "post" && isInfoPost != true && slug.current != $slug && category->slug.current == $category] | order(publishedAt desc)[0...3] {
   _id,
   title,
   slug,

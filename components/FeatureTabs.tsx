@@ -144,20 +144,17 @@ export default function FeatureTabs() {
               <div className="layout_tabs">
                 <div className="layout_tabs-menu">
                   {tabs.map((tab, index) => (
-                    <a
+                    <button
                       key={tab.id}
-                      href={`#${tab.id}`}
+                      type="button"
                       className={`lay-tab-link${activeTab === index ? " active" : ""}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setActiveTab(index);
-                      }}
+                      onClick={() => setActiveTab(index)}
                     >
                       <div>{tab.label}</div>
-                    </a>
+                    </button>
                   ))}
                 </div>
-                <div id={tabs[activeTab].id} className="layout_tabs-content">
+                <div className="layout_tabs-content">
                   <div className="layout507_card">
                     <div className="layout507_card-content-bottom">
                       <div className="layout507_card-content-top">

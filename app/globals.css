@@ -3181,6 +3181,21 @@ details[open] .faq4_icon-wrappper {
   transform: scale(1.1);
 }
 
+/* Feature Tabs - Button Reset */
+button.lay-tab-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 /* Video Content */
 .video-modal-content {
   position: relative;

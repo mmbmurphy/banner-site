@@ -338,7 +338,7 @@ export default function AboutPage() {
                   <Link href="/contact" className="button w-button">
                     Book a Demo
                   </Link>
-                  <Link href="/case-studies/fcp" className="about-cta-link">
+                  <Link href="/case-studies" className="about-cta-link">
                     Read Customer Stories →
                   </Link>
                 </div>

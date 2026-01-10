@@ -314,7 +314,7 @@ export default function ProjectManagementPage() {
                     <Link href="/contact" className="button w-button">
                       Book a Demo
                     </Link>
-                    <Link href="/case-studies/fcp" className="fp-cta-link">
+                    <Link href="/case-studies" className="fp-cta-link">
                       Read customer stories →
                     </Link>
                   </div>

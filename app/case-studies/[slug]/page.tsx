@@ -43,46 +43,40 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   };
 
   return (
-    <>
-      {/* Hero Section */}
-      <header className="case-study-hero page-with-sticky-nav">
-        <div className="padding-global">
-          <div className="container-large">
-            <div className="padding-section-large">
+    <div className="case-study-page">
+      {/* Hero Section - Full width dramatic header */}
+      <header className="cs-hero">
+        <div className="cs-hero-background">
+          <img
+            src="/images/fcp-case-study.jpg"
+            alt=""
+            className="cs-hero-bg-image"
+          />
+          <div className="cs-hero-overlay"></div>
+        </div>
+        <div className="cs-hero-content">
+          <div className="padding-global">
+            <div className="container-large">
               <ScrollReveal>
-                <div className="case-study-hero-content">
-                  <div className="case-study-hero-left">
-                    <div className="case-study-meta">
-                      <img
-                        src={caseStudy.companyLogo}
-                        alt={caseStudy.companyName}
-                        className="case-study-company-logo"
-                      />
-                      <span className="case-study-industry">{caseStudy.industry}</span>
-                    </div>
-                    <h1 className="heading-style-h1">{caseStudy.title}</h1>
-                    <p className="text-size-medium case-study-subtitle">{caseStudy.subtitle}</p>
-                    <div className="margin-top margin-medium">
-                      <Link href="/contact" className="button w-button">
-                        Get similar results
-                      </Link>
-                    </div>
+                <div className="cs-hero-inner">
+                  <div className="cs-hero-badge">
+                    <span className="cs-badge-text">Case Study</span>
                   </div>
-                  <div className="case-study-hero-right">
+                  <div className="cs-hero-logo-row">
                     <img
-                      src={caseStudy.heroImage}
+                      src={caseStudy.companyLogo}
                       alt={caseStudy.companyName}
-                      className="case-study-hero-image"
-                      srcSet={`
-                        /images/portrait-casestudy-banner-p-500.webp 500w,
-                        /images/portrait-casestudy-banner-p-800.webp 800w,
-                        /images/portrait-casestudy-banner-p-1080.webp 1080w,
-                        /images/portrait-casestudy-banner-p-1600.webp 1600w,
-                        /images/portrait-casestudy-banner.webp 2048w
-                      `}
-                      sizes="(max-width: 991px) 100vw, 50vw"
+                      className="cs-hero-company-logo"
+                    />
+                    <span className="cs-hero-divider">×</span>
+                    <img
+                      src="/images/Frame.png"
+                      alt="Banner"
+                      className="cs-hero-banner-logo"
                     />
                   </div>
+                  <h1 className="cs-hero-title">{caseStudy.title}</h1>
+                  <p className="cs-hero-subtitle">{caseStudy.subtitle}</p>
                 </div>
               </ScrollReveal>
             </div>
@@ -90,70 +84,69 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </div>
       </header>
 
-      {/* Stats Section */}
-      <section className="case-study-stats">
+      {/* Stats Bar - Floating card effect */}
+      <section className="cs-stats-section">
         <div className="padding-global">
           <div className="container-large">
-            <div className="padding-section-medium">
-              <ScrollReveal>
-                <div className="case-study-stats-grid">
-                  {caseStudy.stats.map((stat, index) => {
-                    const { num, suffix } = parseStatValue(stat.value);
-                    return (
-                      <div key={index} className="case-study-stat-item">
-                        <div className="stat-heading">
-                          <AnimatedCounter end={num} suffix={suffix} duration={2000} />
-                        </div>
-                        <div className="stat-lower-text">{stat.label}</div>
+            <ScrollReveal>
+              <div className="cs-stats-card">
+                {caseStudy.stats.map((stat, index) => {
+                  const { num, suffix } = parseStatValue(stat.value);
+                  return (
+                    <div key={index} className="cs-stat-item">
+                      <div className="cs-stat-value">
+                        <AnimatedCounter end={num} suffix={suffix} duration={2000} />
                       </div>
-                    );
-                  })}
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Challenge Section */}
-      <section className="case-study-section">
-        <div className="padding-global">
-          <div className="container-large">
-            <div className="padding-section-medium">
-              <ScrollReveal>
-                <div className="case-study-content-block">
-                  <h2 className="heading-style-h2">{caseStudy.challenge.title}</h2>
-                  <div className="spacer-medium"></div>
-                  <p className="text-size-medium">{caseStudy.challenge.content}</p>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Section */}
-      <section className="case-study-testimonial">
-        <div className="padding-global">
-          <div className="container-large">
-            <div className="padding-section-medium">
-              <ScrollReveal>
-                <div className="case-study-testimonial-content">
-                  <img src="/images/__1.png" alt="" className="quote-icon" />
-                  <blockquote className="case-study-quote">
-                    {caseStudy.testimonial.quote}
-                  </blockquote>
-                  <div className="case-study-testimonial-author">
-                    <img
-                      src={caseStudy.testimonial.image}
-                      alt={caseStudy.testimonial.author}
-                      className="case-study-author-image"
-                    />
-                    <div>
-                      <div className="text-weight-bold">{caseStudy.testimonial.author}</div>
-                      <div className="text-size-small">{caseStudy.testimonial.role}</div>
+                      <div className="cs-stat-label">{stat.label}</div>
                     </div>
+                  );
+                })}
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Executive Summary */}
+      <section className="cs-summary-section">
+        <div className="padding-global">
+          <div className="container-large">
+            <div className="cs-summary-grid">
+              <ScrollReveal>
+                <div className="cs-summary-card">
+                  <div className="cs-summary-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <path d="M12 6v6l4 2"/>
+                    </svg>
                   </div>
+                  <h3 className="cs-summary-title">Industry</h3>
+                  <p className="cs-summary-value">{caseStudy.industry}</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <div className="cs-summary-card">
+                  <div className="cs-summary-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                      <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                  </div>
+                  <h3 className="cs-summary-title">Portfolio</h3>
+                  <p className="cs-summary-value">1,000+ Projects</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <div className="cs-summary-card">
+                  <div className="cs-summary-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                      <path d="M2 17l10 5 10-5"/>
+                      <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                  </div>
+                  <h3 className="cs-summary-title">Solution</h3>
+                  <p className="cs-summary-value">Banner Platform</p>
                 </div>
               </ScrollReveal>
             </div>
@@ -161,16 +154,18 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </div>
       </section>
 
-      {/* Solution Section */}
-      <section className="case-study-section">
+      {/* The Challenge */}
+      <section className="cs-content-section">
         <div className="padding-global">
           <div className="container-large">
-            <div className="padding-section-medium">
+            <div className="cs-content-wrapper">
               <ScrollReveal>
-                <div className="case-study-content-block">
-                  <h2 className="heading-style-h2">{caseStudy.solution.title}</h2>
-                  <div className="spacer-medium"></div>
-                  <p className="text-size-medium">{caseStudy.solution.content}</p>
+                <div className="cs-section-header">
+                  <span className="cs-section-number">01</span>
+                  <h2 className="cs-section-title">{caseStudy.challenge.title}</h2>
+                </div>
+                <div className="cs-content-body">
+                  <p className="cs-content-text">{caseStudy.challenge.content}</p>
                 </div>
               </ScrollReveal>
             </div>
@@ -178,16 +173,50 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </div>
       </section>
 
-      {/* Results Section */}
-      <section className="case-study-section light-blue">
+      {/* Testimonial - Full width highlight */}
+      <section className="cs-testimonial-section">
         <div className="padding-global">
           <div className="container-large">
-            <div className="padding-section-medium">
+            <ScrollReveal>
+              <div className="cs-testimonial-wrapper">
+                <div className="cs-quote-mark">"</div>
+                <blockquote className="cs-testimonial-quote">
+                  {caseStudy.testimonial.quote}
+                </blockquote>
+                <div className="cs-testimonial-author">
+                  <img
+                    src={caseStudy.testimonial.image}
+                    alt={caseStudy.testimonial.author}
+                    className="cs-author-image"
+                  />
+                  <div className="cs-author-info">
+                    <div className="cs-author-name">{caseStudy.testimonial.author}</div>
+                    <div className="cs-author-role">{caseStudy.testimonial.role}</div>
+                  </div>
+                  <img
+                    src={caseStudy.companyLogo}
+                    alt={caseStudy.companyName}
+                    className="cs-author-company-logo"
+                  />
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* The Solution */}
+      <section className="cs-content-section cs-alt-bg">
+        <div className="padding-global">
+          <div className="container-large">
+            <div className="cs-content-wrapper">
               <ScrollReveal>
-                <div className="case-study-content-block">
-                  <h2 className="heading-style-h2">{caseStudy.results.title}</h2>
-                  <div className="spacer-medium"></div>
-                  <p className="text-size-medium">{caseStudy.results.content}</p>
+                <div className="cs-section-header">
+                  <span className="cs-section-number">02</span>
+                  <h2 className="cs-section-title">{caseStudy.solution.title}</h2>
+                </div>
+                <div className="cs-content-body">
+                  <p className="cs-content-text">{caseStudy.solution.content}</p>
                 </div>
               </ScrollReveal>
             </div>
@@ -195,74 +224,79 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </div>
       </section>
 
-      {/* Key Benefits Section */}
-      <section className="case-study-section">
+      {/* The Results */}
+      <section className="cs-content-section">
         <div className="padding-global">
           <div className="container-large">
-            <div className="padding-section-medium">
+            <div className="cs-content-wrapper">
               <ScrollReveal>
-                <div className="case-study-content-block">
-                  <h2 className="heading-style-h2">Key Benefits</h2>
-                  <div className="spacer-medium"></div>
-                  <ul className="case-study-benefits-list">
-                    {caseStudy.keyBenefits.map((benefit, index) => (
-                      <li key={index} className="case-study-benefit-item">
-                        <svg
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="#f25e53"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                          <polyline points="22 4 12 14.01 9 11.01" />
-                        </svg>
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="cs-section-header">
+                  <span className="cs-section-number">03</span>
+                  <h2 className="cs-section-title">{caseStudy.results.title}</h2>
+                </div>
+                <div className="cs-content-body">
+                  <p className="cs-content-text">{caseStudy.results.content}</p>
                 </div>
               </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Benefits - Visual cards */}
+      <section className="cs-benefits-section">
+        <div className="padding-global">
+          <div className="container-large">
+            <ScrollReveal>
+              <div className="cs-benefits-header">
+                <h2 className="cs-benefits-title">Key Benefits Achieved</h2>
+              </div>
+            </ScrollReveal>
+            <div className="cs-benefits-grid">
+              {caseStudy.keyBenefits.map((benefit, index) => (
+                <ScrollReveal key={index} delay={index * 50}>
+                  <div className="cs-benefit-card">
+                    <div className="cs-benefit-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </div>
+                    <span className="cs-benefit-text">{benefit}</span>
+                  </div>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <header className="section-cta-main">
+      <section className="cs-cta-section">
         <div className="padding-global">
           <div className="container-large">
-            <div className="padding-section-large">
-              <ScrollReveal>
-                <div className="header62_component-2">
-                  <div className="text-align-center">
-                    <div className="max-width-large align-center custom">
-                      <div className="margin-bottom">
-                        <h3 className="heading-style-h2">
-                          Ready to achieve results like {caseStudy.companyName}?
-                        </h3>
-                      </div>
-                      <p className="text-size-medium">
-                        See how Banner can help your team manage CapEx more effectively.
-                      </p>
-                      <div className="margin-top margin-medium">
-                        <div className="button-group is-center custom">
-                          <Link href="/contact" className="button is-secondary w-button">
-                            Book a demo
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
+            <ScrollReveal>
+              <div className="cs-cta-wrapper">
+                <div className="cs-cta-content">
+                  <h2 className="cs-cta-title">
+                    Ready to achieve results like {caseStudy.companyName}?
+                  </h2>
+                  <p className="cs-cta-description">
+                    Join the leading real estate companies transforming their CapEx management with Banner.
+                  </p>
+                  <div className="cs-cta-buttons">
+                    <Link href="/contact" className="button w-button">
+                      Book a Demo
+                    </Link>
+                    <Link href="/case-studies" className="cs-cta-link">
+                      View more case studies →
+                    </Link>
                   </div>
                 </div>
-              </ScrollReveal>
-            </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
-      </header>
-    </>
+      </section>
+    </div>
   );
 }

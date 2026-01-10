@@ -4,7 +4,7 @@ import { getPosts, getCategories, urlFor, Post, Category } from "@/lib/sanity";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Blog | Banner - CapEx Management Insights",
+  title: "Blog | Banner",
   description:
     "Expert insights on capital expenditure management, real estate technology, and construction project optimization.",
 };

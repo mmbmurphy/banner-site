@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 
 export const metadata: Metadata = {
-  title: "How to Evaluate Your CapEx Process & Build the ROI Case | Banner",
+  title: "CapEx Process Evaluation Guide | Banner",
   description: "A strategic guide for real estate owners and operators to audit CapEx workflows, identify improvements, and build a credible ROI case for modern software.",
 };
 

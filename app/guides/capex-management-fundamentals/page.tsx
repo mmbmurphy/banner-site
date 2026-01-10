@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 
 export const metadata: Metadata = {
-  title: "The Complete Guide to CapEx Management in Commercial Real Estate | Banner",
+  title: "CapEx Management Guide | Banner",
   description: "A best-practice guide for asset and construction managers covering CapEx planning, execution, visibility, and reporting in commercial real estate.",
 };
 

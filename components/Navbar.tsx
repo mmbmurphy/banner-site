@@ -24,8 +24,18 @@ const solutions = [
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Handle scroll for sticky blur effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -58,6 +68,16 @@ export default function Navbar() {
       data-collapse="medium"
       role="banner"
       data-duration="400"
+      style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 1000,
+        backdropFilter: isScrolled ? "blur(12px)" : "none",
+        WebkitBackdropFilter: isScrolled ? "blur(12px)" : "none",
+        backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.9)" : "transparent",
+        boxShadow: isScrolled ? "0 2px 20px rgba(0, 0, 0, 0.08)" : "none",
+        transition: "backdrop-filter 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease",
+      }}
     >
       <div className="nav_container">
         <Link href="/" className="navbar1_logo-link w-nav-brand">

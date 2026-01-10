@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const testimonials = [
   {
@@ -21,6 +21,8 @@ const testimonials = [
 
 export default function TestimonialSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % testimonials.length);
@@ -29,6 +31,21 @@ export default function TestimonialSlider() {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+      }, 6000); // Change every 6 seconds
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [isPaused]);
 
   return (
     <section className="section_testimonial7">
@@ -40,7 +57,11 @@ export default function TestimonialSlider() {
                 <h2 className="heading-style-h2 text-color-white">Hear it from your peers</h2>
               </div>
             </div>
-            <div className="testimonial7_component">
+            <div
+              className="testimonial7_component"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
               <div className="testimonial7_slider" style={{ position: "relative" }}>
                 <div className="testimonial7_mask">
                   <div className="testimonial7_slide">

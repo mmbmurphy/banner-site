@@ -462,8 +462,8 @@ export default function Home() {
                           </p>
                         </div>
                         <div className="fcp-wrapp-bottom">
-                          <div className="text-block-5">Dara Vaziri</div>
-                          <div className="text-block">Senior analyst</div>
+                          <div className="text-block-5">Jeff Robertson</div>
+                          <div className="text-block">SVP Asset Management</div>
                         </div>
                       </div>
                     </div>

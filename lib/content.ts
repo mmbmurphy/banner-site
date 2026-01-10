@@ -219,8 +219,8 @@ export const solutions: Solution[] = [
     testimonials: [
       {
         quote: "We implemented Banner because we can manage our entire portfolio on it and have access to every stakeholder involved, along with live information. It provides a really meaningful check and balance in our CapEx projects.",
-        author: "Dara Vaziri",
-        role: "Senior Analyst",
+        author: "Jeff Robertson",
+        role: "SVP Asset Management",
         company: "FCP",
         image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
         logo: "/images/client-logos/fcp.svg",

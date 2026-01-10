@@ -96,7 +96,7 @@ export const solutions: Solution[] = [
     title: "Multifamily",
     tagline: "For Apartment Portfolios",
     description: "CapEx management for apartment portfolios",
-    heroTitle: "One platform for all your multifamily CapEx",
+    heroTitle: "One Platform for All Your Multifamily CapEx",
     heroDescription:
       "From unit turns to major renovations, Banner gives multifamily owners and operators real-time visibility and budget control across their entire portfolio.",
     heroImage: "/images/Imagery.png",
@@ -107,7 +107,7 @@ export const solutions: Solution[] = [
       { value: "15+", label: "of top 50 NMHC owners trust Banner" },
     ],
     platformIntro: {
-      title: "One home for multifamily CapEx",
+      title: "One Home for Multifamily CapEx",
       subtitle: "Stop juggling spreadsheets, emails, and disconnected tools. Banner brings everything together.",
     },
     capabilities: [
@@ -171,7 +171,7 @@ export const solutions: Solution[] = [
       },
     ],
     roleSection: {
-      title: "Built for your entire team",
+      title: "Built for Your Entire Team",
       subtitle: "Banner adapts to how each role works—so everyone gets exactly what they need.",
     },
     roles: [
@@ -207,7 +207,7 @@ export const solutions: Solution[] = [
       },
     ],
     statsSection: {
-      title: "The Banner impact",
+      title: "The Banner Impact",
       subtitle: "Measurable results from multifamily teams using Banner",
     },
     stats: [
@@ -269,7 +269,7 @@ export const solutions: Solution[] = [
     title: "Commercial",
     tagline: "For Office & Retail",
     description: "Streamline capital projects for office & retail",
-    heroTitle: "CapEx clarity for complex commercial portfolios",
+    heroTitle: "CapEx Clarity for Complex Commercial Portfolios",
     heroDescription:
       "From tenant improvements to building systems, Banner gives commercial real estate teams the tools to manage capital projects with complete transparency and control.",
     heroImage: "/images/Imagery3.png",
@@ -280,7 +280,7 @@ export const solutions: Solution[] = [
       { value: "98%", label: "on-time TI delivery rate" },
     ],
     platformIntro: {
-      title: "Your command center for commercial CapEx",
+      title: "Your Command Center for Commercial CapEx",
       subtitle: "Tenant improvements, building upgrades, and capital planning—all connected in one platform.",
     },
     capabilities: [
@@ -344,7 +344,7 @@ export const solutions: Solution[] = [
       },
     ],
     roleSection: {
-      title: "Purpose-built for commercial teams",
+      title: "Purpose-Built for Commercial Teams",
       subtitle: "Every stakeholder gets the tools and visibility they need to do their job effectively.",
     },
     roles: [
@@ -380,7 +380,7 @@ export const solutions: Solution[] = [
       },
     ],
     statsSection: {
-      title: "Results that matter",
+      title: "Results That Matter",
       subtitle: "How Banner helps commercial teams deliver",
     },
     stats: [
@@ -442,7 +442,7 @@ export const solutions: Solution[] = [
     title: "Developers",
     tagline: "For Ground-Up Development",
     description: "Track development budgets from ground-up",
-    heroTitle: "Development CapEx built for how you work",
+    heroTitle: "Development CapEx Built for How You Work",
     heroDescription:
       "From land acquisition through stabilization, Banner gives development teams the budget visibility, draw management, and lender reporting they need to deliver projects successfully.",
     heroImage: "/images/Imagery4.png",
@@ -453,7 +453,7 @@ export const solutions: Solution[] = [
       { value: "500+", label: "projects managed" },
     ],
     platformIntro: {
-      title: "Your development command center",
+      title: "Your Development Command Center",
       subtitle: "Budget tracking, draw management, and stakeholder reporting—everything developers need in one platform.",
     },
     capabilities: [
@@ -517,7 +517,7 @@ export const solutions: Solution[] = [
       },
     ],
     roleSection: {
-      title: "Built for the development team",
+      title: "Built for the Development Team",
       subtitle: "From principals to project managers, everyone gets the tools they need.",
     },
     roles: [
@@ -553,7 +553,7 @@ export const solutions: Solution[] = [
       },
     ],
     statsSection: {
-      title: "Development teams love Banner",
+      title: "Development Teams Love Banner",
       subtitle: "Results from developers using Banner across their projects",
     },
     stats: [

@@ -13,7 +13,7 @@ export default function CaseStudiesPage() {
   return (
     <>
       {/* Hero Section */}
-      <header className="section_header1 light-blue">
+      <header className="section_header1 light-blue page-with-sticky-nav">
         <div className="padding-global">
           <div className="container-large">
             <div className="padding-section-large">

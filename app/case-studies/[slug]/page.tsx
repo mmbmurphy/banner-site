@@ -45,7 +45,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   return (
     <>
       {/* Hero Section */}
-      <header className="case-study-hero">
+      <header className="case-study-hero page-with-sticky-nav">
         <div className="padding-global">
           <div className="container-large">
             <div className="padding-section-large">

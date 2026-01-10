@@ -1,6 +1,5 @@
-import Script from "next/script";
 import ScrollReveal from "@/components/ScrollReveal";
-import LogoMarquee from "@/components/LogoMarquee";
+import HubSpotEmbed from "@/components/HubSpotEmbed";
 
 export const metadata = {
   title: "Book a Demo | Banner",
@@ -19,7 +18,7 @@ const clientLogos = [
 export default function ContactPage() {
   return (
     <>
-      <section className="section_layout16">
+      <section className="section_layout16 page-with-sticky-nav">
         <div className="padding-global">
           <div className="container-large">
             <div className="padding-section-large">
@@ -90,10 +89,7 @@ export default function ContactPage() {
                     </div>
                     <div className="contact-page-right">
                       <div className="hubspot-embed-wrapper">
-                        <div
-                          className="meetings-iframe-container"
-                          data-src="https://meetings.hubspot.com/murph3/website-booking-form?embed=true"
-                        ></div>
+                        <HubSpotEmbed meetingUrl="https://meetings.hubspot.com/murph3/website-booking-form?embed=true" />
                       </div>
                     </div>
                   </div>
@@ -103,10 +99,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <Script
-        src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
-        strategy="afterInteractive"
-      />
     </>
   );
 }

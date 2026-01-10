@@ -9,7 +9,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <header className="section_header26-2">
+      <header className="section_header26-2 page-with-sticky-nav">
         <div className="padding-global">
           <div className="container-large">
             <div className="padding-section-large">

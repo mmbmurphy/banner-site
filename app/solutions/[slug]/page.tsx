@@ -54,7 +54,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
   return (
     <>
       {/* Hero Section */}
-      <header className="section_header1">
+      <header className="section_header1 page-with-sticky-nav">
         <div className="padding-global">
           <div className="container-large">
             <div className="padding-section-large">

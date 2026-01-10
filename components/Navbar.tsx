@@ -200,6 +200,13 @@ export default function Navbar() {
                 </div>
               </nav>
             </div>
+            <Link
+              href="/blog"
+              className="navbar1_link w-nav-link"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Blog
+            </Link>
           </div>
           <div className="navbar1_menu-buttons">
             <a

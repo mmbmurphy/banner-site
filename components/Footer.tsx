@@ -70,6 +70,7 @@ export default function Footer() {
                         >
                           Features
                         </a>
+                        <Link href="/blog" className="footer2_link">Blog</Link>
                         <Link href="/about" className="footer2_link">About</Link>
                       </div>
                     </div>

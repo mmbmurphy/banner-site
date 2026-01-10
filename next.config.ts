@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    unoptimized: true, // Use unoptimized images for static export compatibility
+  },
+  // Enable static export for Vercel
+  output: "export",
 };
 
 export default nextConfig;

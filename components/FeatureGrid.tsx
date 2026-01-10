@@ -369,7 +369,7 @@ function FeatureGroup({ title, description, features, accentColor, href }: Featu
 
 export default function FeatureGrid() {
   return (
-    <section className="section-feature-grid">
+    <section className="section-feature-grid" id="features">
       <div className="padding-global">
         <div className="container-large">
           <div className="padding-section-large">

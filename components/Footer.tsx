@@ -1,6 +1,39 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+
+    const scrollToElement = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const headerOffset = 120; // Account for fixed header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    };
+
+    // If we're not on the homepage, navigate there first
+    if (pathname !== "/") {
+      router.push("/");
+      // Wait for navigation then scroll
+      setTimeout(scrollToElement, 100);
+    } else {
+      scrollToElement();
+    }
+  };
+
   return (
     <footer className="footer2_component">
       <div className="padding-global">
@@ -30,16 +63,28 @@ export default function Footer() {
                       </div>
                       <div className="footer2_link-list">
                         <Link href="/" className="footer2_link">Product</Link>
-                        <Link href="/blog" className="footer2_link">Resources</Link>
+                        <a
+                          href="/#features"
+                          className="footer2_link"
+                          onClick={(e) => scrollToSection(e, "features")}
+                        >
+                          Features
+                        </a>
                         <Link href="/about" className="footer2_link">About</Link>
                       </div>
                     </div>
                     <div className="footer2_link-column">
                       <div className="margin-bottom margin-xsmall">
-                        <div className="text-weight-semibold">Support Us</div>
+                        <div className="text-weight-semibold">Support</div>
                       </div>
                       <div className="footer2_link-list">
-                        <Link href="/#faqs" className="footer2_link">FAQs</Link>
+                        <a
+                          href="/#faqs"
+                          className="footer2_link"
+                          onClick={(e) => scrollToSection(e, "faqs")}
+                        >
+                          FAQs
+                        </a>
                         <Link href="/contact" className="footer2_link">Contact Us</Link>
                       </div>
                     </div>

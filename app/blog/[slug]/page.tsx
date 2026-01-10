@@ -9,8 +9,6 @@ import {
   urlFor,
   Post,
 } from "@/lib/sanity";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import ShareButtons from "@/components/ShareButtons";
 
@@ -184,8 +182,6 @@ export default async function BlogPostPage({
     : null;
 
   return (
-    <>
-      <Navbar />
       <main className="blog-post-page">
         {/* Hero */}
         <article className="blog-post-article">
@@ -358,7 +354,5 @@ export default async function BlogPostPage({
           </div>
         </section>
       </main>
-      <Footer />
-    </>
   );
 }

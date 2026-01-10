@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { getPosts, getCategories, urlFor, Post, Category } from "@/lib/sanity";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -145,8 +143,6 @@ export default async function BlogPage({
   const regularPosts = filteredPosts.filter((post) => !featuredPosts.includes(post));
 
   return (
-    <>
-      <Navbar />
       <main className="blog-page">
         {/* Hero Section */}
         <section className="blog-hero">
@@ -230,7 +226,5 @@ export default async function BlogPage({
           </div>
         </section>
       </main>
-      <Footer />
-    </>
   );
 }

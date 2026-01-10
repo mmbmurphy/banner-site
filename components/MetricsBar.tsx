@@ -5,8 +5,8 @@ import AnimatedCounter from "./AnimatedCounter";
 const metrics = [
   { value: 5, suffix: "%", label: "Avg CapEx Cost Reduction" },
   { value: 70, suffix: "%", label: "Less Admin Work" },
-  { value: 2, suffix: "B+", prefix: "$", label: "CapEx Managed" },
-  { value: 50, suffix: "K+", label: "Properties on Platform" },
+  { value: 10, suffix: "B+", prefix: "$", label: "CapEx Managed" },
+  { value: 10, suffix: "K+", label: "Properties on Platform" },
 ];
 
 export default function MetricsBar() {

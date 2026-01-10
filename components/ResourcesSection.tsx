@@ -18,23 +18,17 @@ const resources = [
     href: "/guides/capex-management-fundamentals",
   },
   {
-    type: "Calculator",
-    title: "ROI Calculator",
-    description: "See how much time and money Banner could save your organization.",
+    type: "Evaluation",
+    title: "ROI Evaluation",
+    description: "Learn how to audit your CapEx process and build a credible ROI case for modern software.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="4" y="2" width="16" height="20" rx="2" />
-        <line x1="8" y1="6" x2="16" y2="6" />
-        <line x1="8" y1="10" x2="10" y2="10" />
-        <line x1="14" y1="10" x2="16" y2="10" />
-        <line x1="8" y1="14" x2="10" y2="14" />
-        <line x1="14" y1="14" x2="16" y2="14" />
-        <line x1="8" y1="18" x2="10" y2="18" />
-        <line x1="14" y1="18" x2="16" y2="18" />
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
       </svg>
     ),
     color: "#4A90D9",
-    href: "/resources/roi-calculator",
+    href: "/guides/capex-process-evaluation",
   },
   {
     type: "Case Study",

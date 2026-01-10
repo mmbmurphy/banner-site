@@ -721,6 +721,94 @@ export const caseStudies: CaseStudy[] = [
       "Scalable platform that grows with the portfolio",
     ],
   },
+  {
+    slug: "tourmaline",
+    companyName: "Tourmaline",
+    companyLogo: "/images/client-logos/tourmaline.png",
+    industry: "Multifamily",
+    title: "Tourmaline scales CapEx operations across a growing portfolio",
+    subtitle:
+      "How Tourmaline streamlined capital project management and gained real-time visibility across their multifamily investments",
+    heroImage: "/images/portrait-casestudy-banner.webp",
+    stats: [
+      { value: "40%", label: "faster project approvals" },
+      { value: "60%", label: "reduction in reporting time" },
+      { value: "2X", label: "projects managed per PM" },
+    ],
+    challenge: {
+      title: "The Challenge",
+      content:
+        "As Tourmaline's multifamily portfolio expanded rapidly, their existing CapEx management processes couldn't keep pace. Project managers were juggling multiple spreadsheets and email chains to track renovations and capital improvements across properties. The lack of standardized workflows meant inconsistent execution, delayed approvals, and limited visibility for leadership into project status and spend across the portfolio.",
+    },
+    solution: {
+      title: "The Solution",
+      content:
+        "Tourmaline partnered with Banner to implement a unified CapEx management platform across their entire portfolio. The team established standardized workflows for project requests, approvals, and vendor management. With Banner's real-time dashboards, leadership gained instant visibility into every capital project, while property managers could efficiently manage day-to-day execution with automated alerts and streamlined communication.",
+    },
+    results: {
+      title: "The Results",
+      content:
+        "After implementing Banner, Tourmaline achieved significant operational improvements. Project approvals that previously took days now happen in hours, with a 40% reduction in approval cycle time. The automated reporting capabilities cut reporting time by 60%, freeing up asset managers to focus on strategic initiatives. Most impressively, project managers now handle twice as many projects without sacrificing quality or oversight.",
+    },
+    testimonial: {
+      quote:
+        "Banner gave us the operational infrastructure we needed to scale. We went from chasing spreadsheets to having complete confidence in our CapEx data across every property.",
+      author: "Operations Team",
+      role: "Tourmaline",
+      image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
+    },
+    keyBenefits: [
+      "Standardized workflows across all properties",
+      "Real-time portfolio-wide visibility",
+      "Faster approval cycles and decision-making",
+      "Automated reporting for stakeholders",
+      "Scalable processes that grow with the portfolio",
+    ],
+  },
+  {
+    slug: "industrious",
+    companyName: "Industrious",
+    companyLogo: "/images/client-logos/industrious.svg",
+    industry: "Commercial",
+    title: "Industrious transforms capital project delivery across locations",
+    subtitle:
+      "How Industrious achieved consistent project execution and cost control across their nationwide flexible workspace portfolio",
+    heroImage: "/images/portrait-casestudy-banner.webp",
+    stats: [
+      { value: "30%", label: "reduction in project costs" },
+      { value: "50%", label: "faster project delivery" },
+      { value: "100%", label: "budget visibility" },
+    ],
+    challenge: {
+      title: "The Challenge",
+      content:
+        "Industrious operates flexible workspace locations across the country, each requiring ongoing capital improvements to maintain their premium experience. Managing build-outs, renovations, and maintenance projects across dozens of locations created significant coordination challenges. Without centralized visibility, the team struggled to control costs, track vendor performance, and ensure consistent quality standards across all locations.",
+    },
+    solution: {
+      title: "The Solution",
+      content:
+        "Industrious implemented Banner to create a centralized command center for all capital projects. The platform enabled standardized scoping and budgeting templates that ensured consistency across locations. Real-time budget tracking and automated variance alerts helped the team catch potential overruns early, while the vendor management features allowed them to build and leverage a high-performing contractor network nationwide.",
+    },
+    results: {
+      title: "The Results",
+      content:
+        "Banner transformed how Industrious manages capital projects. The standardized processes and proactive budget controls led to a 30% reduction in overall project costs. Streamlined workflows and better coordination cut project delivery times in half, allowing new locations to open faster. Leadership now has complete visibility into every dollar spent across the portfolio, enabling data-driven decisions about capital allocation.",
+    },
+    testimonial: {
+      quote:
+        "With Banner, we finally have the visibility and control we need to deliver projects on time and on budget. It's become an essential part of how we operate.",
+      author: "Construction Team",
+      role: "Industrious",
+      image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
+    },
+    keyBenefits: [
+      "Centralized management across all locations",
+      "Standardized scoping and budgeting templates",
+      "Proactive cost control and variance management",
+      "Nationwide vendor network optimization",
+      "Complete transparency for leadership",
+    ],
+  },
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {

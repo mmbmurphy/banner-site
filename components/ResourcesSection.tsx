@@ -7,7 +7,7 @@ const resources = [
   {
     type: "Guide",
     title: "The Complete Guide to CapEx Management",
-    description: "Learn best practices for managing capital expenditures across your real estate portfolio.",
+    description: "A best-practice guide for asset and construction managers in commercial real estate.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
@@ -15,7 +15,7 @@ const resources = [
       </svg>
     ),
     color: "#f25e53",
-    href: "/resources/capex-guide",
+    href: "/guides/capex-management-fundamentals",
   },
   {
     type: "Calculator",

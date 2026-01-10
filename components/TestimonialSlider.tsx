@@ -8,14 +8,37 @@ const testimonials = [
     quote:
       "Banner completely changed how we manage bidding and contracting. Automating our RFP workflow now saves us over $900,000 every year, and the accuracy and transparency we get across vendors is unlike anything we've had before. As an operations leader, Banner is a game-changer.",
     name: "Drew Gravina",
-    position: "SVP Facilities Operations at Morgan Properties",
+    position: "SVP Facilities Operations",
+    company: "Morgan Properties",
+    logo: "/images/client-logos/morgan-properties.png",
   },
   {
     image: "/images/Jon-Jacobs---Tourmaline.jpeg",
     quote:
       "If our prior software made 4 things easier, it made 4 things harder - Banner is our ideal system.",
     name: "Jon Jacobs",
-    position: "Managing Principal, COO at Tourmaline",
+    position: "Managing Principal, COO",
+    company: "Tourmaline",
+    logo: "/images/client-logos/tourmaline.png",
+  },
+  {
+    image: "/images/portrait-casestudy-banner.webp",
+    quote:
+      "We implemented Banner because we can manage our entire portfolio on it and have access to every stakeholder involved, along with live information. It provides a really meaningful check and balance in our CapEx projects.",
+    name: "Dara Vaziri",
+    position: "Senior Analyst",
+    company: "FCP",
+    logo: "/images/client-logos/fcp.svg",
+  },
+  {
+    image: "/images/client-logos/greystar.svg",
+    quote:
+      "Banner gives us the visibility we need to make confident capital decisions across our entire portfolio. The real-time forecasting has transformed how we approach budgeting.",
+    name: "Asset Management Team",
+    position: "Portfolio Operations",
+    company: "Greystar",
+    logo: "/images/client-logos/greystar.svg",
+    isPlaceholder: true,
   },
 ];
 
@@ -85,7 +108,7 @@ export default function TestimonialSlider() {
                             {testimonials[currentSlide].name}
                           </div>
                           <div className="testimonial-client-position">
-                            {testimonials[currentSlide].position}
+                            {testimonials[currentSlide].position} at {testimonials[currentSlide].company}
                           </div>
                         </div>
                       </div>

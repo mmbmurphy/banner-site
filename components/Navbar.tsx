@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const solutions = [
   {
@@ -29,6 +30,13 @@ export default function Navbar() {
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const pathname = usePathname();
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setIsMobileSolutionsOpen(false);
+  }, [pathname]);
 
   // Detect mobile viewport
   useEffect(() => {
@@ -69,6 +77,18 @@ export default function Navbar() {
       setIsMobileSolutionsOpen(false);
     }
   }, [isMobile]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   const handleMouseEnter = () => {
     if (isMobile) return; // Disable hover on mobile

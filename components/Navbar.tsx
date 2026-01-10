@@ -109,7 +109,7 @@ export default function Navbar() {
       }}
     >
       <div className="nav_container">
-        <Link href="/" className="navbar1_logo-link w-nav-brand">
+        <Link href="/" className="navbar1_logo-link w-nav-brand" onClick={() => handleMobileMenuClose()}>
           <img
             width={134}
             height={40}
@@ -123,7 +123,13 @@ export default function Navbar() {
         <nav
           role="navigation"
           className={`navbar1_menu is-page-height-tablet w-nav-menu ${isMobileMenuOpen ? "w--open" : ""}`}
-          style={isMobileMenuOpen ? { display: "block", height: "100vh", overflowY: "auto" } : {}}
+          style={
+            isMobile
+              ? isMobileMenuOpen
+                ? { display: "block", height: "100vh", overflowY: "auto" }
+                : { display: "none" }
+              : {}
+          }
         >
           <div className="navbar1_menu-links">
             {/* Desktop Mega Menu */}
@@ -320,7 +326,9 @@ export default function Navbar() {
             <Link
               href="/blog"
               className="navbar1_link w-nav-link"
-              onClick={handleMobileMenuClose}
+              onClick={() => {
+                handleMobileMenuClose();
+              }}
             >
               Blog
             </Link>

@@ -27,7 +27,7 @@ export default function LogoMarquee({ logos, speed = 30 }: LogoMarqueeProps) {
             <img
               src={logo.src}
               alt={logo.alt}
-              loading="lazy"
+              loading="eager"
               className="logo6_logo"
             />
           </div>
@@ -40,22 +40,22 @@ export default function LogoMarquee({ logos, speed = 30 }: LogoMarqueeProps) {
           mask-image: linear-gradient(
             to right,
             transparent,
-            black 10%,
-            black 90%,
+            black 5%,
+            black 95%,
             transparent
           );
           -webkit-mask-image: linear-gradient(
             to right,
             transparent,
-            black 10%,
-            black 90%,
+            black 5%,
+            black 95%,
             transparent
           );
         }
 
         .logo-marquee-track {
           display: flex;
-          gap: 3rem;
+          gap: 4rem;
           width: fit-content;
           animation: marquee linear infinite;
         }
@@ -65,7 +65,8 @@ export default function LogoMarquee({ logos, speed = 30 }: LogoMarqueeProps) {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 0 1rem;
+          padding: 0 1.5rem;
+          min-width: 120px;
         }
 
         @keyframes marquee {

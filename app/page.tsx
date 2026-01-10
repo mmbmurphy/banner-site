@@ -5,14 +5,50 @@ import ScrollReveal from "@/components/ScrollReveal";
 import LogoMarquee from "@/components/LogoMarquee";
 import ParallaxImage from "@/components/ParallaxImage";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import FeatureGrid from "@/components/FeatureGrid";
+
+const integrationLogos = [
+  { src: "/images/l1.png", alt: "Integration 1" },
+  { src: "/images/l2.png", alt: "Integration 2" },
+  { src: "/images/l3.png", alt: "Integration 3" },
+  { src: "/images/l4.png", alt: "Integration 4" },
+  { src: "/images/l5.png", alt: "Integration 5" },
+  { src: "/images/quickbooks.png", alt: "QuickBooks" },
+  { src: "/images/Mask-group.png", alt: "Integration 7" },
+];
 
 const clientLogos = [
-  { src: "/images/Summit-Real-Estate-Group_Color_RGB.svg", alt: "Summit Real Estate Group" },
-  { src: "/images/l1.png", alt: "Client Logo 1" },
-  { src: "/images/l2.png", alt: "Client Logo 2" },
-  { src: "/images/l3.png", alt: "Client Logo 3" },
-  { src: "/images/l4.png", alt: "Client Logo 4" },
-  { src: "/images/l5.png", alt: "Client Logo 5" },
+  { src: "/images/client-logos/summit.svg", alt: "Summit Real Estate Group" },
+  { src: "/images/client-logos/morgan-properties.png", alt: "Morgan Properties" },
+  { src: "/images/client-logos/greystar.svg", alt: "Greystar" },
+  { src: "/images/client-logos/starwood.svg", alt: "Starwood Capital Group" },
+  { src: "/images/client-logos/fcp.svg", alt: "FCP" },
+  { src: "/images/client-logos/kennedy-wilson.svg", alt: "Kennedy Wilson" },
+  { src: "/images/client-logos/tourmaline.png", alt: "Tourmaline" },
+  { src: "/images/client-logos/cardinal.svg", alt: "Cardinal Group" },
+  { src: "/images/client-logos/harbor-group.svg", alt: "Harbor Group" },
+  { src: "/images/client-logos/industrious.svg", alt: "Industrious" },
+  { src: "/images/client-logos/kettler.png", alt: "Kettler" },
+  { src: "/images/client-logos/lantower.svg", alt: "Lantower" },
+  { src: "/images/client-logos/livcor.svg", alt: "Livcor" },
+  { src: "/images/client-logos/olympus.png", alt: "Olympus" },
+  { src: "/images/client-logos/mra-group.svg", alt: "MRA Group" },
+  { src: "/images/client-logos/29th-street.svg", alt: "29th Street Capital" },
+  { src: "/images/client-logos/acacia.svg", alt: "Acacia" },
+  { src: "/images/client-logos/acc.svg", alt: "ACC" },
+  { src: "/images/client-logos/airbnb.svg", alt: "Airbnb" },
+  { src: "/images/client-logos/air-communities.svg", alt: "AIR Communities" },
+  { src: "/images/client-logos/april.png", alt: "April Housing" },
+  { src: "/images/client-logos/clear-height.svg", alt: "Clear Height" },
+  { src: "/images/client-logos/convene.svg", alt: "Convene" },
+  { src: "/images/client-logos/dayrise.svg", alt: "Dayrise" },
+  { src: "/images/client-logos/eos.svg", alt: "EOS Investors" },
+  { src: "/images/client-logos/flynn.svg", alt: "Flynn Group" },
+  { src: "/images/client-logos/griffin.svg", alt: "Griffin Partners" },
+  { src: "/images/client-logos/osso.svg", alt: "Osso" },
+  { src: "/images/client-logos/radco.svg", alt: "Radco" },
+  { src: "/images/client-logos/ridc.svg", alt: "RIDC" },
+  { src: "/images/client-logos/stoneweg.svg", alt: "Stoneweg" },
 ];
 
 export default function Home() {
@@ -88,7 +124,7 @@ export default function Home() {
                       </h2>
                     </div>
                     <div className="spacer-medium"></div>
-                    <LogoMarquee logos={clientLogos} speed={25} />
+                    <LogoMarquee logos={clientLogos} speed={60} />
                   </div>
                 </ScrollReveal>
               </div>
@@ -114,8 +150,8 @@ export default function Home() {
                     </div>
                   </ScrollReveal>
                 </div>
-                <div className="w-layout-grid layout238_list">
-                  <ScrollReveal delay={0} direction="up">
+                <ScrollReveal>
+                  <div className="w-layout-grid layout238_list">
                     <div className="layout238_item">
                       <div className="margin-bottom margin-small">
                         <div className="layout238_item-icon-wrapper">
@@ -128,8 +164,6 @@ export default function Home() {
                         </h3>
                       </div>
                     </div>
-                  </ScrollReveal>
-                  <ScrollReveal delay={100} direction="up">
                     <div className="layout238_item">
                       <div className="margin-bottom margin-small">
                         <div className="layout238_item-icon-wrapper">
@@ -142,8 +176,6 @@ export default function Home() {
                         </h3>
                       </div>
                     </div>
-                  </ScrollReveal>
-                  <ScrollReveal delay={200} direction="up">
                     <div className="layout238_item">
                       <div className="margin-bottom margin-small">
                         <div className="layout238_item-icon-wrapper">
@@ -156,8 +188,8 @@ export default function Home() {
                         </h3>
                       </div>
                     </div>
-                  </ScrollReveal>
-                </div>
+                  </div>
+                </ScrollReveal>
               </div>
             </div>
           </div>
@@ -194,9 +226,9 @@ export default function Home() {
                     </div>
                   </ScrollReveal>
                 </div>
-                <div className="w-layout-grid layout368_row">
-                  <ScrollReveal delay={0}>
-                    <div className="layout368_card-large">
+                <ScrollReveal>
+                  <div className="w-layout-grid layout368_row">
+                    <div id="w-node-_22bdcdf3-0362-6d95-8cf3-1e988f56972c-f9d7f908" className="layout368_card-large">
                       <div className="layout368_card-large-content">
                         <div className="layout368_card-large-content-top">
                           <h3 className="heading-style-h3 text-color-white">
@@ -204,7 +236,7 @@ export default function Home() {
                           </h3>
                         </div>
                       </div>
-                      <div className="layout368_card-large-image-wrapper">
+                      <div id="w-node-_22bdcdf3-0362-6d95-8cf3-1e988f56972d-f9d7f908" className="layout368_card-large-image-wrapper">
                         <img
                           sizes="(max-width: 1117px) 100vw, 1117px"
                           srcSet="/images/Group-35933-p-500.png 500w, /images/Group-35933-p-800.png 800w, /images/Group-35933-p-1080.png 1080w, /images/Group-35933.png 1117w"
@@ -215,8 +247,6 @@ export default function Home() {
                         />
                       </div>
                     </div>
-                  </ScrollReveal>
-                  <ScrollReveal delay={100}>
                     <div className="layout368_card-small">
                       <div className="layout368_card-small-content">
                         <div className="layout368_card-small-content-top">
@@ -238,8 +268,6 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                  </ScrollReveal>
-                  <ScrollReveal delay={200}>
                     <div className="layout368_card-small">
                       <div className="layout368_card-small-content">
                         <div className="layout368_card-small-content-top">
@@ -261,8 +289,8 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                  </ScrollReveal>
-                </div>
+                  </div>
+                </ScrollReveal>
               </div>
             </div>
           </div>
@@ -297,31 +325,7 @@ export default function Home() {
             </div>
           </div>
           <ScrollReveal delay={200}>
-            <div className="logo3_component-2">
-              <div className="logo3_list">
-                <div className="logo3_wrapper integration-logo-wrapper">
-                  <img loading="lazy" src="/images/l1.png" alt="" className="logo3_logo" />
-                </div>
-                <div className="logo3_wrapper integration-logo-wrapper">
-                  <img loading="lazy" src="/images/l2.png" alt="" className="logo3_logo" />
-                </div>
-                <div className="logo3_wrapper integration-logo-wrapper">
-                  <img loading="lazy" src="/images/l3.png" alt="" className="logo3_logo" />
-                </div>
-                <div className="logo3_wrapper integration-logo-wrapper">
-                  <img loading="lazy" src="/images/l4.png" alt="" className="logo3_logo" />
-                </div>
-                <div className="logo3_wrapper integration-logo-wrapper">
-                  <img loading="lazy" src="/images/l5.png" alt="" className="logo3_logo" />
-                </div>
-                <div className="logo3_wrapper integration-logo-wrapper">
-                  <img loading="lazy" src="/images/quickbooks.png" alt="" className="logo3_logo" />
-                </div>
-                <div className="logo3_wrapper integration-logo-wrapper">
-                  <img loading="lazy" src="/images/Mask-group.png" alt="" className="logo3_logo" />
-                </div>
-              </div>
-            </div>
+            <LogoMarquee logos={integrationLogos} speed={20} />
           </ScrollReveal>
         </div>
         <div className="left-overlay"></div>
@@ -341,9 +345,9 @@ export default function Home() {
                 </div>
               </ScrollReveal>
               <div className="spacer-xhuge"></div>
-              <div className="layout227_component">
-                <div className="w-layout-grid layout227_list">
-                  <ScrollReveal delay={0} direction="up">
+              <ScrollReveal>
+                <div className="layout227_component">
+                  <div className="w-layout-grid layout227_list">
                     <div className="layout227_item is-black">
                       <div className="card-icon-wrap">
                         <img src="/images/Frame-34375601.png" loading="lazy" alt="" className="card-icon" />
@@ -361,8 +365,6 @@ export default function Home() {
                         </Link>
                       </div>
                     </div>
-                  </ScrollReveal>
-                  <ScrollReveal delay={100} direction="up">
                     <div className="layout227_item is-black is-blue">
                       <div className="card-icon-wrap">
                         <img src="/images/Frame-34375601_1.png" loading="lazy" alt="" className="card-icon" />
@@ -379,8 +381,6 @@ export default function Home() {
                         </Link>
                       </div>
                     </div>
-                  </ScrollReveal>
-                  <ScrollReveal delay={200} direction="up">
                     <div className="layout227_item is-black is-blue is-orange">
                       <div className="card-icon-wrap">
                         <img src="/images/Frame-34375601_2.png" loading="lazy" alt="" className="card-icon" />
@@ -398,13 +398,18 @@ export default function Home() {
                         </Link>
                       </div>
                     </div>
-                  </ScrollReveal>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Financial Management Features Grid */}
+      <ScrollReveal>
+        <FeatureGrid />
+      </ScrollReveal>
 
       {/* Case Study Section */}
       <section className="section-fcp">

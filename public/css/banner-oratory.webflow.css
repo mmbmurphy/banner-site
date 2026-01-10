@@ -8609,6 +8609,7 @@ figcaption {
 /* Mobile Solutions Accordion */
 .mobile-solutions-accordion {
   width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 .mobile-solutions-toggle {
@@ -8616,9 +8617,10 @@ figcaption {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 1rem 0;
+  padding: 0.875rem 0;
   background: none;
   border: none;
+  border-bottom: 1px solid #e8ebef;
   font-family: Inter, sans-serif;
   font-size: 1rem;
   font-weight: 500;
@@ -8627,8 +8629,10 @@ figcaption {
   text-align: left;
 }
 
-.mobile-solutions-toggle:hover {
+.mobile-solutions-toggle:hover,
+.mobile-solutions-toggle:focus {
   color: #ff6b35;
+  outline: none;
 }
 
 .mobile-solutions-toggle svg {
@@ -8637,11 +8641,13 @@ figcaption {
 }
 
 .mobile-solutions-content {
-  padding-left: 0;
+  padding: 0 0 0 1rem;
+  background-color: #f9fafb;
+  border-radius: 0 0 8px 8px;
 }
 
 .mobile-solutions-section {
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid #e8ebef;
 }
 
@@ -8650,25 +8656,25 @@ figcaption {
 }
 
 .mobile-solutions-header {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: #7a8491;
-  padding: 0.5rem 0;
-  margin-bottom: 0.25rem;
+  padding: 0.25rem 0 0.5rem;
 }
 
 .mobile-solutions-link {
   display: flex;
   flex-direction: column;
-  padding: 0.75rem 0;
+  padding: 0.625rem 0;
   text-decoration: none;
   color: inherit;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.mobile-solutions-link:hover {
+.mobile-solutions-link:hover,
+.mobile-solutions-link:active {
   color: #ff6b35;
 }
 
@@ -8676,15 +8682,16 @@ figcaption {
   font-size: 0.9375rem;
   font-weight: 500;
   color: #131518;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.125rem;
 }
 
-.mobile-solutions-link:hover .mobile-solutions-title {
+.mobile-solutions-link:hover .mobile-solutions-title,
+.mobile-solutions-link:active .mobile-solutions-title {
   color: #ff6b35;
 }
 
 .mobile-solutions-desc {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: #7a8491;
-  line-height: 1.4;
+  line-height: 1.3;
 }

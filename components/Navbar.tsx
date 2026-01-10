@@ -329,11 +329,19 @@ export default function Navbar() {
             <a
               href="https://auth.withbanner.com/login"
               className="button is-secondary is-small is-nav w-button"
-              onClick={handleMobileMenuClose}
+              onClick={() => {
+                handleMobileMenuClose();
+              }}
             >
               Log in
             </a>
-            <Link href="/contact" className="button is-small w-button" onClick={handleMobileMenuClose}>
+            <Link
+              href="/contact"
+              className="button is-small w-button"
+              onClick={(e) => {
+                handleMobileMenuClose();
+              }}
+            >
               Book a Demo
             </Link>
           </div>

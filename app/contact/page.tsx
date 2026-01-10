@@ -1,7 +1,20 @@
+import Script from "next/script";
+import ScrollReveal from "@/components/ScrollReveal";
+import LogoMarquee from "@/components/LogoMarquee";
+
 export const metadata = {
-  title: "Contact | Banner",
+  title: "Book a Demo | Banner",
   description: "Book a demo to see how Banner can transform your CapEx management.",
 };
+
+const clientLogos = [
+  { src: "/images/client-logos/summit.svg", alt: "Summit Real Estate Group" },
+  { src: "/images/client-logos/greystar.svg", alt: "Greystar" },
+  { src: "/images/client-logos/fcp.svg", alt: "FCP" },
+  { src: "/images/client-logos/starwood.svg", alt: "Starwood Capital Group" },
+  { src: "/images/client-logos/kennedy-wilson.svg", alt: "Kennedy Wilson" },
+  { src: "/images/client-logos/cardinal.svg", alt: "Cardinal Group" },
+];
 
 export default function ContactPage() {
   return (
@@ -10,82 +23,90 @@ export default function ContactPage() {
         <div className="padding-global">
           <div className="container-large">
             <div className="padding-section-large">
-              <div className="text-align-center">
-                <div className="max-width-large align-center">
-                  <h1 className="heading-style-h1">Book a Demo</h1>
-                  <div className="spacer-medium"></div>
-                  <p className="text-size-medium">
-                    See how Banner can help your team manage CapEx more effectively.
-                    Fill out the form below and we&apos;ll be in touch.
-                  </p>
-                </div>
-              </div>
-              <div className="spacer-xlarge"></div>
-              <div className="max-width-medium align-center">
-                <div className="contact-form_component w-form">
-                  <form className="contact-form_form">
-                    <div className="form-field-wrapper">
-                      <label htmlFor="name" className="form-field-label">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        className="form-input w-input"
-                        id="name"
-                        name="name"
-                        placeholder="Your name"
-                        required
-                      />
+              <div className="layout16_component">
+                <ScrollReveal>
+                  <div className="contact-page-grid">
+                    <div className="contact-page-left">
+                      <div className="contact-hero-top">
+                        <h1 className="heading-style-h1">
+                          See Banner in action
+                        </h1>
+                        <p className="text-size-medium">
+                          Book a personalized demo with our team to see how Banner can help you
+                          manage CapEx across your portfolio with real-time visibility and control.
+                        </p>
+                      </div>
+                      <div className="layout16_item-list">
+                        <div className="layout16_item">
+                          <div className="layout16_item-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f25e53" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                              <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                          </div>
+                          <div className="layout16_item-text-wrapper">
+                            <p className="text-size-medium semi-bold">Portfolio Visibility</p>
+                            <p>See how Banner gives you real-time visibility across all your properties and projects.</p>
+                          </div>
+                        </div>
+                        <div className="layout16_item">
+                          <div className="layout16_item-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f25e53" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                              <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                          </div>
+                          <div className="layout16_item-text-wrapper">
+                            <p className="text-size-medium semi-bold">Budget Control</p>
+                            <p>Learn how to track costs against budgets and catch variances before they become problems.</p>
+                          </div>
+                        </div>
+                        <div className="layout16_item">
+                          <div className="layout16_item-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f25e53" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                              <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                          </div>
+                          <div className="layout16_item-text-wrapper">
+                            <p className="text-size-medium semi-bold">Seamless Integrations</p>
+                            <p>Discover how Banner integrates with your existing accounting and property management systems.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="contact-logos-section">
+                        <p className="text-size-small text-color-muted">Trusted by leading real estate companies</p>
+                        <div className="contact-logos-row">
+                          {clientLogos.map((logo, index) => (
+                            <img
+                              key={index}
+                              src={logo.src}
+                              alt={logo.alt}
+                              className="contact-logo"
+                            />
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <div className="form-field-wrapper">
-                      <label htmlFor="email" className="form-field-label">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        className="form-input w-input"
-                        id="email"
-                        name="email"
-                        placeholder="you@company.com"
-                        required
-                      />
+                    <div className="contact-page-right">
+                      <div className="hubspot-embed-wrapper">
+                        <div
+                          className="meetings-iframe-container"
+                          data-src="https://meetings.hubspot.com/murph3/website-booking-form?embed=true"
+                        ></div>
+                      </div>
                     </div>
-                    <div className="form-field-wrapper">
-                      <label htmlFor="company" className="form-field-label">
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        className="form-input w-input"
-                        id="company"
-                        name="company"
-                        placeholder="Your company"
-                      />
-                    </div>
-                    <div className="form-field-wrapper">
-                      <label htmlFor="message" className="form-field-label">
-                        Message
-                      </label>
-                      <textarea
-                        className="form-input is-text-area w-input"
-                        id="message"
-                        name="message"
-                        placeholder="Tell us about your CapEx challenges..."
-                        rows={4}
-                      />
-                    </div>
-                    <div className="margin-top margin-medium">
-                      <button type="submit" className="button w-button">
-                        Submit
-                      </button>
-                    </div>
-                  </form>
-                </div>
+                  </div>
+                </ScrollReveal>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <Script
+        src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
+        strategy="afterInteractive"
+      />
     </>
   );
 }

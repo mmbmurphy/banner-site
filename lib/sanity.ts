@@ -213,3 +213,104 @@ export async function getPostsByCategory(category: string): Promise<Post[]> {
 export async function getRelatedPosts(slug: string, category: string): Promise<Post[]> {
   return client.fetch(relatedPostsQuery, { slug, category });
 }
+
+// Info Posts (SEO/directory content - separate from main blog)
+// Uses isInfoPost field to differentiate
+
+export const infoPostsQuery = `*[_type == "post" && isInfoPost == true] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  excerpt,
+  mainImage,
+  publishedAt,
+  readTime,
+  "author": author->{
+    _id,
+    name,
+    slug,
+    role,
+    image
+  },
+  "category": category->{
+    _id,
+    title,
+    slug,
+    color
+  }
+}`;
+
+export const infoPostBySlugQuery = `*[_type == "post" && isInfoPost == true && slug.current == $slug][0] {
+  _id,
+  title,
+  slug,
+  excerpt,
+  mainImage,
+  publishedAt,
+  readTime,
+  body,
+  seoTitle,
+  seoDescription,
+  "author": author->{
+    _id,
+    name,
+    slug,
+    role,
+    image,
+    bio,
+    linkedin,
+    twitter
+  },
+  "category": category->{
+    _id,
+    title,
+    slug,
+    color
+  }
+}`;
+
+export const infoPostSlugsQuery = `*[_type == "post" && isInfoPost == true && defined(slug.current)][].slug.current`;
+
+export const infoCategoriesQuery = `*[_type == "category" && isInfoCategory == true] | order(title asc) {
+  _id,
+  title,
+  slug,
+  description,
+  color
+}`;
+
+export const relatedInfoPostsQuery = `*[_type == "post" && isInfoPost == true && slug.current != $slug && category->slug.current == $category] | order(publishedAt desc)[0...3] {
+  _id,
+  title,
+  slug,
+  excerpt,
+  mainImage,
+  publishedAt,
+  readTime,
+  "category": category->{
+    _id,
+    title,
+    slug,
+    color
+  }
+}`;
+
+export async function getInfoPosts(): Promise<Post[]> {
+  return client.fetch(infoPostsQuery);
+}
+
+export async function getInfoPostBySlug(slug: string): Promise<Post | null> {
+  return client.fetch(infoPostBySlugQuery, { slug });
+}
+
+export async function getInfoPostSlugs(): Promise<string[]> {
+  return client.fetch(infoPostSlugsQuery);
+}
+
+export async function getInfoCategories(): Promise<Category[]> {
+  return client.fetch(infoCategoriesQuery);
+}
+
+export async function getRelatedInfoPosts(slug: string, category: string): Promise<Post[]> {
+  return client.fetch(relatedInfoPostsQuery, { slug, category });
+}

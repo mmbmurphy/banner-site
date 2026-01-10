@@ -92,6 +92,15 @@ export default function Footer() {
                     </div>
                     <div className="footer2_link-column">
                       <div className="margin-bottom margin-xsmall">
+                        <div className="text-weight-semibold">Resources</div>
+                      </div>
+                      <div className="footer2_link-list">
+                        <Link href="/info" className="footer2_link">Guides & Directories</Link>
+                        <Link href="/guides" className="footer2_link">CapEx Guides</Link>
+                      </div>
+                    </div>
+                    <div className="footer2_link-column">
+                      <div className="margin-bottom margin-xsmall">
                         <div className="text-weight-semibold">Legal</div>
                       </div>
                       <div className="footer2_link-list">

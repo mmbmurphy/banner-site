@@ -34,6 +34,13 @@ export default defineType({
       description: "Color for the category badge (e.g., #FF6B35)",
       initialValue: "#FF6B35",
     }),
+    defineField({
+      name: "isInfoCategory",
+      title: "Info Category",
+      type: "boolean",
+      initialValue: false,
+      description: "Category for info/SEO posts (contractor directories, etc.)",
+    }),
   ],
   preview: {
     select: {

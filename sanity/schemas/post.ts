@@ -76,6 +76,13 @@ export default defineType({
       description: "Feature this post at the top of the blog",
     }),
     defineField({
+      name: "isInfoPost",
+      title: "Info/SEO Post",
+      type: "boolean",
+      initialValue: false,
+      description: "Mark as info post (contractor directories, comparisons) - shown at /info instead of /blog",
+    }),
+    defineField({
       name: "body",
       title: "Body",
       type: "blockContent",

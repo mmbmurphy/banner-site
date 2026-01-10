@@ -650,7 +650,8 @@ export interface CaseStudy {
   industry: string;
   title: string;
   subtitle: string;
-  heroImage: string;
+  heroImage: string; // Used on landing page (portrait/thumbnail)
+  detailImage: string; // Used on case study detail page (building/scene)
   stats: {
     value: string;
     label: string;
@@ -686,6 +687,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       "How FCP aligned asset managers, vendors, and property managers in one system with real-time visibility",
     heroImage: "/images/portrait-casestudy-banner.webp",
+    detailImage: "/images/fcp-case-study.jpg",
     stats: [
       { value: "5%", label: "reduction in CapEx cost" },
       { value: "70%", label: "reduction in admin work" },
@@ -730,6 +732,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       "How Tourmaline streamlined capital project management and gained real-time visibility across their multifamily investments",
     heroImage: "/images/portrait-casestudy-banner.webp",
+    detailImage: "/images/fcp-case-study.jpg",
     stats: [
       { value: "40%", label: "faster project approvals" },
       { value: "60%", label: "reduction in reporting time" },
@@ -774,6 +777,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       "How Industrious achieved consistent project execution and cost control across their nationwide flexible workspace portfolio",
     heroImage: "/images/portrait-casestudy-banner.webp",
+    detailImage: "/images/fcp-case-study.jpg",
     stats: [
       { value: "30%", label: "reduction in project costs" },
       { value: "50%", label: "faster project delivery" },

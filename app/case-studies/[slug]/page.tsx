@@ -48,7 +48,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <header className="cs-hero">
         <div className="cs-hero-background">
           <img
-            src="/images/fcp-case-study.jpg"
+            src={caseStudy.detailImage}
             alt=""
             className="cs-hero-bg-image"
           />

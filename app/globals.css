@@ -2288,7 +2288,7 @@ details[open] .faq4_icon-wrappper {
 
 .legal-header {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 4rem 0 3rem;
+  padding: 8rem 0 3rem;
 }
 
 .legal-header-content {
@@ -2397,7 +2397,7 @@ details[open] .faq4_icon-wrappper {
 
 @media (max-width: 767px) {
   .legal-header {
-    padding: 3rem 0 2rem;
+    padding: 7rem 0 2rem;
   }
 
   .legal-title {

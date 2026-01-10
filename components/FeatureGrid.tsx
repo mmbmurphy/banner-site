@@ -5,7 +5,8 @@ interface Feature {
   icon: React.ReactNode;
 }
 
-const features: Feature[] = [
+// Financial Management features
+const financialFeatures: Feature[] = [
   {
     name: "Approvals",
     icon: (
@@ -16,28 +17,7 @@ const features: Feature[] = [
     ),
   },
   {
-    name: "Asset Tracking",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-        <circle cx="8.5" cy="8.5" r="1.5" />
-        <polyline points="21 15 16 10 5 21" />
-      </svg>
-    ),
-  },
-  {
-    name: "Bidding",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-        <polyline points="14 2 14 8 20 8" />
-        <line x1="12" y1="18" x2="12" y2="12" />
-        <line x1="9" y1="15" x2="15" y2="15" />
-      </svg>
-    ),
-  },
-  {
-    name: "Budget Controls",
+    name: "Budgeting",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" y1="1" x2="12" y2="23" />
@@ -64,30 +44,11 @@ const features: Feature[] = [
     ),
   },
   {
-    name: "Contracting",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-        <polyline points="14 2 14 8 20 8" />
-        <line x1="16" y1="13" x2="8" y2="13" />
-        <line x1="16" y1="17" x2="8" y2="17" />
-      </svg>
-    ),
-  },
-  {
     name: "Cost Tracking",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
         <line x1="1" y1="10" x2="23" y2="10" />
-      </svg>
-    ),
-  },
-  {
-    name: "Document Management",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
       </svg>
     ),
   },
@@ -123,6 +84,59 @@ const features: Feature[] = [
     ),
   },
   {
+    name: "Reporting",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+        <path d="M22 12A10 10 0 0 0 12 2v10z" />
+      </svg>
+    ),
+  },
+];
+
+// Project Management features
+const projectFeatures: Feature[] = [
+  {
+    name: "Asset Tracking",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+        <circle cx="8.5" cy="8.5" r="1.5" />
+        <polyline points="21 15 16 10 5 21" />
+      </svg>
+    ),
+  },
+  {
+    name: "Bidding",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="12" y1="18" x2="12" y2="12" />
+        <line x1="9" y1="15" x2="15" y2="15" />
+      </svg>
+    ),
+  },
+  {
+    name: "Contracting",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+      </svg>
+    ),
+  },
+  {
+    name: "Document Management",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+      </svg>
+    ),
+  },
+  {
     name: "Project Scheduling",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -147,15 +161,6 @@ const features: Feature[] = [
     ),
   },
   {
-    name: "Reporting",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
-        <path d="M22 12A10 10 0 0 0 12 2v10z" />
-      </svg>
-    ),
-  },
-  {
     name: "TIs",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -173,7 +178,7 @@ const features: Feature[] = [
     ),
   },
   {
-    name: "Vendor Communication",
+    name: "Vendor Communications",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -182,115 +187,207 @@ const features: Feature[] = [
   },
 ];
 
+interface FeatureGroupProps {
+  title: string;
+  description: string;
+  features: Feature[];
+  accentColor: string;
+}
+
+function FeatureGroup({ title, description, features, accentColor }: FeatureGroupProps) {
+  return (
+    <div className="feature-group">
+      <div className="feature-group-header">
+        <div className="feature-group-icon-wrapper" style={{ backgroundColor: accentColor }}>
+          {title === "Financial Management" ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+          ) : (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
+            </svg>
+          )}
+        </div>
+        <div className="feature-group-text">
+          <h3 className="feature-group-title">{title}</h3>
+          <p className="feature-group-description">{description}</p>
+        </div>
+      </div>
+      <div className="feature-group-grid">
+        {features.map((feature, index) => (
+          <div key={index} className="feature-item">
+            <div className="feature-item-icon" style={{ color: accentColor }}>{feature.icon}</div>
+            <span className="feature-item-name">{feature.name}</span>
+          </div>
+        ))}
+      </div>
+      <style jsx>{`
+        .feature-group {
+          background: #ffffff;
+          border-radius: 16px;
+          padding: 2rem;
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+          border: 1px solid #f0f0f0;
+        }
+
+        .feature-group-header {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+          padding-bottom: 1.5rem;
+          border-bottom: 1px solid #f0f0f0;
+        }
+
+        .feature-group-icon-wrapper {
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .feature-group-text {
+          flex: 1;
+        }
+
+        .feature-group-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #1a1a1a;
+          margin: 0 0 0.25rem 0;
+        }
+
+        .feature-group-description {
+          font-size: 0.9375rem;
+          color: #666;
+          margin: 0;
+          line-height: 1.5;
+        }
+
+        .feature-group-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.75rem;
+        }
+
+        .feature-item {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 0.875rem 1rem;
+          background: #f8f9fa;
+          border-radius: 8px;
+          transition: all 0.2s ease;
+        }
+
+        .feature-item:hover {
+          background: #f0f0f0;
+          transform: translateX(4px);
+        }
+
+        .feature-item-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          flex-shrink: 0;
+        }
+
+        .feature-item-name {
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: #1a1a1a;
+        }
+
+        @media (max-width: 767px) {
+          .feature-group {
+            padding: 1.5rem;
+          }
+
+          .feature-group-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .feature-group-header {
+            flex-direction: column;
+            gap: 0.75rem;
+          }
+        }
+
+        @media (max-width: 479px) {
+          .feature-group-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
+    </div>
+  );
+}
+
 export default function FeatureGrid() {
   return (
     <section className="section-feature-grid">
       <div className="padding-global">
         <div className="container-large">
           <div className="padding-section-large">
-            <div className="feature-grid-header">
-              <h2 className="heading-style-h2">Financial Management</h2>
-              <p className="text-size-medium feature-grid-subtitle">
-                Planning, controlling, and reconciling money across CapEx and OpEx
+            {/* Main Section Header */}
+            <div className="feature-section-header">
+              <h2 className="heading-style-h2">Complete CapEx Management</h2>
+              <p className="text-size-medium feature-section-subtitle">
+                Banner has a robust suite of tools for all of your CapEx needs
               </p>
             </div>
-            <div className="feature-grid">
-              {features.map((feature, index) => (
-                <div key={index} className="feature-grid-item">
-                  <div className="feature-grid-icon">{feature.icon}</div>
-                  <span className="feature-grid-name">{feature.name}</span>
-                </div>
-              ))}
+
+            {/* Two Feature Groups */}
+            <div className="feature-groups-wrapper">
+              <FeatureGroup
+                title="Financial Management"
+                description="Planning, controlling, and reconciling money across CapEx and OpEx"
+                features={financialFeatures}
+                accentColor="#f25e53"
+              />
+              <FeatureGroup
+                title="Project Management"
+                description="Executing work, coordinating people, timelines, and assets"
+                features={projectFeatures}
+                accentColor="#1a1a1a"
+              />
             </div>
           </div>
         </div>
       </div>
       <style jsx>{`
         .section-feature-grid {
-          background-color: #ffffff;
+          background-color: #f8f9fa;
         }
 
-        .feature-grid-header {
+        .feature-section-header {
           text-align: center;
           margin-bottom: 3rem;
         }
 
-        .feature-grid-subtitle {
+        .feature-section-subtitle {
           color: #666;
           margin-top: 0.75rem;
         }
 
-        .feature-grid {
+        .feature-groups-wrapper {
           display: grid;
-          grid-template-columns: repeat(6, 1fr);
-          gap: 1rem;
-        }
-
-        .feature-grid-item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 1.5rem 1rem;
-          border: 1px solid #e5e5e5;
-          border-radius: 8px;
-          text-align: center;
-          transition: all 0.2s ease;
-          background: #fff;
-        }
-
-        .feature-grid-item:hover {
-          border-color: #f25e53;
-          box-shadow: 0 4px 12px rgba(242, 94, 83, 0.15);
-          transform: translateY(-2px);
-        }
-
-        .feature-grid-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 48px;
-          height: 48px;
-          margin-bottom: 0.75rem;
-          color: #f25e53;
-        }
-
-        .feature-grid-name {
-          font-size: 0.875rem;
-          font-weight: 500;
-          color: #1a1a1a;
-          line-height: 1.3;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
         }
 
         @media (max-width: 991px) {
-          .feature-grid {
-            grid-template-columns: repeat(4, 1fr);
-          }
-        }
-
-        @media (max-width: 767px) {
-          .feature-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.75rem;
-          }
-
-          .feature-grid-item {
-            padding: 1rem 0.5rem;
-          }
-
-          .feature-grid-icon {
-            width: 40px;
-            height: 40px;
-          }
-
-          .feature-grid-name {
-            font-size: 0.75rem;
-          }
-        }
-
-        @media (max-width: 479px) {
-          .feature-grid {
-            grid-template-columns: repeat(2, 1fr);
+          .feature-groups-wrapper {
+            grid-template-columns: 1fr;
           }
         }
       `}</style>

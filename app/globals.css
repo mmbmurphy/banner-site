@@ -10233,6 +10233,11 @@ a:focus-visible {
   }
 }
 
+/* Footer Logo Text */
+.footer-logo-text {
+  margin-top: 1.5rem;
+}
+
 /* Footer Contact Info */
 .footer-contact-info {
   display: flex;

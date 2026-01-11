@@ -449,7 +449,7 @@ export const solutions: Solution[] = [
     icon: "/images/Frame-34375601_2.png",
     trustIndicators: [
       { value: "$2B+", label: "in development projects tracked" },
-      { value: "66%", label: "faster draw preparation" },
+      { value: "80%", label: "faster draw preparation" },
       { value: "3X", label: "portfolio growth without adding headcount" },
     ],
     platformIntro: {
@@ -557,7 +557,7 @@ export const solutions: Solution[] = [
       subtitle: "Real results from development teams using Banner",
     },
     stats: [
-      { value: "66%", label: "faster draw preparation", context: "with automated package generation" },
+      { value: "80%", label: "faster draw preparation", context: "with automated package generation" },
       { value: "25%", label: "reduction in cost overruns", context: "through proactive variance alerts" },
       { value: "80%", label: "less time on admin work", context: "with automated reporting and workflows" },
       { value: "3X", label: "portfolio growth capacity", context: "without adding headcount" },
@@ -565,12 +565,12 @@ export const solutions: Solution[] = [
     testimonials: [
       {
         quote: "Banner has streamlined our draw process and gives our lenders confidence in our reporting. What used to take two weeks now takes two hours—and we've eliminated the back-and-forth completely.",
-        author: "David Park",
-        role: "Development Manager",
-        company: "Starwood Capital Group",
-        image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
-        logo: "/images/client-logos/starwood.svg",
-        metric: "66%",
+        author: "Chris Collins",
+        role: "SVP, Construction & Development",
+        company: "Summit Real Estate Group",
+        image: "/images/chris-collins-summit.jpg",
+        logo: "/images/client-logos/summit.svg",
+        metric: "80%",
         metricLabel: "faster draws",
       },
       {
@@ -596,7 +596,7 @@ export const solutions: Solution[] = [
       },
       {
         question: "How does Banner handle construction draw management?",
-        answer: "Banner automates the entire draw process—from compiling costs and calculating retainage to generating lender-ready packages. Most teams cut draw prep time by 66% or more, going from weeks to hours.",
+        answer: "Banner automates the entire draw process—from compiling costs and calculating retainage to generating lender-ready packages. Most teams cut draw prep time by 80% or more, going from weeks to hours.",
       },
       {
         question: "Can Banner track both hard and soft costs?",

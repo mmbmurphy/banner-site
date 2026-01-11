@@ -18,7 +18,7 @@ const solutionMockups: Record<string, { hero: MockupVariant; features: MockupVar
   },
   developers: {
     hero: "developers-draw",
-    features: ["developers-draw", "financial-forecasting", "multifamily-portfolio"],
+    features: ["dev-draw-management", "dev-budget-control", "dev-portfolio-view"],
   },
 };
 

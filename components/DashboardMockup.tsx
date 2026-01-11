@@ -368,7 +368,10 @@ export type MockupVariant =
   | "developers-draw"
   | "approvals"
   | "bidding"
-  | "vendor-management";
+  | "vendor-management"
+  | "dev-draw-management"
+  | "dev-budget-control"
+  | "dev-portfolio-view";
 
 // Main component with variants
 export default function DashboardMockup({ variant }: { variant: MockupVariant }) {
@@ -778,6 +781,298 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
               sideLabel="Avg Rating"
               sideValue="4.5★"
             />
+          </div>
+        );
+
+      case "dev-draw-management":
+        return (
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact">
+              <div className="dm-draw-header-row">
+                <h3 className="dm-card-title">Draw Package #8</h3>
+                <span className="dm-status-badge" style={{ backgroundColor: `${colors.green}20`, color: colors.green }}>
+                  Ready to Submit
+                </span>
+              </div>
+              <div className="dm-draw-summary">
+                <div className="dm-draw-main-amount">
+                  <span className="dm-draw-label">This Draw</span>
+                  <span className="dm-draw-big-value">$1,847,500</span>
+                </div>
+                <div className="dm-draw-breakdown-mini">
+                  <div className="dm-draw-line">
+                    <span>Gross Amount</span>
+                    <span>$2,052,778</span>
+                  </div>
+                  <div className="dm-draw-line">
+                    <span>Less Retainage (10%)</span>
+                    <span className="dm-text-red">-$205,278</span>
+                  </div>
+                  <div className="dm-draw-line dm-draw-line-bold">
+                    <span>Net This Draw</span>
+                    <span>$1,847,500</span>
+                  </div>
+                </div>
+              </div>
+              <div className="dm-draw-costs">
+                <div className="dm-cost-line">
+                  <span className="dm-cost-dot" style={{ backgroundColor: colors.blue }} />
+                  <span className="dm-cost-name">Hard Costs</span>
+                  <span className="dm-cost-val">$1,520,000</span>
+                </div>
+                <div className="dm-cost-line">
+                  <span className="dm-cost-dot" style={{ backgroundColor: colors.purple }} />
+                  <span className="dm-cost-name">Soft Costs</span>
+                  <span className="dm-cost-val">$285,000</span>
+                </div>
+                <div className="dm-cost-line">
+                  <span className="dm-cost-dot" style={{ backgroundColor: colors.teal }} />
+                  <span className="dm-cost-name">Contingency</span>
+                  <span className="dm-cost-val">$247,778</span>
+                </div>
+              </div>
+              <button className="dm-btn dm-btn-primary dm-btn-full">Generate Draw Package</button>
+            </div>
+            <div className="dm-right-stack">
+              <div className="dm-card dm-card-compact">
+                <h3 className="dm-card-title">Loan Progress</h3>
+                <div className="dm-loan-visual">
+                  <div className="dm-loan-bar">
+                    <div className="dm-loan-filled" style={{ width: "58%" }} />
+                    <div className="dm-loan-pending" style={{ width: "8%", left: "58%" }} />
+                  </div>
+                  <div className="dm-loan-labels">
+                    <span>$17.4M drawn</span>
+                    <span>$30M total</span>
+                  </div>
+                </div>
+                <div className="dm-loan-stats">
+                  <div className="dm-loan-stat">
+                    <span className="dm-loan-stat-value">7</span>
+                    <span className="dm-loan-stat-label">Draws Completed</span>
+                  </div>
+                  <div className="dm-loan-stat">
+                    <span className="dm-loan-stat-value">$12.6M</span>
+                    <span className="dm-loan-stat-label">Remaining</span>
+                  </div>
+                </div>
+              </div>
+              <div className="dm-card dm-card-compact">
+                <h3 className="dm-card-title">Lender Requirements</h3>
+                <div className="dm-checklist">
+                  <div className="dm-check-item dm-check-done">
+                    <span className="dm-check-icon">✓</span>
+                    <span>AIA G702/G703</span>
+                  </div>
+                  <div className="dm-check-item dm-check-done">
+                    <span className="dm-check-icon">✓</span>
+                    <span>Lien Waivers</span>
+                  </div>
+                  <div className="dm-check-item dm-check-done">
+                    <span className="dm-check-icon">✓</span>
+                    <span>Inspection Report</span>
+                  </div>
+                  <div className="dm-check-item dm-check-done">
+                    <span className="dm-check-icon">✓</span>
+                    <span>Updated Schedule</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "dev-budget-control":
+        return (
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact">
+              <h3 className="dm-card-title">Budget vs Actual</h3>
+              <div className="dm-budget-header-stats">
+                <div className="dm-budget-stat">
+                  <span className="dm-budget-stat-label">Original Budget</span>
+                  <span className="dm-budget-stat-value">$28,500,000</span>
+                </div>
+                <div className="dm-budget-stat">
+                  <span className="dm-budget-stat-label">Current Forecast</span>
+                  <span className="dm-budget-stat-value dm-text-orange">$29,125,000</span>
+                </div>
+                <div className="dm-budget-stat">
+                  <span className="dm-budget-stat-label">Variance</span>
+                  <span className="dm-budget-stat-value dm-text-red">+$625,000</span>
+                </div>
+              </div>
+              <div className="dm-variance-bars">
+                <div className="dm-variance-row">
+                  <span className="dm-variance-category">Hard Costs</span>
+                  <div className="dm-variance-bar-container">
+                    <div className="dm-variance-bar dm-variance-budget" style={{ width: "100%" }} />
+                    <div className="dm-variance-bar dm-variance-actual" style={{ width: "103%" }} />
+                  </div>
+                  <span className="dm-variance-amount dm-text-red">+$420K</span>
+                </div>
+                <div className="dm-variance-row">
+                  <span className="dm-variance-category">Soft Costs</span>
+                  <div className="dm-variance-bar-container">
+                    <div className="dm-variance-bar dm-variance-budget" style={{ width: "100%" }} />
+                    <div className="dm-variance-bar dm-variance-actual" style={{ width: "108%" }} />
+                  </div>
+                  <span className="dm-variance-amount dm-text-red">+$205K</span>
+                </div>
+                <div className="dm-variance-row">
+                  <span className="dm-variance-category">Contingency</span>
+                  <div className="dm-variance-bar-container">
+                    <div className="dm-variance-bar dm-variance-budget" style={{ width: "100%" }} />
+                    <div className="dm-variance-bar dm-variance-actual" style={{ width: "65%" }} />
+                  </div>
+                  <span className="dm-variance-amount dm-text-green">35% remaining</span>
+                </div>
+              </div>
+            </div>
+            <div className="dm-right-stack">
+              <div className="dm-card dm-card-compact dm-alert-card">
+                <h3 className="dm-card-title">
+                  <span className="dm-alert-icon">⚠</span>
+                  Active Alerts
+                </h3>
+                <div className="dm-alert-list">
+                  <div className="dm-alert-item dm-alert-high">
+                    <span className="dm-alert-badge">High</span>
+                    <div className="dm-alert-content">
+                      <span className="dm-alert-title">Concrete costs +12%</span>
+                      <span className="dm-alert-detail">$180K over budget</span>
+                    </div>
+                  </div>
+                  <div className="dm-alert-item dm-alert-medium">
+                    <span className="dm-alert-badge">Med</span>
+                    <div className="dm-alert-content">
+                      <span className="dm-alert-title">Electrical at 95%</span>
+                      <span className="dm-alert-detail">Approaching threshold</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="dm-card dm-card-compact">
+                <h3 className="dm-card-title">Contingency Burn</h3>
+                <div className="dm-contingency-visual">
+                  <DonutChart
+                    segments={[
+                      { value: 65, color: colors.blue },
+                      { value: 35, color: colors.gray },
+                    ]}
+                    size={64}
+                    strokeWidth={10}
+                    centerValue="35%"
+                  />
+                  <div className="dm-contingency-detail">
+                    <span className="dm-contingency-remaining">$498K remaining</span>
+                    <span className="dm-contingency-total">of $1.425M</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "dev-portfolio-view":
+        return (
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact">
+              <h3 className="dm-card-title">Portfolio Overview</h3>
+              <div className="dm-portfolio-metrics">
+                <div className="dm-portfolio-metric">
+                  <span className="dm-portfolio-metric-value">12</span>
+                  <span className="dm-portfolio-metric-label">Active Projects</span>
+                </div>
+                <div className="dm-portfolio-metric">
+                  <span className="dm-portfolio-metric-value">$284M</span>
+                  <span className="dm-portfolio-metric-label">Total Budget</span>
+                </div>
+                <div className="dm-portfolio-metric">
+                  <span className="dm-portfolio-metric-value">$168M</span>
+                  <span className="dm-portfolio-metric-label">Drawn to Date</span>
+                </div>
+              </div>
+              <div className="dm-portfolio-projects">
+                <div className="dm-portfolio-project">
+                  <div className="dm-portfolio-project-header">
+                    <span className="dm-portfolio-project-name">Highland Tower</span>
+                    <span className="dm-status-badge" style={{ backgroundColor: `${colors.green}20`, color: colors.green }}>On Track</span>
+                  </div>
+                  <div className="dm-portfolio-project-stats">
+                    <span>$45M budget</span>
+                    <span>68% complete</span>
+                  </div>
+                  <div className="dm-progress-track">
+                    <div className="dm-progress-fill" style={{ width: "68%", backgroundColor: colors.green }} />
+                  </div>
+                </div>
+                <div className="dm-portfolio-project">
+                  <div className="dm-portfolio-project-header">
+                    <span className="dm-portfolio-project-name">Marina District</span>
+                    <span className="dm-status-badge" style={{ backgroundColor: `${colors.orange}20`, color: colors.orange }}>At Risk</span>
+                  </div>
+                  <div className="dm-portfolio-project-stats">
+                    <span>$72M budget</span>
+                    <span>42% complete</span>
+                  </div>
+                  <div className="dm-progress-track">
+                    <div className="dm-progress-fill" style={{ width: "42%", backgroundColor: colors.orange }} />
+                  </div>
+                </div>
+                <div className="dm-portfolio-project">
+                  <div className="dm-portfolio-project-header">
+                    <span className="dm-portfolio-project-name">Parkview Commons</span>
+                    <span className="dm-status-badge" style={{ backgroundColor: `${colors.green}20`, color: colors.green }}>On Track</span>
+                  </div>
+                  <div className="dm-portfolio-project-stats">
+                    <span>$38M budget</span>
+                    <span>85% complete</span>
+                  </div>
+                  <div className="dm-progress-track">
+                    <div className="dm-progress-fill" style={{ width: "85%", backgroundColor: colors.green }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="dm-right-stack">
+              <div className="dm-card dm-card-compact">
+                <h3 className="dm-card-title">Risk Summary</h3>
+                <div className="dm-risk-summary">
+                  <div className="dm-risk-item">
+                    <span className="dm-risk-dot" style={{ backgroundColor: colors.green }} />
+                    <span className="dm-risk-label">On Track</span>
+                    <span className="dm-risk-count">8</span>
+                  </div>
+                  <div className="dm-risk-item">
+                    <span className="dm-risk-dot" style={{ backgroundColor: colors.orange }} />
+                    <span className="dm-risk-label">At Risk</span>
+                    <span className="dm-risk-count">3</span>
+                  </div>
+                  <div className="dm-risk-item">
+                    <span className="dm-risk-dot" style={{ backgroundColor: colors.red }} />
+                    <span className="dm-risk-label">Over Budget</span>
+                    <span className="dm-risk-count">1</span>
+                  </div>
+                </div>
+              </div>
+              <div className="dm-card dm-card-compact">
+                <h3 className="dm-card-title">This Month</h3>
+                <div className="dm-month-stats">
+                  <div className="dm-month-stat">
+                    <span className="dm-month-value">$12.4M</span>
+                    <span className="dm-month-label">Draws Submitted</span>
+                  </div>
+                  <div className="dm-month-stat">
+                    <span className="dm-month-value">$8.2M</span>
+                    <span className="dm-month-label">Funded</span>
+                  </div>
+                  <div className="dm-month-stat">
+                    <span className="dm-month-value">4</span>
+                    <span className="dm-month-label">Pending</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         );
 

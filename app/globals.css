@@ -1,5 +1,37 @@
 /* Minimal global styles - Webflow CSS handles most styling */
 
+/* ============================================
+   MOBILE MENU FIXES
+   Ensure menu properly hides when closed
+   ============================================ */
+
+@media (max-width: 991px) {
+  /* Force hide menu when not open */
+  .navbar1_menu.w-nav-menu:not(.w--open) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* Ensure menu content is properly contained */
+  .navbar1_menu.w-nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+
+  /* Prevent buttons from showing through */
+  .navbar1_menu-buttons {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
@@ -10241,6 +10273,473 @@ a:focus-visible {
 
 .footer-linkedin svg {
   fill: currentColor;
+}
+
+/* Developer Mockup Styles */
+.dm-draw-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.dm-draw-summary {
+  margin-bottom: 16px;
+}
+
+.dm-draw-main-amount {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.dm-draw-big-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dm-draw-breakdown-mini {
+  background: #f8fafc;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.dm-draw-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #64748b;
+  padding: 3px 0;
+}
+
+.dm-draw-line-bold {
+  font-weight: 600;
+  color: #0f172a;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 4px;
+  padding-top: 6px;
+}
+
+.dm-draw-costs {
+  margin-bottom: 12px;
+}
+
+.dm-cost-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 11px;
+}
+
+.dm-cost-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dm-cost-name {
+  flex: 1;
+  color: #64748b;
+}
+
+.dm-cost-val {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dm-btn-full {
+  width: 100%;
+}
+
+.dm-loan-visual {
+  margin-bottom: 12px;
+}
+
+.dm-loan-bar {
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dm-loan-filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #3b82f6;
+  border-radius: 6px 0 0 6px;
+}
+
+.dm-loan-pending {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #3b82f6,
+    #3b82f6 4px,
+    #60a5fa 4px,
+    #60a5fa 8px
+  );
+}
+
+.dm-loan-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.dm-loan-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.dm-loan-stat {
+  flex: 1;
+  text-align: center;
+}
+
+.dm-loan-stat-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dm-loan-stat-label {
+  font-size: 9px;
+  color: #64748b;
+}
+
+.dm-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dm-check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.dm-check-done {
+  color: #0f172a;
+}
+
+.dm-check-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.dm-text-red {
+  color: #ef4444 !important;
+}
+
+.dm-text-orange {
+  color: #f97316 !important;
+}
+
+.dm-text-green {
+  color: #22c55e !important;
+}
+
+/* Budget Control Styles */
+.dm-budget-header-stats {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.dm-budget-stat {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.dm-budget-stat-label {
+  display: block;
+  font-size: 9px;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+
+.dm-budget-stat-value {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dm-variance-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dm-variance-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dm-variance-category {
+  width: 70px;
+  font-size: 10px;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.dm-variance-bar-container {
+  flex: 1;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  position: relative;
+}
+
+.dm-variance-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.dm-variance-budget {
+  background: #cbd5e1;
+}
+
+.dm-variance-actual {
+  background: #3b82f6;
+  top: 2px;
+  height: 4px;
+}
+
+.dm-variance-amount {
+  width: 60px;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.dm-alert-card .dm-card-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dm-alert-icon {
+  color: #f97316;
+}
+
+.dm-alert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-alert-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  background: #fef2f2;
+}
+
+.dm-alert-high {
+  background: #fef2f2;
+}
+
+.dm-alert-medium {
+  background: #fffbeb;
+}
+
+.dm-alert-badge {
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #ef4444;
+  color: white;
+}
+
+.dm-alert-medium .dm-alert-badge {
+  background: #f97316;
+}
+
+.dm-alert-content {
+  flex: 1;
+}
+
+.dm-alert-title {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dm-alert-detail {
+  display: block;
+  font-size: 9px;
+  color: #64748b;
+}
+
+.dm-contingency-visual {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dm-contingency-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.dm-contingency-remaining {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dm-contingency-total {
+  font-size: 9px;
+  color: #64748b;
+}
+
+/* Portfolio View Styles */
+.dm-portfolio-metrics {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.dm-portfolio-metric {
+  flex: 1;
+  text-align: center;
+  padding: 10px 6px;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.dm-portfolio-metric-value {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dm-portfolio-metric-label {
+  font-size: 9px;
+  color: #64748b;
+}
+
+.dm-portfolio-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dm-portfolio-project {
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.dm-portfolio-project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.dm-portfolio-project-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dm-portfolio-project-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.dm-risk-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-risk-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dm-risk-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dm-risk-label {
+  flex: 1;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.dm-risk-count {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dm-month-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-month-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dm-month-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dm-month-label {
+  font-size: 10px;
+  color: #64748b;
 }
 
 @media (max-width: 600px) {

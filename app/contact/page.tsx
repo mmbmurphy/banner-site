@@ -28,7 +28,7 @@ export default function ContactPage() {
                     <div className="contact-page-left">
                       <div className="contact-hero-top">
                         <h1 className="heading-style-h1">
-                          See Banner in action
+                          See Banner in Action
                         </h1>
                         <p className="text-size-medium">
                           Book a personalized demo with our team to see how Banner can help you

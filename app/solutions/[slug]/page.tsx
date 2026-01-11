@@ -238,7 +238,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
       </section>
 
       {/* Platform Capabilities */}
-      <section className="sol-platform-section" id="how-it-works">
+      <section className="sol-platform-section" id="how-it-works" style={{ scrollMarginTop: '100px' }}>
         <div className="padding-global">
           <div className="container-large">
             <ScrollReveal>

@@ -307,7 +307,7 @@ export default function Home() {
       <FeatureTabs />
 
       {/* How It Works Section */}
-      <div id="how-it-works" style={{ scrollMarginTop: '120px' }}>
+      <div id="how-it-works" style={{ scrollMarginTop: '180px' }}>
         <HowItWorks />
       </div>
 

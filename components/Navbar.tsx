@@ -221,7 +221,7 @@ export default function Navbar() {
                       >
                         <div className="mega-menu-item-title">Book a Demo</div>
                         <div className="mega-menu-item-desc">
-                          See Banner in action with a personalized walkthrough
+                          See Banner in Action with a personalized walkthrough
                         </div>
                       </Link>
                     </div>
@@ -330,7 +330,7 @@ export default function Navbar() {
                       onClick={handleMobileMenuClose}
                     >
                       <span className="mobile-solutions-title">Book a Demo</span>
-                      <span className="mobile-solutions-desc">See Banner in action</span>
+                      <span className="mobile-solutions-desc">See Banner in Action</span>
                     </Link>
                   </div>
                   <div className="mobile-solutions-section">

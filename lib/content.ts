@@ -98,13 +98,13 @@ export const solutions: Solution[] = [
     description: "CapEx management for apartment portfolios",
     heroTitle: "One Platform for All Your Multifamily CapEx",
     heroDescription:
-      "From unit turns to major renovations, Banner gives multifamily owners and operators real-time visibility and budget control across their entire portfolio.",
+      "From unit renovations to site CapEx, Banner gives multifamily owners and operators real-time visibility and budget control across their entire portfolio.",
     heroImage: "/images/Imagery.png",
     icon: "/images/Frame-34375601.png",
     trustIndicators: [
-      { value: "200K+", label: "units managed on Banner" },
-      { value: "$500M+", label: "in CapEx spend processed" },
-      { value: "15+", label: "of top 50 NMHC owners trust Banner" },
+      { value: "1M+", label: "units managed on Banner" },
+      { value: "$10B+", label: "in CapEx spend processed" },
+      { value: "20+", label: "of top 50 NMHC trust Banner" },
     ],
     platformIntro: {
       title: "One Home for Multifamily CapEx",
@@ -118,7 +118,7 @@ export const solutions: Solution[] = [
       },
       {
         title: "Connect Teams",
-        description: "Asset managers, PMs, and vendors collaborate seamlessly with role-based access",
+        description: "Asset Managers, PMs, and vendors collaborate seamlessly with role-based access",
         icon: "users",
       },
       {
@@ -146,7 +146,7 @@ export const solutions: Solution[] = [
         image: "/images/Imagery.png",
       },
       {
-        title: "Unit Turn Management",
+        title: "Unit Reno Management",
         subtitle: "Renovate faster, spend smarter",
         description: "Streamline unit renovations with standardized scopes, automated approvals, and real-time cost tracking. Reduce turn times while protecting your budgets.",
         bullets: [
@@ -214,7 +214,7 @@ export const solutions: Solution[] = [
       { value: "5%", label: "reduction in CapEx costs", context: "through better visibility and budget control" },
       { value: "70%", label: "less administrative work", context: "with automated reporting and workflows" },
       { value: "2X", label: "faster project completion", context: "from streamlined coordination" },
-      { value: "3X", label: "portfolio growth capacity", context: "without adding CapEx headcount" },
+      { value: "3X", label: "portfolio growth capacity", context: "without adding headcount to support CapEx management" },
     ],
     testimonials: [
       {
@@ -222,18 +222,18 @@ export const solutions: Solution[] = [
         author: "Jeff Robertson",
         role: "SVP Asset Management",
         company: "FCP",
-        image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
+        image: "/images/portrait-casestudy-banner.webp",
         logo: "/images/client-logos/fcp.svg",
         metric: "70%",
         metricLabel: "less admin work",
       },
       {
-        quote: "Banner has transformed how we manage CapEx across our multifamily portfolio. We now have complete visibility into every project and can make data-driven decisions in real-time.",
-        author: "Sarah Chen",
-        role: "VP of Asset Management",
-        company: "Summit Real Estate Group",
-        image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
-        logo: "/images/client-logos/summit.svg",
+        quote: "Banner gives us the visibility we need to make confident capital decisions across our entire portfolio. The real-time forecasting has transformed how we approach budgeting.",
+        author: "Dave Ruth",
+        role: "VP - Construction",
+        company: "Livcor",
+        image: "/images/dave-ruth.png",
+        logo: "/images/client-logos/livcor.svg",
         metric: "5%",
         metricLabel: "cost reduction",
       },
@@ -246,11 +246,11 @@ export const solutions: Solution[] = [
     faqs: [
       {
         question: "How does Banner integrate with our property management system?",
-        answer: "Banner integrates with major property management systems including Yardi, RealPage, and Entrata. We sync property data, chart of accounts, and can push approved invoices directly to your accounting system.",
+        answer: "Banner integrates with every major property management system, including Yardi, RealPage, Entrata, MRI, and many more. We sync property data, charts of accounts, vendor compliance info, and can push approved invoices directly to your accounting system -- plus a lot of additional, more complex functionality -- ask us about it!",
       },
       {
-        question: "Can Banner handle high-volume unit turn workflows?",
-        answer: "Yes! Banner is built for scale. Our unit turn management includes standardized scopes, photo documentation, vendor assignment, and automated approval workflows—all designed for portfolios processing hundreds of turns per month.",
+        question: "Can Banner handle high-volume unit renovation workflows?",
+        answer: "Yes! Banner is built for scale. Our unit renovation management includes standardized scopes, photo documentation, vendor assignment, and automated approval workflows—all designed for portfolios processing thousands of renos per year.",
       },
       {
         question: "How long does implementation take?",
@@ -258,10 +258,10 @@ export const solutions: Solution[] = [
       },
       {
         question: "What kind of support do you provide?",
-        answer: "Every Banner customer gets dedicated support including onboarding, training, and ongoing assistance. Enterprise customers also receive a dedicated customer success manager and quarterly business reviews.",
+        answer: "Every Banner customer gets dedicated support including onboarding, training, and ongoing assistance. Enterprise customers also receive a dedicated Customer Success Manager and quarterly business reviews.",
       },
     ],
-    ctaTitle: "See Banner in action",
+    ctaTitle: "See Banner in Action",
     ctaDescription: "Get a personalized demo and see how Banner can transform CapEx management for your multifamily portfolio.",
   },
   {

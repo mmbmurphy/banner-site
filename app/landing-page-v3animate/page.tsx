@@ -263,7 +263,7 @@ export default function LandingPageV3Animate() {
       <FeatureTabs />
 
       {/* How It Works Section */}
-      <div id="how-it-works" style={{ scrollMarginTop: '120px' }}>
+      <div id="how-it-works" style={{ scrollMarginTop: '180px' }}>
         <HowItWorks />
       </div>
 

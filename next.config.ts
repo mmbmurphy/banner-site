@@ -10,10 +10,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Ignore ESLint errors during build (pre-existing issues)
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   // Remove static export to enable dynamic routes for CMS
   // Vercel will handle this automatically with ISR
 };

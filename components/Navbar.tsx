@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const solutions = [
   {
@@ -28,14 +28,20 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
+  const router = useRouter();
 
-  // Close mobile menu on route change
+  // Close mobile menu on route change - with immediate effect
   useEffect(() => {
+    // Immediately close menu and reset navigation state
     setIsMobileMenuOpen(false);
     setIsMobileSolutionsOpen(false);
+    setIsNavigating(false);
+    // Also ensure body scroll is restored
+    document.body.style.overflow = "";
   }, [pathname]);
 
   // Detect mobile viewport
@@ -103,10 +109,34 @@ export default function Navbar() {
     }, 200);
   };
 
-  const handleMobileMenuClose = () => {
+  const handleMobileMenuClose = useCallback(() => {
     setIsMobileMenuOpen(false);
     setIsMobileSolutionsOpen(false);
-  };
+    setIsNavigating(false);
+    // Immediately restore body scroll
+    document.body.style.overflow = "";
+  }, []);
+
+  // Navigate with menu close - ensures menu closes before/during navigation
+  const handleMobileNavigation = useCallback((href: string, e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+    }
+
+    // Set navigating state for immediate visual feedback
+    setIsNavigating(true);
+
+    // Close menus immediately
+    setIsMobileMenuOpen(false);
+    setIsMobileSolutionsOpen(false);
+    document.body.style.overflow = "";
+
+    // Navigate after a brief moment to allow visual feedback
+    // This ensures the menu visually closes before page transition
+    setTimeout(() => {
+      router.push(href);
+    }, 50);
+  }, [router]);
 
   return (
     <div
@@ -142,15 +172,18 @@ export default function Navbar() {
 
         <nav
           role="navigation"
-          className={`navbar1_menu is-page-height-tablet w-nav-menu ${isMobileMenuOpen ? "w--open" : ""}`}
+          className={`navbar1_menu is-page-height-tablet w-nav-menu ${isMobileMenuOpen && !isNavigating ? "w--open" : ""}`}
           style={
             isMobile
               ? {
-                  maxHeight: isMobileMenuOpen ? "100vh" : "0",
+                  maxHeight: isMobileMenuOpen && !isNavigating ? "100vh" : "0",
                   overflow: "hidden",
-                  transition: "max-height 0.3s ease",
-                  display: "block",
-                  overflowY: isMobileMenuOpen ? "auto" : "hidden",
+                  transition: isNavigating ? "none" : "max-height 0.3s ease",
+                  display: isMobileMenuOpen && !isNavigating ? "block" : "none",
+                  overflowY: isMobileMenuOpen && !isNavigating ? "auto" : "hidden",
+                  visibility: isMobileMenuOpen && !isNavigating ? "visible" : "hidden",
+                  opacity: isMobileMenuOpen && !isNavigating ? 1 : 0,
+                  pointerEvents: isMobileMenuOpen && !isNavigating ? "auto" : "none",
                 }
               : {}
           }
@@ -303,93 +336,114 @@ export default function Navbar() {
                   <div className="mobile-solutions-section">
                     <div className="mobile-solutions-header">Solutions</div>
                     {solutions.map((solution) => (
-                      <Link
+                      <a
                         key={solution.href}
                         href={solution.href}
                         className="mobile-solutions-link"
-                        onClick={handleMobileMenuClose}
+                        onClick={(e) => handleMobileNavigation(solution.href, e)}
                       >
                         <span className="mobile-solutions-title">{solution.title}</span>
                         <span className="mobile-solutions-desc">{solution.description}</span>
-                      </Link>
+                      </a>
                     ))}
                   </div>
                   <div className="mobile-solutions-section">
                     <div className="mobile-solutions-header">Why Banner</div>
-                    <Link
+                    <a
                       href="/about"
                       className="mobile-solutions-link"
-                      onClick={handleMobileMenuClose}
+                      onClick={(e) => handleMobileNavigation("/about", e)}
                     >
                       <span className="mobile-solutions-title">About Us</span>
                       <span className="mobile-solutions-desc">Learn how Banner transforms CapEx management</span>
-                    </Link>
-                    <Link
+                    </a>
+                    <a
                       href="/contact"
                       className="mobile-solutions-link"
-                      onClick={handleMobileMenuClose}
+                      onClick={(e) => handleMobileNavigation("/contact", e)}
                     >
                       <span className="mobile-solutions-title">Book a Demo</span>
                       <span className="mobile-solutions-desc">See Banner in Action</span>
-                    </Link>
+                    </a>
                   </div>
                   <div className="mobile-solutions-section">
                     <div className="mobile-solutions-header">Case Studies</div>
-                    <Link
+                    <a
                       href="/case-studies/fcp"
                       className="mobile-solutions-link"
-                      onClick={handleMobileMenuClose}
+                      onClick={(e) => handleMobileNavigation("/case-studies/fcp", e)}
                     >
                       <span className="mobile-solutions-title">FCP Case Study</span>
                       <span className="mobile-solutions-desc">One source of truth for CapEx</span>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
             )}
 
-            <Link
-              href="/blog"
-              className="navbar1_link w-nav-link"
-              onClick={() => {
-                handleMobileMenuClose();
-              }}
-            >
-              Blog
-            </Link>
+            {isMobile ? (
+              <a
+                href="/blog"
+                className="navbar1_link w-nav-link"
+                onClick={(e) => handleMobileNavigation("/blog", e)}
+              >
+                Blog
+              </a>
+            ) : (
+              <Link
+                href="/blog"
+                className="navbar1_link w-nav-link"
+              >
+                Blog
+              </Link>
+            )}
           </div>
           <div className="navbar1_menu-buttons">
             <a
               href="https://auth.withbanner.com/login"
               className="button is-secondary is-small is-nav w-button"
               onClick={() => {
-                handleMobileMenuClose();
+                if (isMobile) {
+                  handleMobileMenuClose();
+                }
               }}
             >
               Log in
             </a>
-            <Link
-              href="/contact"
-              className="button is-small w-button"
-              onClick={(e) => {
-                handleMobileMenuClose();
-              }}
-            >
-              Book a Demo
-            </Link>
+            {isMobile ? (
+              <a
+                href="/contact"
+                className="button is-small w-button"
+                onClick={(e) => handleMobileNavigation("/contact", e)}
+              >
+                Book a Demo
+              </a>
+            ) : (
+              <Link
+                href="/contact"
+                className="button is-small w-button"
+              >
+                Book a Demo
+              </Link>
+            )}
           </div>
         </nav>
 
         <div
-          className={`navbar1_menu-button w-nav-button ${isMobileMenuOpen ? "w--open" : ""}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className={`navbar1_menu-button w-nav-button ${isMobileMenuOpen && !isNavigating ? "w--open" : ""}`}
+          onClick={() => {
+            // Don't allow toggle while navigating
+            if (!isNavigating) {
+              setIsMobileMenuOpen(!isMobileMenuOpen);
+            }
+          }}
           style={{ cursor: "pointer" }}
         >
           <div className="menu-icon1">
             <div
               className="menu-icon1_line-top"
               style={{
-                transform: isMobileMenuOpen
+                transform: isMobileMenuOpen && !isNavigating
                   ? "translate3d(0, 7px, 0) rotate(45deg)"
                   : "none",
                 transition: "transform 0.3s ease",
@@ -398,7 +452,7 @@ export default function Navbar() {
             <div
               className="menu-icon1_line-middle"
               style={{
-                opacity: isMobileMenuOpen ? 0 : 1,
+                opacity: isMobileMenuOpen && !isNavigating ? 0 : 1,
                 transition: "opacity 0.3s ease",
               }}
             >
@@ -407,7 +461,7 @@ export default function Navbar() {
             <div
               className="menu-icon1_line-bottom"
               style={{
-                transform: isMobileMenuOpen
+                transform: isMobileMenuOpen && !isNavigating
                   ? "translate3d(0, -7px, 0) rotate(-45deg)"
                   : "none",
                 transition: "transform 0.3s ease",

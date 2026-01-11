@@ -116,6 +116,15 @@ html, body {
   }
 }
 
+/* Landing page hero mockup */
+.hero-mockup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 /* Link hover underline animation */
 .text-style-link {
   position: relative;
@@ -2857,7 +2866,7 @@ details[open] .faq4_icon-wrappper {
 
 /* Hero Section */
 .about-hero {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(135deg, #072747 0%, #0c3054 100%);
   padding: 6rem 0 4rem;
 }
 
@@ -2894,6 +2903,36 @@ details[open] .faq4_icon-wrappper {
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-hero-mockup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-hero-mockup {
+    order: -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-hero-grid {
+    gap: 2rem;
+  }
 }
 
 /* Stats Section */
@@ -3006,6 +3045,19 @@ details[open] .faq4_icon-wrappper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  position: relative;
+  padding-top: 3rem;
+}
+
+/* Timeline connecting line */
+.about-timeline-grid::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  left: calc(12.5% + 1rem);
+  right: calc(12.5% + 1rem);
+  height: 2px;
+  background: linear-gradient(90deg, #e0e0e0 0%, #d0d0d0 50%, #e0e0e0 100%);
 }
 
 .about-timeline-item {
@@ -3015,6 +3067,41 @@ details[open] .faq4_icon-wrappper {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   border: 1px solid #f0f0f0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Red vertex dots */
+.about-timeline-item::before {
+  content: '';
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #f25e53;
+  border-radius: 50%;
+  border: 3px solid #f9f9f9;
+  box-shadow: 0 2px 8px rgba(242, 94, 83, 0.3);
+}
+
+/* Vertical line from dot to card */
+.about-timeline-item::after {
+  content: '';
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 1.5rem;
+  background: #e0e0e0;
+}
+
+.about-timeline-content {
+  flex: 1;
 }
 
 .about-timeline-item:hover {
@@ -3117,8 +3204,8 @@ details[open] .faq4_icon-wrappper {
 
 .about-platform-image {
   border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: visible;
+  background: transparent;
 }
 
 .about-platform-features {
@@ -3186,7 +3273,7 @@ details[open] .faq4_icon-wrappper {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
   margin-top: 3rem;
   flex-wrap: wrap;
 }
@@ -3271,6 +3358,16 @@ details[open] .faq4_icon-wrappper {
 
   .about-timeline-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding-top: 0;
+  }
+
+  .about-timeline-grid::before {
+    display: none;
+  }
+
+  .about-timeline-item::before,
+  .about-timeline-item::after {
+    display: none;
   }
 
   .about-values-grid {

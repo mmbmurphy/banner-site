@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import DeviceMockup from "@/components/DeviceMockup";
 
 export const metadata = {
   title: "About Us | Banner",
@@ -8,36 +9,28 @@ export const metadata = {
 };
 
 const stats = [
-  { value: "$2B+", label: "CapEx Managed" },
-  { value: "500+", label: "Properties" },
-  { value: "50K+", label: "Projects Completed" },
+  { value: "1M+", label: "Units on Platform" },
+  { value: "50+", label: "Enterprise Clients" },
+  { value: "$10B+", label: "CapEx Managed" },
   { value: "99.9%", label: "Platform Uptime" },
 ];
 
 const values = [
   {
-    title: "Customer Obsession",
-    description: "We build for our customers. Every feature, every decision, every line of code is driven by the needs of the real estate professionals who use Banner every day.",
+    title: "Clients First",
+    description: "Everything we build starts with our clients. Their challenges guide our roadmap, their feedback shapes our product, and their success is how we measure ours.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Transparency",
-    description: "We believe in radical transparency—with our customers, our team, and in the products we build. Clear visibility into capital projects shouldn't be a luxury.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <line x1="12" y1="16" x2="12" y2="12" />
-        <line x1="12" y1="8" x2="12.01" y2="8" />
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
   },
   {
     title: "Excellence",
-    description: "We sweat the details. From the reliability of our platform to the responsiveness of our support, we hold ourselves to the highest standards in everything we do.",
+    description: "We sweat the details. From platform reliability to support responsiveness, we hold ourselves to the highest standards in everything we do.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -45,8 +38,17 @@ const values = [
     ),
   },
   {
+    title: "Trust",
+    description: "We earn trust through transparency and reliability. Our clients depend on Banner for critical financial data, and we take that responsibility seriously.",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+  },
+  {
     title: "Speed",
-    description: "Real estate moves fast. We ship fast, iterate fast, and respond fast. Our customers don't wait weeks for features or days for support—we move at the speed of their business.",
+    description: "Real estate moves fast, and so do we. We ship quickly, iterate constantly, and respond promptly. Our clients don't wait—we move at the speed of their business.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
@@ -63,18 +65,18 @@ const milestones = [
   },
   {
     year: "2021",
-    title: "First Enterprise Customers",
-    description: "Major multifamily operators adopt Banner to manage portfolios of 10,000+ units.",
-  },
-  {
-    year: "2023",
-    title: "$2B+ Under Management",
-    description: "Banner crosses $2 billion in capital expenditure under management across the platform.",
+    title: "First Enterprise Clients",
+    description: "Major multifamily operators adopt Banner to manage portfolios of 100,000+ units.",
   },
   {
     year: "2024",
+    title: "$10B+ Under Management",
+    description: "Banner crosses $10 billion in capital expenditure under management across the platform.",
+  },
+  {
+    year: "2025 - Today",
     title: "Platform Expansion",
-    description: "Launch of comprehensive project management and vendor coordination tools.",
+    description: "Launch of comprehensive project management, vendor coordination, and OpEx expense management tools.",
   },
 ];
 
@@ -85,19 +87,30 @@ export default function AboutPage() {
       <header className="about-hero">
         <div className="padding-global">
           <div className="container-large">
-            <ScrollReveal>
-              <div className="about-hero-content">
-                <div className="about-hero-badge">
-                  <span>About Banner</span>
+            <div className="about-hero-grid">
+              <ScrollReveal>
+                <div className="about-hero-content">
+                  <div className="about-hero-badge">
+                    <span>About Banner</span>
+                  </div>
+                  <h1 className="about-hero-title">
+                    We're building the operating system for commercial real estate CapEx
+                  </h1>
+                  <p className="about-hero-description">
+                    Banner Technologies is on a mission to transform how real estate teams plan, execute, and track capital expenditure projects. We're replacing spreadsheets and disconnected tools with a unified platform purpose-built for the industry.
+                  </p>
                 </div>
-                <h1 className="about-hero-title">
-                  We're building the operating system for commercial real estate CapEx
-                </h1>
-                <p className="about-hero-description">
-                  Banner Technologies is on a mission to transform how real estate teams plan, execute, and track capital expenditure projects. We're replacing spreadsheets and disconnected tools with a unified platform purpose-built for the industry.
-                </p>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <div className="about-hero-mockup">
+                  <DeviceMockup
+                    desktopImage="/images/dashboard.png"
+                    mobileImage="/images/dashboard.png"
+                    alt="Banner Dashboard"
+                  />
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </header>
@@ -110,13 +123,15 @@ export default function AboutPage() {
               <div className="about-stats-grid">
                 {stats.map((stat, index) => {
                   const numMatch = stat.value.match(/[\d.]+/);
-                  const num = numMatch ? parseFloat(numMatch[0]) : 0;
+                  const numStr = numMatch ? numMatch[0] : "0";
+                  const num = parseFloat(numStr);
+                  const decimals = numStr.includes('.') ? numStr.split('.')[1].length : 0;
                   const prefix = stat.value.match(/^\D+/)?.[0] || "";
                   const suffix = stat.value.match(/\D+$/)?.[0] || "";
                   return (
                     <div key={index} className="about-stat-item">
                       <div className="about-stat-value">
-                        {prefix}<AnimatedCounter end={num} suffix={suffix} duration={2000} />
+                        {prefix}<AnimatedCounter end={num} suffix={suffix} duration={2000} decimals={decimals} />
                       </div>
                       <div className="about-stat-label">{stat.label}</div>
                     </div>
@@ -137,21 +152,24 @@ export default function AboutPage() {
                 <div className="about-story-text">
                   <h2 className="about-section-title">Our Story</h2>
                   <p className="about-story-lead">
-                    We started Banner because we saw an industry stuck in the past.
+                    Banner was founded by Mark Murphy and Kunal Chaudhary in 2019.
                   </p>
                   <p>
-                    Commercial real estate teams were managing billions of dollars in capital projects using spreadsheets, email chains, and disconnected point solutions. Critical information was scattered across dozens of files. Approvals took weeks. Nobody had a clear picture of where projects stood.
+                    Mark had a background in commercial real estate and had seen how asset managers were stuck managing billions in capital projects with spreadsheets, email threads, and a patchwork of disconnected tools. Kunal had spent years in software engineering, building products for complex workflows. The CRE industry was overdue for better tooling, and they set out to build it.
                   </p>
                   <p>
-                    We knew there had to be a better way. So we built Banner—a unified platform that brings together budgeting, project management, vendor coordination, and financial tracking in one place. Today, leading real estate owners and operators use Banner to manage their entire capital program with confidence.
+                    The two originally met at UC Berkeley back in 2015 and hit it off. They stayed in touch over the years, and the idea for what would become Banner kept coming up. Mark understood the problem from the operations side. Kunal could build the solution.
+                  </p>
+                  <p>
+                    Today, Banner is used by leading owners and operators to manage their CapEx programs. The goal is the same as when they started: give real estate teams software that actually works for how they operate.
                   </p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <div className="about-story-image">
                   <img
-                    src="/images/Imagery.png"
-                    alt="Banner Platform"
+                    src="/images/founders.jpg"
+                    alt="Mark and Kunal - Banner Founders"
                     className="about-image"
                   />
                 </div>
@@ -224,10 +242,10 @@ export default function AboutPage() {
             <div className="about-platform-content">
               <ScrollReveal delay={200}>
                 <div className="about-platform-image">
-                  <img
-                    src="/images/Imagery.png"
+                  <DeviceMockup
+                    desktopImage="/images/dashboard.png"
+                    mobileImage="/images/dashboard.png"
                     alt="Banner Dashboard"
-                    className="about-image"
                   />
                 </div>
               </ScrollReveal>
@@ -302,17 +320,26 @@ export default function AboutPage() {
               <div className="about-backed-content">
                 <h2 className="about-section-title">Trusted by Industry Leaders</h2>
                 <p className="about-section-subtitle">
-                  Banner is used by top real estate owners, operators, and developers across the country.
+                  Banner is used by top real estate owners, operators, and developers across the globe.
                 </p>
                 <div className="about-logos-grid">
                   <div className="about-logo-item">
-                    <img src="/images/client-logos/fcp.svg" alt="FCP" />
+                    <img src="/images/client-logos/livcor.svg" alt="Livcor" />
+                  </div>
+                  <div className="about-logo-item">
+                    <img src="/images/client-logos/starwood.svg" alt="Starwood" />
+                  </div>
+                  <div className="about-logo-item">
+                    <img src="/images/client-logos/morgan-properties.png" alt="Morgan Properties" />
+                  </div>
+                  <div className="about-logo-item">
+                    <img src="/images/client-logos/industrious.svg" alt="Industrious" />
+                  </div>
+                  <div className="about-logo-item">
+                    <img src="/images/client-logos/ridc.svg" alt="RIDC" />
                   </div>
                   <div className="about-logo-item">
                     <img src="/images/client-logos/summit.svg" alt="Summit" />
-                  </div>
-                  <div className="about-logo-item">
-                    <img src="/images/client-logos/avenue5.svg" alt="Avenue5" />
                   </div>
                 </div>
               </div>
@@ -327,7 +354,7 @@ export default function AboutPage() {
           <div className="container-large">
             <ScrollReveal>
               <div className="about-cta-content">
-                <h2 className="about-cta-title">Ready to transform your CapEx management?</h2>
+                <h2 className="about-cta-title">Ready to Transform Your CapEx Management?</h2>
                 <p className="about-cta-description">
                   Join the leading real estate teams who trust Banner to manage their capital programs.
                 </p>

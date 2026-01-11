@@ -392,11 +392,11 @@ export const solutions: Solution[] = [
     testimonials: [
       {
         quote: "Managing TIs across our office portfolio used to be chaos. Banner brought order to the process and gave us visibility we never had before. Our tenants notice the difference.",
-        author: "Michael Torres",
-        role: "Director of Construction",
-        company: "Griffin Partners",
-        image: "/images/Drew_Gravina_-_3_u9yqfa.webp",
-        logo: "/images/client-logos/griffin.svg",
+        author: "Jon Jacobs",
+        role: "VP of Asset Management",
+        company: "Tourmaline",
+        image: "/images/Jon-Jacobs---Tourmaline.jpeg",
+        logo: "/images/client-logos/tourmaline.png",
         metric: "40%",
         metricLabel: "faster TI delivery",
       },

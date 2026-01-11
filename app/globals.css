@@ -774,7 +774,7 @@ details[open] .faq4_icon-wrappper {
 }
 
 .csl-hero {
-  padding: 10rem 0 4rem;
+  padding: 6rem 0 4rem;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
 
@@ -1141,7 +1141,7 @@ details[open] .faq4_icon-wrappper {
 /* Responsive */
 @media (max-width: 991px) {
   .csl-hero {
-    padding: 8rem 0 3rem;
+    padding: 5rem 0 3rem;
   }
 
   .csl-hero-title {
@@ -1196,7 +1196,7 @@ details[open] .faq4_icon-wrappper {
 
 @media (max-width: 767px) {
   .csl-hero {
-    padding: 7rem 0 2.5rem;
+    padding: 4.5rem 0 2.5rem;
   }
 
   .csl-cards-grid .csl-card {
@@ -2707,7 +2707,7 @@ details[open] .faq4_icon-wrappper {
 
 .legal-header {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 8rem 0 3rem;
+  padding: 5rem 0 3rem;
 }
 
 .legal-header-content {
@@ -2858,7 +2858,7 @@ details[open] .faq4_icon-wrappper {
 /* Hero Section */
 .about-hero {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 10rem 0 5rem;
+  padding: 6rem 0 4rem;
 }
 
 .about-hero-content {
@@ -3252,7 +3252,7 @@ details[open] .faq4_icon-wrappper {
 /* Responsive */
 @media (max-width: 991px) {
   .about-hero {
-    padding: 8rem 0 4rem;
+    padding: 5rem 0 3rem;
   }
 
   .about-hero-title {
@@ -3715,7 +3715,7 @@ button.lay-tab-link {
 }
 
 .blog-hero {
-  padding-top: 7rem;
+  padding-top: 5rem;
   padding-bottom: 3rem;
   background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
 }
@@ -4026,7 +4026,7 @@ button.lay-tab-link {
 }
 
 .blog-post-header {
-  padding-top: 10rem;
+  padding-top: 6rem;
   padding-bottom: 3rem;
 }
 
@@ -4692,7 +4692,7 @@ button.lay-tab-link {
   }
 
   .blog-post-header {
-    padding-top: 8rem;
+    padding-top: 5rem;
   }
 
   .blog-post-title {
@@ -4741,7 +4741,7 @@ button.lay-tab-link {
 /* Guide Hero */
 .guide-hero {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 8rem 0 4rem;
+  padding: 5rem 0 4rem;
 }
 
 .guide-hero-content {
@@ -5251,7 +5251,7 @@ button.lay-tab-link {
 
 .guides-hero {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 8rem 0 4rem;
+  padding: 5rem 0 4rem;
 }
 
 .guides-hero-content {
@@ -5605,7 +5605,7 @@ button.lay-tab-link {
 /* Guide Hero */
 .guide-hero {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 8rem 0 4rem;
+  padding: 5rem 0 4rem;
 }
 
 .guide-hero-content {
@@ -6115,7 +6115,7 @@ button.lay-tab-link {
 
 .guides-hero {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 8rem 0 4rem;
+  padding: 5rem 0 4rem;
 }
 
 .guides-hero-content {

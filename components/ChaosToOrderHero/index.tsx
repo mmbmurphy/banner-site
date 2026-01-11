@@ -338,7 +338,7 @@ export default function ChaosToOrderHero() {
             <div className="container-large">
               <div className="header62_component">
                 <div className="text-align-center">
-                  <div className="max-width-large align-center header-content">
+                  <div className="max-width-large align-center">
                     <div className="margin-bottom margin-small">
                       <h1 className="heading-style-h1 text-wrap-balance">
                         Where Real Estate Owners and Operators Manage CapEx
@@ -398,14 +398,6 @@ export default function ChaosToOrderHero() {
           right: 0;
           z-index: 50;
           background: transparent;
-        }
-
-        .hero-header :global(.header-content) {
-          background: rgba(248, 250, 252, 0.85);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          padding: 2rem 2.5rem;
-          border-radius: 20px;
         }
 
         .chaos-animation-container {

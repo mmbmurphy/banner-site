@@ -204,7 +204,7 @@ export default function ProjectManagementPage() {
           <div className="container-large">
             <ScrollReveal>
               <div className="fp-features-header">
-                <h2 className="fp-features-title">Everything you need to deliver projects</h2>
+                <h2 className="fp-features-title">Everything You Need to Deliver Projects</h2>
                 <p className="fp-features-subtitle">
                   Nine powerful tools working together to streamline project execution across your portfolio.
                 </p>
@@ -232,7 +232,7 @@ export default function ProjectManagementPage() {
             <div className="fp-benefits-content fp-benefits-reverse">
               <ScrollReveal>
                 <div className="fp-benefits-text">
-                  <h2 className="fp-benefits-title">Why teams choose Banner for project management</h2>
+                  <h2 className="fp-benefits-title">Why Teams Choose Banner for Project Management</h2>
                   <div className="fp-benefits-list">
                     {benefits.map((benefit, index) => (
                       <div key={index} className="fp-benefit-item">
@@ -299,7 +299,7 @@ export default function ProjectManagementPage() {
             <ScrollReveal>
               <div className="fp-cta-wrapper fp-cta-wrapper-dark">
                 <div className="fp-cta-content">
-                  <h2 className="fp-cta-title">Ready to streamline your project delivery?</h2>
+                  <h2 className="fp-cta-title">Ready to Streamline Your Project Delivery?</h2>
                   <p className="fp-cta-description">
                     See how Banner's project management tools can help you deliver capital projects faster.
                   </p>

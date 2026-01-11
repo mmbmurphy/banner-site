@@ -111,7 +111,7 @@ export default function CaseStudiesPage() {
           <div className="padding-global">
             <div className="container-large">
               <ScrollReveal>
-                <h2 className="csl-section-title">More success stories</h2>
+                <h2 className="csl-section-title">More Success Stories</h2>
               </ScrollReveal>
               <div className="csl-cards-grid">
                 {otherCaseStudies.map((caseStudy, index) => (
@@ -157,7 +157,7 @@ export default function CaseStudiesPage() {
           <div className="container-large">
             <ScrollReveal>
               <div className="csl-cta-content">
-                <h2 className="csl-cta-title">Ready to write your own success story?</h2>
+                <h2 className="csl-cta-title">Ready to Write Your Own Success Story?</h2>
                 <p className="csl-cta-description">
                   Join the leading real estate companies transforming their CapEx management with Banner.
                 </p>

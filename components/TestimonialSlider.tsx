@@ -89,7 +89,7 @@ export default function TestimonialSlider() {
         {/* Header */}
         <div className="testimonial-header">
           <span className="testimonial-eyebrow">Customer Stories</span>
-          <h2 className="testimonial-title">Hear it from your peers</h2>
+          <h2 className="testimonial-title">Hear It from Your Peers</h2>
           <p className="testimonial-subtitle">
             Leading real estate teams trust Banner to manage billions in capital expenditures
           </p>

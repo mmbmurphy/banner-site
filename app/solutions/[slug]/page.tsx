@@ -376,7 +376,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           <div className="container-large">
             <ScrollReveal>
               <div className="sol-testimonials-header">
-                <h2 className="sol-testimonials-title">What teams are saying</h2>
+                <h2 className="sol-testimonials-title">What Teams Are Saying</h2>
               </div>
             </ScrollReveal>
             <div className="sol-testimonials-grid">
@@ -422,7 +422,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           <div className="container-large">
             <ScrollReveal>
               <div className="sol-faq-header">
-                <h2 className="sol-faq-title">Frequently asked questions</h2>
+                <h2 className="sol-faq-title">Frequently Asked Questions</h2>
               </div>
             </ScrollReveal>
             <div className="sol-faq-list">

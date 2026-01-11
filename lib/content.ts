@@ -267,7 +267,7 @@ export const solutions: Solution[] = [
   {
     slug: "commercial",
     title: "Commercial",
-    tagline: "For Office & Retail",
+    tagline: "For Commercial Portfolios",
     description: "Streamline capital projects for office & retail",
     heroTitle: "CapEx Clarity for Complex Commercial Portfolios",
     heroDescription:
@@ -277,7 +277,7 @@ export const solutions: Solution[] = [
     trustIndicators: [
       { value: "50M+", label: "SF under management" },
       { value: "$300M+", label: "in TI projects tracked" },
-      { value: "98%", label: "on-time TI delivery rate" },
+      { value: "5%", label: "average CapEx cost savings" },
     ],
     platformIntro: {
       title: "Your Command Center for Commercial CapEx",

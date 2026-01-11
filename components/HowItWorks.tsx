@@ -47,7 +47,7 @@ export default function HowItWorks() {
           <div className="padding-section-large">
             <ScrollReveal>
               <div className="how-it-works-header">
-                <h2 className="heading-style-h2">Get started in days, not months</h2>
+                <h2 className="heading-style-h2">Get Started in Days, Not Months</h2>
                 <p className="text-size-medium how-it-works-subtitle">
                   Banner is designed for rapid deployment with minimal IT overhead
                 </p>

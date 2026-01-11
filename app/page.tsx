@@ -163,7 +163,7 @@ export default function Home() {
                         <img loading="lazy" src="/images/EyeSlash.svg" alt="" className="icon-1x1-medium" />
                       </div>
                       <div className="pain-point-content">
-                        <h3 className="pain-point-title">Scattered data</h3>
+                        <h3 className="pain-point-title">Scattered Data</h3>
                         <p className="pain-point-description">
                           No visibility across drives, inboxes, sheets, and tools
                         </p>
@@ -174,7 +174,7 @@ export default function Home() {
                         <img loading="lazy" src="/images/FileDashed.svg" alt="" className="icon-1x1-medium" />
                       </div>
                       <div className="pain-point-content">
-                        <h3 className="pain-point-title">Stale reports</h3>
+                        <h3 className="pain-point-title">Stale Reports</h3>
                         <p className="pain-point-description">
                           Reports are outdated before they&apos;re even shared
                         </p>
@@ -185,7 +185,7 @@ export default function Home() {
                         <img loading="lazy" src="/images/HourglassHigh.svg" alt="" className="icon-1x1-medium" />
                       </div>
                       <div className="pain-point-content">
-                        <h3 className="pain-point-title">Manual work</h3>
+                        <h3 className="pain-point-title">Manual Work</h3>
                         <p className="pain-point-description">
                           Asset managers spend hours stitching data together
                         </p>

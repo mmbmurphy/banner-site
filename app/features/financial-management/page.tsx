@@ -199,7 +199,7 @@ export default function FinancialManagementPage() {
           <div className="container-large">
             <ScrollReveal>
               <div className="fp-features-header">
-                <h2 className="fp-features-title">Everything you need for financial control</h2>
+                <h2 className="fp-features-title">Everything You Need for Financial Control</h2>
                 <p className="fp-features-subtitle">
                   Nine powerful tools working together to give you complete command over CapEx finances.
                 </p>
@@ -227,7 +227,7 @@ export default function FinancialManagementPage() {
             <div className="fp-benefits-content">
               <ScrollReveal>
                 <div className="fp-benefits-text">
-                  <h2 className="fp-benefits-title">Why teams choose Banner for financial management</h2>
+                  <h2 className="fp-benefits-title">Why Teams Choose Banner for Financial Management</h2>
                   <div className="fp-benefits-list">
                     {benefits.map((benefit, index) => (
                       <div key={index} className="fp-benefit-item">
@@ -294,7 +294,7 @@ export default function FinancialManagementPage() {
             <ScrollReveal>
               <div className="fp-cta-wrapper">
                 <div className="fp-cta-content">
-                  <h2 className="fp-cta-title">Ready to take control of your CapEx finances?</h2>
+                  <h2 className="fp-cta-title">Ready to Take Control of Your CapEx Finances?</h2>
                   <p className="fp-cta-description">
                     See how Banner's financial management tools can transform your capital program.
                   </p>

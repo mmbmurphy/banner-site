@@ -136,7 +136,7 @@ export default function FeatureTabs() {
                 <div className="text-align-center">
                   <div className="max-width-large align-center">
                     <div className="margin-bottom margin-small">
-                      <h2 className="heading-style-h2">Banner changes everything</h2>
+                      <h2 className="heading-style-h2">Banner Changes Everything</h2>
                     </div>
                   </div>
                 </div>

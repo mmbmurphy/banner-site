@@ -107,7 +107,7 @@ function EmptyState() {
           <path d="M9 21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </div>
-      <h3 className="blog-empty-title">No posts yet</h3>
+      <h3 className="blog-empty-title">No Posts Yet</h3>
       <p className="blog-empty-text">
         We&apos;re working on some great content. Check back soon or subscribe to get notified when we publish.
       </p>
@@ -212,7 +212,7 @@ export default async function BlogPage({
               <ScrollReveal>
                 <div className="blog-newsletter-card">
                   <div className="blog-newsletter-content">
-                    <h2 className="blog-newsletter-title">Stay in the loop</h2>
+                    <h2 className="blog-newsletter-title">Stay in the Loop</h2>
                     <p className="blog-newsletter-text">
                       Get the latest insights on CapEx management delivered to your inbox.
                     </p>

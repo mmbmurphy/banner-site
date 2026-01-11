@@ -30,7 +30,7 @@ export default function ContactPage() {
                         <div className="sol-hero-badge">
                           <span className="sol-badge-text">Book a Demo</span>
                         </div>
-                        <h1 className="heading-style-h1">
+                        <h1 className="heading-style-h1" style={{ fontWeight: 700 }}>
                           See Banner in Action
                         </h1>
                         <p className="text-size-medium">

@@ -1,0 +1,7 @@
+# Ignore migration scripts
+scripts/
+
+# Ignore build output
+.next/
+out/
+node_modules/

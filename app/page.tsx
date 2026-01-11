@@ -123,7 +123,7 @@ export default function Home() {
                   <div className="text-align-center">
                     <div className="max-width-large align-center">
                       <h2 className="heading-style-h6 is-black">
-                        Trusted by real estate owners &amp; operators
+                        Trusted by top real estate owners &amp; operators globally
                       </h2>
                     </div>
                     <div className="spacer-medium"></div>

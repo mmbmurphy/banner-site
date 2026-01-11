@@ -397,7 +397,7 @@ export const solutions: Solution[] = [
         company: "Tourmaline",
         image: "/images/Jon-Jacobs---Tourmaline.jpeg",
         logo: "/images/client-logos/tourmaline.png",
-        metric: "40%",
+        metric: "20%",
         metricLabel: "faster TI delivery",
       },
       {

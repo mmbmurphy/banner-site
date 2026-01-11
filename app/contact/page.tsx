@@ -59,7 +59,7 @@ export default function ContactPage() {
                             </svg>
                           </div>
                           <div className="layout16_item-text-wrapper">
-                            <p className="text-size-medium semi-bold">Budget Control</p>
+                            <p className="text-size-medium semi-bold">Cost Control</p>
                             <p>Learn how to track costs against budgets and catch variances before they become problems.</p>
                           </div>
                         </div>

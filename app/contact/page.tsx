@@ -27,6 +27,9 @@ export default function ContactPage() {
                   <div className="contact-page-grid">
                     <div className="contact-page-left">
                       <div className="contact-hero-top">
+                        <div className="sol-hero-badge">
+                          <span className="sol-badge-text">Book a Demo</span>
+                        </div>
                         <h1 className="heading-style-h1">
                           See Banner in Action
                         </h1>

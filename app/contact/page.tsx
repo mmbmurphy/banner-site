@@ -21,7 +21,7 @@ export default function ContactPage() {
       <section className="section_layout16 page-with-sticky-nav">
         <div className="padding-global">
           <div className="container-large">
-            <div className="padding-section-large">
+            <div className="padding-section-large" style={{ paddingTop: '6rem' }}>
               <div className="layout16_component">
                 <ScrollReveal>
                   <div className="contact-page-grid">

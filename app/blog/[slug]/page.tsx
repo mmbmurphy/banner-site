@@ -15,7 +15,8 @@ import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 const BASE_URL = "https://withbanner.com";
 
-export const revalidate = 3600;
+// Revalidate every 10 minutes for faster updates
+export const revalidate = 600;
 
 export async function generateStaticParams() {
   try {

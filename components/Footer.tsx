@@ -53,7 +53,8 @@ export default function Footer() {
                       className="footer2_logo"
                     />
                   </Link>
-                  <div className="footer-logo-text">Control CapEx Costs with Banner.</div>
+                  <br /><br /><br />
+                  <div style={{ color: 'rgba(255,255,255,0.85)', lineHeight: '1.4' }}>Control CapEx Costs with Banner.</div>
                   <div className="footer-contact-info">
                     <a href="mailto:info@withbanner.com" className="footer-contact-link">
                       info@withbanner.com

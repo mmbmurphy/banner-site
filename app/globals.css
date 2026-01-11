@@ -10235,7 +10235,7 @@ a:focus-visible {
 
 /* Footer Logo Text */
 .footer-logo-text {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem !important;
 }
 
 /* Footer Contact Info */

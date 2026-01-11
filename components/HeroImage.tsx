@@ -31,6 +31,7 @@ export default function HeroImage({ src, srcSet, alt }: HeroImageProps) {
             className="hero-dashboard-image"
             speed={0.2}
           />
+          {/* Watch Demo button temporarily hidden
           <button
             className="hero-play-button"
             onClick={() => setIsPlaying(true)}
@@ -43,6 +44,7 @@ export default function HeroImage({ src, srcSet, alt }: HeroImageProps) {
             </div>
             <span className="hero-play-text">Watch Demo</span>
           </button>
+          */}
           {/* Video badge temporarily hidden
           <div className="hero-image-badge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

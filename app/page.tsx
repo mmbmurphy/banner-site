@@ -13,6 +13,7 @@ import TrustBadges from "@/components/TrustBadges";
 import HowItWorks from "@/components/HowItWorks";
 import ResourcesSection from "@/components/ResourcesSection";
 import HeroImage from "@/components/HeroImage";
+import DeviceMockup from "@/components/DeviceMockup";
 
 const integrationLogos = [
   { src: "/images/l1.png", alt: "Integration 1" },
@@ -95,6 +96,14 @@ export default function Home() {
                 </ScrollReveal>
                 <div className="spacer-huge"></div>
                 <ScrollReveal delay={200}>
+                  <div className="hero-mockup-wrapper">
+                    <DeviceMockup
+                      desktopImage="/images/dashboard.png"
+                      mobileImage="/images/dashboard.png"
+                      alt="Banner Dashboard"
+                    />
+                  </div>
+                  {/* OLD HERO IMAGE - kept for reference
                   <div className="div-block">
                     <HeroImage
                       src="/images/dashboard.png"
@@ -102,6 +111,7 @@ export default function Home() {
                       alt="Banner Dashboard"
                     />
                   </div>
+                  */}
                 </ScrollReveal>
               </div>
             </div>

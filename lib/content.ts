@@ -434,7 +434,7 @@ export const solutions: Solution[] = [
         answer: "Banner supports customizable reporting templates that can be tailored to specific tenant requirements, lease terms, and TI allowance structures. You can generate reports in multiple formats.",
       },
     ],
-    ctaTitle: "See how Banner works for commercial",
+    ctaTitle: "See How Banner Works for Commercial",
     ctaDescription: "Get a personalized demo tailored to your commercial portfolio and see the difference Banner can make.",
   },
   {
@@ -607,7 +607,7 @@ export const solutions: Solution[] = [
         answer: "Banner supports multiple projects with different structures, lenders, and reporting requirements. Each project can have its own draw templates, approval workflows, and stakeholder access.",
       },
     ],
-    ctaTitle: "See Banner for development",
+    ctaTitle: "See Banner for Development",
     ctaDescription: "Get a demo tailored to development workflows and see how Banner can streamline your projects from land to stabilization.",
   },
 ];

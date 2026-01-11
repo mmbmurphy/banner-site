@@ -13,7 +13,7 @@ export default function Footer() {
     const scrollToElement = () => {
       const element = document.getElementById(sectionId);
       if (element) {
-        const headerOffset = 120; // Account for fixed header
+        const headerOffset = 150; // Account for fixed header
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -62,13 +62,6 @@ export default function Footer() {
                         <div className="text-weight-semibold">Navigate</div>
                       </div>
                       <div className="footer2_link-list">
-                        <a
-                          href="/#features"
-                          className="footer2_link"
-                          onClick={(e) => scrollToSection(e, "features")}
-                        >
-                          Product
-                        </a>
                         <a
                           href="/#features"
                           className="footer2_link"

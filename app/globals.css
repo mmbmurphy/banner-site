@@ -3356,6 +3356,7 @@ details[open] .faq4_icon-wrappper {
 }
 
 .faq-title {
+  font-family: Lexend, sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: #1a1a1a;
@@ -3363,6 +3364,7 @@ details[open] .faq4_icon-wrappper {
 }
 
 .faq-subtitle {
+  font-family: Inter, sans-serif;
   font-size: 1.125rem;
   color: #666666;
   margin: 0;
@@ -3414,6 +3416,7 @@ details[open] .faq4_icon-wrappper {
 }
 
 .faq-question-text {
+  font-family: Lexend, sans-serif;
   font-size: 1.125rem;
   font-weight: 600;
   color: #1a1a1a;
@@ -3441,6 +3444,7 @@ details[open] .faq4_icon-wrappper {
 }
 
 .faq-answer p {
+  font-family: Inter, sans-serif;
   font-size: 1rem;
   line-height: 1.7;
   color: #4a4a4a;

@@ -1162,13 +1162,45 @@ details[open] .faq4_icon-wrappper {
   }
 
   .csl-cards-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin: 0 -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .csl-cards-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .csl-cards-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  .csl-cards-grid::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+  }
+
+  .csl-cards-grid .csl-card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
   }
 }
 
 @media (max-width: 767px) {
   .csl-hero {
     padding: 7rem 0 2.5rem;
+  }
+
+  .csl-cards-grid .csl-card {
+    flex: 0 0 90%;
   }
 
   .csl-hero-title {

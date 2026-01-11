@@ -22,6 +22,7 @@ export default function ChaosToOrderHero() {
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const elementsContainerRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const dashboardRef = useRef<HTMLDivElement>(null);
   const taglineRef = useRef<HTMLDivElement>(null);
   const idleAnimationsRef = useRef<gsap.core.Tween[]>([]);
@@ -218,8 +219,20 @@ export default function ChaosToOrderHero() {
       });
 
       // ============================================
-      // PHASE 2: Documents shrink INTO dashboard as it emerges (58% - 85%)
+      // PHASE 2: Header fades, documents shrink INTO dashboard (40% - 85%)
       // ============================================
+
+      // Header fades out as documents start converging
+      tl.to(
+        headerRef.current,
+        {
+          opacity: 0,
+          y: -30,
+          ease: "power2.in",
+          duration: 0.2,
+        },
+        0.35
+      );
 
       // Documents shrink to a point and fade rapidly as dashboard emerges
       tl.to(
@@ -290,47 +303,11 @@ export default function ChaosToOrderHero() {
 
   return (
     <section ref={sectionRef} className="chaos-hero-section">
-      {/* Production Header */}
-      <header className="hero-header">
-        <div className="padding-global">
-          <div className="spacer-large"></div>
-          <div className="container-large">
-            <div className="header62_component">
-              <div className="text-align-center">
-                <div className="max-width-large align-center">
-                  <div className="margin-bottom margin-small">
-                    <h1 className="heading-style-h1 text-wrap-balance">
-                      Where Real Estate Owners and Operators Manage CapEx
-                    </h1>
-                  </div>
-                  <p className="text-size-medium">
-                    Banner replaces spreadsheets and email with one platform that links
-                    long-term plans, annual budgets, and day-to-day execution across the
-                    entire CapEx lifecycle.
-                  </p>
-                  <div className="margin-top margin-medium">
-                    <div className="button-group is-center">
-                      <Link href="/contact" className="button w-button">
-                        Book a demo
-                      </Link>
-                      <a href="#how-it-works" className="button is-secondary w-button">
-                        See how it works
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="spacer-medium"></div>
-        </div>
-      </header>
-
-      {/* Animation Container */}
+      {/* Animation Container - includes header */}
       <div ref={containerRef} className="chaos-animation-container">
         <div className="hero-background" />
 
-        {/* Floating elements layer */}
+        {/* Floating elements layer - behind header */}
         <div ref={elementsContainerRef} className="elements-layer">
           {elements.map((config) => {
             const depth = depthConfig[config.depth as keyof typeof depthConfig];
@@ -353,6 +330,42 @@ export default function ChaosToOrderHero() {
             );
           })}
         </div>
+
+        {/* Header - on top of floating elements */}
+        <header ref={headerRef} className="hero-header">
+          <div className="padding-global">
+            <div className="spacer-large"></div>
+            <div className="container-large">
+              <div className="header62_component">
+                <div className="text-align-center">
+                  <div className="max-width-large align-center">
+                    <div className="margin-bottom margin-small">
+                      <h1 className="heading-style-h1 text-wrap-balance">
+                        Where Real Estate Owners and Operators Manage CapEx
+                      </h1>
+                    </div>
+                    <p className="text-size-medium">
+                      Banner replaces spreadsheets and email with one platform that links
+                      long-term plans, annual budgets, and day-to-day execution across the
+                      entire CapEx lifecycle.
+                    </p>
+                    <div className="margin-top margin-medium">
+                      <div className="button-group is-center">
+                        <Link href="/contact" className="button w-button">
+                          Book a demo
+                        </Link>
+                        <a href="#how-it-works" className="button is-secondary w-button">
+                          See how it works
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="spacer-medium"></div>
+          </div>
+        </header>
 
         {/* Dashboard - positioned at convergence point */}
         <div className="dashboard-wrapper">
@@ -379,8 +392,11 @@ export default function ChaosToOrderHero() {
         }
 
         .hero-header {
-          position: relative;
-          z-index: 100;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 50;
           background: transparent;
         }
 

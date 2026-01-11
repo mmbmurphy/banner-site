@@ -12,7 +12,7 @@ const solutions = [
   },
   {
     title: "Commercial",
-    description: "Streamline capital projects for office & retail",
+    description: "Streamline CapEx for industrial, retail, office & more",
     href: "/solutions/commercial",
   },
   {

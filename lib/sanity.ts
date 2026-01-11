@@ -185,9 +185,131 @@ export const relatedPostsQuery = `*[_type == "post" && isInfoPost != true && slu
   }
 }`;
 
+// Pagination config
+export const POSTS_PER_PAGE = 12;
+
+// Paginated posts query
+export const paginatedPostsQuery = `{
+  "posts": *[_type == "post" && isInfoPost != true] | order(publishedAt desc)[$start...$end] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    mainImage,
+    publishedAt,
+    readTime,
+    featured,
+    "author": author->{
+      _id,
+      name,
+      slug,
+      role,
+      image
+    },
+    "category": category->{
+      _id,
+      title,
+      slug,
+      color
+    }
+  },
+  "total": count(*[_type == "post" && isInfoPost != true])
+}`;
+
+export const paginatedPostsByCategoryQuery = `{
+  "posts": *[_type == "post" && isInfoPost != true && category->slug.current == $category] | order(publishedAt desc)[$start...$end] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    mainImage,
+    publishedAt,
+    readTime,
+    featured,
+    "author": author->{
+      _id,
+      name,
+      slug,
+      role,
+      image
+    },
+    "category": category->{
+      _id,
+      title,
+      slug,
+      color
+    }
+  },
+  "total": count(*[_type == "post" && isInfoPost != true && category->slug.current == $category])
+}`;
+
+export interface PaginatedPostsResult {
+  posts: Post[];
+  total: number;
+}
+
+// Helper to extract clean excerpt from body content
+function extractExcerptFromBody(body: PortableTextBlock[] | undefined): string | null {
+  if (!body || body.length === 0) return null;
+
+  for (const block of body) {
+    if (block._type === 'block' && block.style === 'normal' && block.children) {
+      const text = (block.children as Array<{ text?: string }>)
+        .map(c => c.text || '')
+        .join('')
+        .trim();
+      if (text.length < 50) continue;
+      if (/^(Note:|Warning:|Tip:|Example:)/i.test(text)) continue;
+
+      const cleaned = text.replace(/\s+/g, ' ').trim();
+      if (cleaned.length <= 160) return cleaned;
+
+      // Try to truncate at sentence boundary
+      const truncated = cleaned.substring(0, 160);
+      const lastPeriod = truncated.lastIndexOf('. ');
+      if (lastPeriod > 80) {
+        return truncated.substring(0, lastPeriod + 1);
+      }
+      // Otherwise truncate at word boundary
+      const lastSpace = truncated.lastIndexOf(' ');
+      return truncated.substring(0, lastSpace) + '...';
+    }
+  }
+  return null;
+}
+
+// Fix truncated excerpts (ones that end mid-word with "...")
+function fixTruncatedExcerpt(post: Post): Post {
+  if (!post.excerpt) return post;
+
+  // Check if excerpt appears truncated mid-sentence
+  const excerpt = post.excerpt;
+  const isTruncated = excerpt.endsWith('...') &&
+    !excerpt.endsWith('....') && // Not intentional ellipsis
+    !/[.!?]\.\.\.$/.test(excerpt); // Doesn't end with proper punctuation before ...
+
+  if (isTruncated && post.body) {
+    const betterExcerpt = extractExcerptFromBody(post.body);
+    if (betterExcerpt) {
+      return { ...post, excerpt: betterExcerpt };
+    }
+  }
+  return post;
+}
+
 // Fetch functions
 export async function getPosts(): Promise<Post[]> {
   return client.fetch(postsQuery);
+}
+
+export async function getPaginatedPosts(page: number = 1, category?: string): Promise<PaginatedPostsResult> {
+  const start = (page - 1) * POSTS_PER_PAGE;
+  const end = start + POSTS_PER_PAGE;
+
+  if (category) {
+    return client.fetch(paginatedPostsByCategoryQuery, { start, end, category });
+  }
+  return client.fetch(paginatedPostsQuery, { start, end });
 }
 
 export async function getFeaturedPosts(): Promise<Post[]> {
@@ -195,7 +317,9 @@ export async function getFeaturedPosts(): Promise<Post[]> {
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-  return client.fetch(postBySlugQuery, { slug });
+  const post = await client.fetch(postBySlugQuery, { slug });
+  if (!post) return null;
+  return fixTruncatedExcerpt(post);
 }
 
 export async function getPostSlugs(): Promise<string[]> {
@@ -203,7 +327,15 @@ export async function getPostSlugs(): Promise<string[]> {
 }
 
 export async function getCategories(): Promise<Category[]> {
-  return client.fetch(categoriesQuery);
+  const categories = await client.fetch(categoriesQuery);
+  // Deduplicate by slug (keep first occurrence)
+  const seen = new Set<string>();
+  return categories.filter((cat: Category) => {
+    const slug = cat.slug?.current;
+    if (!slug || seen.has(slug)) return false;
+    seen.add(slug);
+    return true;
+  });
 }
 
 export async function getPostsByCategory(category: string): Promise<Post[]> {
@@ -300,7 +432,9 @@ export async function getInfoPosts(): Promise<Post[]> {
 }
 
 export async function getInfoPostBySlug(slug: string): Promise<Post | null> {
-  return client.fetch(infoPostBySlugQuery, { slug });
+  const post = await client.fetch(infoPostBySlugQuery, { slug });
+  if (!post) return null;
+  return fixTruncatedExcerpt(post);
 }
 
 export async function getInfoPostSlugs(): Promise<string[]> {

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { getPosts, getCategories, urlFor, Post, Category } from "@/lib/sanity";
+import { getPaginatedPosts, getCategories, urlFor, Post, Category, POSTS_PER_PAGE } from "@/lib/sanity";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -97,6 +97,116 @@ function CategoryFilter({ categories, activeCategory }: { categories: Category[]
   );
 }
 
+function Pagination({
+  currentPage,
+  totalPages,
+  category,
+}: {
+  currentPage: number;
+  totalPages: number;
+  category?: string;
+}) {
+  if (totalPages <= 1) return null;
+
+  const getPageUrl = (page: number) => {
+    const params = new URLSearchParams();
+    if (page > 1) params.set("page", page.toString());
+    if (category) params.set("category", category);
+    const queryString = params.toString();
+    return `/blog${queryString ? `?${queryString}` : ""}`;
+  };
+
+  // Generate page numbers to show
+  const getPageNumbers = () => {
+    const pages: (number | string)[] = [];
+    const showPages = 5; // Max pages to show
+
+    if (totalPages <= showPages + 2) {
+      // Show all pages if total is small
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      // Always show first page
+      pages.push(1);
+
+      if (currentPage > 3) {
+        pages.push("...");
+      }
+
+      // Show pages around current
+      const start = Math.max(2, currentPage - 1);
+      const end = Math.min(totalPages - 1, currentPage + 1);
+
+      for (let i = start; i <= end; i++) {
+        pages.push(i);
+      }
+
+      if (currentPage < totalPages - 2) {
+        pages.push("...");
+      }
+
+      // Always show last page
+      pages.push(totalPages);
+    }
+
+    return pages;
+  };
+
+  return (
+    <nav className="blog-pagination" aria-label="Blog pagination">
+      {/* Previous button */}
+      {currentPage > 1 ? (
+        <Link href={getPageUrl(currentPage - 1)} className="blog-pagination-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </Link>
+      ) : (
+        <span className="blog-pagination-arrow disabled">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </span>
+      )}
+
+      {/* Page numbers */}
+      <div className="blog-pagination-pages">
+        {getPageNumbers().map((page, index) =>
+          typeof page === "string" ? (
+            <span key={`ellipsis-${index}`} className="blog-pagination-ellipsis">
+              {page}
+            </span>
+          ) : (
+            <Link
+              key={page}
+              href={getPageUrl(page)}
+              className={`blog-pagination-page ${currentPage === page ? "active" : ""}`}
+            >
+              {page}
+            </Link>
+          )
+        )}
+      </div>
+
+      {/* Next button */}
+      {currentPage < totalPages ? (
+        <Link href={getPageUrl(currentPage + 1)} className="blog-pagination-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </Link>
+      ) : (
+        <span className="blog-pagination-arrow disabled">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </span>
+      )}
+    </nav>
+  );
+}
+
 function EmptyState() {
   return (
     <div className="blog-empty-state">
@@ -121,26 +231,33 @@ function EmptyState() {
 export default async function BlogPage({
   searchParams,
 }: {
-  searchParams: Promise<{ category?: string }>;
+  searchParams: Promise<{ category?: string; page?: string }>;
 }) {
   const params = await searchParams;
+  const currentPage = Math.max(1, parseInt(params.page || "1", 10));
+
   let posts: Post[] = [];
+  let totalPosts = 0;
   let categories: Category[] = [];
 
   try {
-    [posts, categories] = await Promise.all([getPosts(), getCategories()]);
+    const [paginatedResult, fetchedCategories] = await Promise.all([
+      getPaginatedPosts(currentPage, params.category),
+      getCategories(),
+    ]);
+    posts = paginatedResult.posts;
+    totalPosts = paginatedResult.total;
+    categories = fetchedCategories;
   } catch (error) {
     console.error("Error fetching blog data:", error);
   }
 
-  // Filter by category if specified
-  const filteredPosts = params.category
-    ? posts.filter((post) => post.category?.slug.current === params.category)
-    : posts;
+  const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
 
-  // Separate featured posts
-  const featuredPosts = filteredPosts.filter((post) => post.featured).slice(0, 1);
-  const regularPosts = filteredPosts.filter((post) => !featuredPosts.includes(post));
+  // Separate featured post (only on first page without category filter)
+  const showFeatured = currentPage === 1 && !params.category;
+  const featuredPosts = showFeatured ? posts.filter((post) => post.featured).slice(0, 1) : [];
+  const regularPosts = showFeatured ? posts.filter((post) => !featuredPosts.includes(post)) : posts;
 
   return (
       <main className="blog-page">
@@ -176,7 +293,7 @@ export default async function BlogPage({
         <section className="blog-posts-section">
           <div className="padding-global">
             <div className="container-large">
-              {filteredPosts.length === 0 ? (
+              {posts.length === 0 ? (
                 <EmptyState />
               ) : (
                 <>
@@ -193,38 +310,32 @@ export default async function BlogPage({
                   {regularPosts.length > 0 && (
                     <div className="blog-grid">
                       {regularPosts.map((post, index) => (
-                        <ScrollReveal key={post._id} delay={index * 0.1}>
+                        <ScrollReveal key={post._id} delay={Math.min(index * 0.05, 0.3)}>
                           <PostCard post={post} />
                         </ScrollReveal>
                       ))}
                     </div>
                   )}
+
+                  {/* Pagination */}
+                  <ScrollReveal>
+                    <Pagination
+                      currentPage={currentPage}
+                      totalPages={totalPages}
+                      category={params.category}
+                    />
+                  </ScrollReveal>
+
+                  {/* Post count */}
+                  <div className="blog-post-count">
+                    Showing {(currentPage - 1) * POSTS_PER_PAGE + 1}-{Math.min(currentPage * POSTS_PER_PAGE, totalPosts)} of {totalPosts} posts
+                  </div>
                 </>
               )}
             </div>
           </div>
         </section>
 
-        {/* Newsletter CTA */}
-        <section className="blog-newsletter">
-          <div className="padding-global">
-            <div className="container-large">
-              <ScrollReveal>
-                <div className="blog-newsletter-card">
-                  <div className="blog-newsletter-content">
-                    <h2 className="blog-newsletter-title">Stay in the Loop</h2>
-                    <p className="blog-newsletter-text">
-                      Get the latest insights on CapEx management delivered to your inbox.
-                    </p>
-                  </div>
-                  <Link href="/contact" className="button-light w-button">
-                    Subscribe
-                  </Link>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </section>
       </main>
   );
 }

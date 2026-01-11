@@ -11,6 +11,9 @@ import {
 } from "@/lib/sanity";
 import ScrollReveal from "@/components/ScrollReveal";
 import ShareButtons from "@/components/ShareButtons";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+
+const BASE_URL = "https://withbanner.com";
 
 export const revalidate = 3600;
 
@@ -33,18 +36,31 @@ export async function generateMetadata({
     const post = await getPostBySlug(slug);
     if (!post) return { title: "Post Not Found" };
 
+    const url = `${BASE_URL}/blog/${slug}`;
+    const imageUrl = post.mainImage
+      ? urlFor(post.mainImage).width(1200).height(630).url()
+      : undefined;
+
     return {
-      title: post.seoTitle || `${post.title} | Banner Blog`,
+      title: post.seoTitle || post.title,
       description: post.seoDescription || post.excerpt,
+      alternates: {
+        canonical: url,
+      },
       openGraph: {
         title: post.seoTitle || post.title,
         description: post.seoDescription || post.excerpt,
         type: "article",
         publishedTime: post.publishedAt,
         authors: post.author?.name ? [post.author.name] : undefined,
-        images: post.mainImage
-          ? [{ url: urlFor(post.mainImage).width(1200).height(630).url() }]
-          : undefined,
+        url: url,
+        images: imageUrl ? [{ url: imageUrl, width: 1200, height: 630 }] : undefined,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.seoTitle || post.title,
+        description: post.seoDescription || post.excerpt,
+        images: imageUrl ? [imageUrl] : undefined,
       },
     };
   } catch {
@@ -181,7 +197,17 @@ export default async function BlogPostPage({
     ? urlFor(post.mainImage).width(1400).height(700).url()
     : null;
 
+  const articleUrl = `${BASE_URL}/blog/${slug}`;
+  const breadcrumbs = [
+    { name: "Home", url: BASE_URL },
+    { name: "Blog", url: `${BASE_URL}/blog` },
+    { name: post.title, url: articleUrl },
+  ];
+
   return (
+    <>
+      <ArticleJsonLd post={post} url={articleUrl} />
+      <BreadcrumbJsonLd items={breadcrumbs} />
       <main className="blog-post-page">
         {/* Hero */}
         <article className="blog-post-article">
@@ -259,11 +285,9 @@ export default async function BlogPostPage({
 
                   {/* Main Content */}
                   <div className="blog-post-content">
-                    <ScrollReveal>
-                      {post.body && (
-                        <PortableText value={post.body} components={portableTextComponents} />
-                      )}
-                    </ScrollReveal>
+                    {post.body && (
+                      <PortableText value={post.body} components={portableTextComponents} />
+                    )}
                   </div>
                 </div>
               </div>
@@ -354,5 +378,6 @@ export default async function BlogPostPage({
           </div>
         </section>
       </main>
+    </>
   );
 }

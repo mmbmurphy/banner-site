@@ -10,6 +10,9 @@ import {
   Post,
 } from "@/lib/sanity";
 import ScrollReveal from "@/components/ScrollReveal";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+
+const BASE_URL = "https://withbanner.com";
 
 export const revalidate = 3600;
 
@@ -32,17 +35,30 @@ export async function generateMetadata({
     const post = await getInfoPostBySlug(slug);
     if (!post) return { title: "Resource Not Found" };
 
+    const url = `${BASE_URL}/info/${slug}`;
+    const imageUrl = post.mainImage
+      ? urlFor(post.mainImage).width(1200).height(630).url()
+      : undefined;
+
     return {
-      title: post.seoTitle || `${post.title} | Banner Resources`,
+      title: post.seoTitle || post.title,
       description: post.seoDescription || post.excerpt,
+      alternates: {
+        canonical: url,
+      },
       openGraph: {
         title: post.seoTitle || post.title,
         description: post.seoDescription || post.excerpt,
         type: "article",
         publishedTime: post.publishedAt,
-        images: post.mainImage
-          ? [{ url: urlFor(post.mainImage).width(1200).height(630).url() }]
-          : undefined,
+        url: url,
+        images: imageUrl ? [{ url: imageUrl, width: 1200, height: 630 }] : undefined,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.seoTitle || post.title,
+        description: post.seoDescription || post.excerpt,
+        images: imageUrl ? [imageUrl] : undefined,
       },
     };
   } catch {
@@ -179,8 +195,18 @@ export default async function InfoPostPage({
     ? urlFor(post.mainImage).width(1400).height(700).url()
     : null;
 
+  const articleUrl = `${BASE_URL}/info/${slug}`;
+  const breadcrumbs = [
+    { name: "Home", url: BASE_URL },
+    { name: "Resources", url: `${BASE_URL}/info` },
+    { name: post.title, url: articleUrl },
+  ];
+
   return (
-    <main className="blog-post-page">
+    <>
+      <ArticleJsonLd post={post} url={articleUrl} />
+      <BreadcrumbJsonLd items={breadcrumbs} />
+      <main className="blog-post-page">
       <article className="blog-post-article">
         <header className="blog-post-header">
           <div className="padding-global">
@@ -234,11 +260,9 @@ export default async function InfoPostPage({
               <div className="blog-post-content-grid">
                 <aside className="blog-post-sidebar"></aside>
                 <div className="blog-post-content">
-                  <ScrollReveal>
-                    {post.body && (
-                      <PortableText value={post.body} components={portableTextComponents} />
-                    )}
-                  </ScrollReveal>
+                  {post.body && (
+                    <PortableText value={post.body} components={portableTextComponents} />
+                  )}
                 </div>
               </div>
             </div>
@@ -278,5 +302,6 @@ export default async function InfoPostPage({
         </div>
       </section>
     </main>
+    </>
   );
 }

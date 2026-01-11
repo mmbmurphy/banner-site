@@ -4503,6 +4503,89 @@ button.lay-tab-link {
   color: #ff6b35;
 }
 
+/* Pagination */
+.blog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ebebeb;
+}
+
+.blog-pagination-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  color: #333333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.blog-pagination-arrow:hover {
+  background: #ff6b35;
+  color: white;
+}
+
+.blog-pagination-arrow.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.blog-pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.blog-pagination-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #666666;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.blog-pagination-page:hover {
+  background: #f5f5f5;
+  color: #333333;
+}
+
+.blog-pagination-page.active {
+  background: #ff6b35;
+  color: white;
+}
+
+.blog-pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  font-size: 0.9375rem;
+  color: #999999;
+}
+
+.blog-post-count {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #999999;
+}
+
 /* Responsive */
 @media (max-width: 991px) {
   .blog-hero-title {
@@ -4559,6 +4642,25 @@ button.lay-tab-link {
 @media (max-width: 767px) {
   .blog-hero {
     padding-top: 6rem;
+  }
+
+  .blog-pagination {
+    gap: 0.25rem;
+  }
+
+  .blog-pagination-page {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.875rem;
+  }
+
+  .blog-pagination-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .blog-pagination-ellipsis {
+    min-width: 28px;
   }
 
   .blog-hero-title {

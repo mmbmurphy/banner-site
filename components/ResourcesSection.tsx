@@ -106,13 +106,15 @@ export default function ResourcesSection() {
           gap: 2rem;
         }
         .resources-section :global(.resource-card) {
-          display: block;
+          display: flex;
+          flex-direction: column;
           background: #f8f9fa;
           border-radius: 16px;
           padding: 2rem;
           text-decoration: none;
           transition: all 0.2s ease;
           border: 1px solid transparent;
+          height: 100%;
         }
         .resources-section :global(.resource-card):hover {
           background: #ffffff;
@@ -143,12 +145,14 @@ export default function ResourcesSection() {
           color: #1a1a1a;
           margin: 0 0 0.5rem;
           line-height: 1.4;
+          min-height: 2.8em;
         }
         .resource-description {
           font-size: 0.9375rem;
           color: #666;
           line-height: 1.6;
           margin: 0 0 1rem;
+          flex: 1;
         }
         .resource-link {
           display: inline-flex;

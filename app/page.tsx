@@ -157,41 +157,38 @@ export default function Home() {
                   </ScrollReveal>
                 </div>
                 <ScrollReveal>
-                  <div className="w-layout-grid layout238_list">
-                    <div className="layout238_item">
-                      <div className="margin-bottom margin-small">
-                        <div className="layout238_item-icon-wrapper">
-                          <img loading="lazy" src="/images/EyeSlash.svg" alt="" className="icon-1x1-medium" />
-                        </div>
+                  <div className="pain-points-grid">
+                    <div className="pain-point-card">
+                      <div className="pain-point-icon-wrapper">
+                        <img loading="lazy" src="/images/EyeSlash.svg" alt="" className="icon-1x1-medium" />
                       </div>
-                      <div className="margin-bottom margin-small">
-                        <h3 className="heading-style-h5">
+                      <div className="pain-point-content">
+                        <h3 className="pain-point-title">Scattered data</h3>
+                        <p className="pain-point-description">
                           No visibility across drives, inboxes, sheets, and tools
-                        </h3>
+                        </p>
                       </div>
                     </div>
-                    <div className="layout238_item">
-                      <div className="margin-bottom margin-small">
-                        <div className="layout238_item-icon-wrapper">
-                          <img loading="lazy" src="/images/FileDashed.svg" alt="" className="icon-1x1-medium" />
-                        </div>
+                    <div className="pain-point-card">
+                      <div className="pain-point-icon-wrapper">
+                        <img loading="lazy" src="/images/FileDashed.svg" alt="" className="icon-1x1-medium" />
                       </div>
-                      <div className="margin-bottom margin-small">
-                        <h3 className="heading-style-h5">
-                          By the time they&apos;re shared, reports are out of date
-                        </h3>
+                      <div className="pain-point-content">
+                        <h3 className="pain-point-title">Stale reports</h3>
+                        <p className="pain-point-description">
+                          Reports are outdated before they&apos;re even shared
+                        </p>
                       </div>
                     </div>
-                    <div className="layout238_item">
-                      <div className="margin-bottom margin-small">
-                        <div className="layout238_item-icon-wrapper">
-                          <img loading="lazy" src="/images/HourglassHigh.svg" alt="" className="icon-1x1-medium" />
-                        </div>
+                    <div className="pain-point-card">
+                      <div className="pain-point-icon-wrapper">
+                        <img loading="lazy" src="/images/HourglassHigh.svg" alt="" className="icon-1x1-medium" />
                       </div>
-                      <div className="margin-bottom margin-small">
-                        <h3 className="heading-style-h5">
-                          Stitching data together takes hours for asset managers
-                        </h3>
+                      <div className="pain-point-content">
+                        <h3 className="pain-point-title">Manual work</h3>
+                        <p className="pain-point-description">
+                          Asset managers spend hours stitching data together
+                        </p>
                       </div>
                     </div>
                   </div>

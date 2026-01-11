@@ -101,7 +101,9 @@ export default function FAQ() {
                       style={{
                         maxHeight: openIndex === index ? "500px" : "0",
                         opacity: openIndex === index ? 1 : 0,
+                        paddingTop: openIndex === index ? "1rem" : "0",
                         paddingBottom: openIndex === index ? "1.5rem" : "0",
+                        transition: "max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease",
                       }}
                     >
                       <p>{faq.answer}</p>

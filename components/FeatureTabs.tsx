@@ -155,7 +155,7 @@ export default function FeatureTabs() {
                   ))}
                 </div>
                 <div className="layout_tabs-content">
-                  <div className="layout507_card">
+                  <div className="layout507_card" style={{ transition: 'opacity 0.3s ease' }}>
                     <div className="layout507_card-content-bottom">
                       <div className="layout507_card-content-top">
                         <h2 className="heading-style-h3-2">
@@ -188,6 +188,7 @@ export default function FeatureTabs() {
                         src={tabs[activeTab].image}
                         loading="lazy"
                         className="layout507_image"
+                        style={{ transition: 'opacity 0.3s ease' }}
                       />
                     </div>
                   </div>

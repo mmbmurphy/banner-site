@@ -102,6 +102,9 @@ export default function HowItWorks() {
           box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
           border: 1px solid #f0f0f0;
           transition: transform 0.2s ease, box-shadow 0.2s ease;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
         }
         .how-it-works-step:hover {
           transform: translateY(-4px);
@@ -141,13 +144,15 @@ export default function HowItWorks() {
           color: #666;
           line-height: 1.6;
           margin: 0;
+          flex: 1;
+          min-height: 3em;
         }
         .step-connector {
           display: none;
           position: absolute;
-          right: -2rem;
-          top: 50%;
-          transform: translateY(-50%);
+          right: calc(-1rem - 12px);
+          top: 2.5rem;
+          transform: none;
           color: #ddd;
         }
         @media (min-width: 992px) {

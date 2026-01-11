@@ -52,6 +52,15 @@ export default function MetricsBar() {
           margin-top: 0.5rem;
           font-weight: 500;
         }
+        @media (max-width: 1024px) {
+          .metrics-bar-inner {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+          }
+          .metric-value {
+            font-size: 2rem;
+          }
+        }
         @media (max-width: 768px) {
           .metrics-bar-inner {
             grid-template-columns: repeat(2, 1fr);

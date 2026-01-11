@@ -145,9 +145,13 @@ export default function Navbar() {
           className={`navbar1_menu is-page-height-tablet w-nav-menu ${isMobileMenuOpen ? "w--open" : ""}`}
           style={
             isMobile
-              ? isMobileMenuOpen
-                ? { display: "block", height: "100vh", overflowY: "auto" }
-                : { display: "none" }
+              ? {
+                  maxHeight: isMobileMenuOpen ? "100vh" : "0",
+                  overflow: "hidden",
+                  transition: "max-height 0.3s ease",
+                  display: "block",
+                  overflowY: isMobileMenuOpen ? "auto" : "hidden",
+                }
               : {}
           }
         >
@@ -194,6 +198,7 @@ export default function Navbar() {
                   style={{
                     display: isDropdownOpen ? "block" : "none",
                     opacity: isDropdownOpen ? 1 : 0,
+                    zIndex: 1001,
                   }}
                 >
                   <div className="mega-menu-container">

@@ -113,11 +113,12 @@ export default function TestimonialSlider() {
             <div className="testimonial-content-grid">
               {/* Left: Image */}
               <div className="testimonial-image-section">
-                <div className="testimonial-image-wrapper">
+                <div className="testimonial-image-wrapper" style={{ width: '200px', height: '200px', aspectRatio: '1', overflow: 'hidden' }}>
                   <img
                     src={current.image}
                     alt={current.name}
                     className="testimonial-image"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                   <div className="testimonial-image-ring" />
                 </div>
@@ -134,13 +135,11 @@ export default function TestimonialSlider() {
 
               {/* Right: Quote and info */}
               <div className="testimonial-quote-section">
-                {/* Metric badge */}
-                {current.metric && (
-                  <div className="testimonial-metric-badge">
-                    <span className="metric-value">{current.metric}</span>
-                    <span className="metric-label">{current.metricLabel}</span>
-                  </div>
-                )}
+                {/* Metric badge - always reserve space */}
+                <div className="testimonial-metric-badge" style={{ minHeight: '32px', marginBottom: '1rem', visibility: current.metric ? 'visible' : 'hidden' }}>
+                  <span className="metric-value">{current.metric || ''}</span>
+                  <span className="metric-label">{current.metricLabel || ''}</span>
+                </div>
 
                 {/* Quote */}
                 <blockquote className="testimonial-quote">

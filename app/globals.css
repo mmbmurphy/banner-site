@@ -10234,45 +10234,41 @@ a:focus-visible {
 }
 
 /* Footer Contact Info */
-.footer-contact-row {
+.footer-contact-info {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 1rem;
 }
 
 .footer-contact-link {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   transition: color 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-}
-
-.footer-contact-link svg {
-  opacity: 0.7;
-  flex-shrink: 0;
 }
 
 .footer-contact-link:hover {
   color: #ffffff;
 }
 
-.footer-contact-link:hover svg {
-  opacity: 1;
+.footer-linkedin-badge {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-.footer-contact-divider {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.875rem;
-  user-select: none;
+.footer-linkedin-badge:hover {
+  opacity: 0.7;
 }
 
-.footer-linkedin svg {
-  fill: currentColor;
+.footer-linkedin-icon {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1;
 }
 
 /* Developer Mockup Styles */

@@ -40,8 +40,13 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
     setIsMobileSolutionsOpen(false);
     setIsNavigating(false);
-    // Also ensure body scroll is restored
+    // Ensure body scroll is restored and scroll to top
     document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   // Detect mobile viewport
@@ -129,11 +134,18 @@ export default function Navbar() {
     // Close menus immediately
     setIsMobileMenuOpen(false);
     setIsMobileSolutionsOpen(false);
+
+    // Restore body scroll
     document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
 
     // Navigate after a brief moment to allow visual feedback
     // This ensures the menu visually closes before page transition
     setTimeout(() => {
+      // Scroll to top before navigation
+      window.scrollTo(0, 0);
       router.push(href);
     }, 50);
   }, [router]);

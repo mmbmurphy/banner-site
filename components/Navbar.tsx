@@ -17,7 +17,7 @@ const solutions = [
   },
   {
     title: "Developers",
-    description: "Track development budgets from ground-up",
+    description: "Deliver every project on time and on budget",
     href: "/solutions/developers",
   },
 ];

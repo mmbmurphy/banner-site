@@ -6401,6 +6401,7 @@ button.lay-tab-link {
   padding: 3rem;
   position: relative;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 340px;
 }
 
 .testimonial-card::before {
@@ -6473,26 +6474,25 @@ button.lay-tab-link {
 
 .testimonial-image-wrapper {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .testimonial-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
+  object-position: center top;
+  border-radius: 50%;
   position: relative;
   z-index: 1;
 }
 
 .testimonial-image-ring {
-  position: absolute;
-  inset: -4px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #f25e53 0%, rgba(242, 94, 83, 0.3) 100%);
-  z-index: 0;
-  opacity: 0.6;
+  display: none;
 }
 
 .testimonial-logo-wrapper {
@@ -6721,6 +6721,7 @@ button.lay-tab-link {
   .testimonial-image-wrapper {
     width: 120px;
     height: 120px;
+    border-radius: 50%;
   }
 
   .testimonial-quote-section {
@@ -6780,6 +6781,7 @@ button.lay-tab-link {
   .testimonial-image-wrapper {
     width: 100px;
     height: 100px;
+    border-radius: 50%;
   }
 
   .trust-stats {

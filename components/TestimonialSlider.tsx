@@ -22,6 +22,8 @@ const testimonials = [
     position: "Managing Principal, COO",
     company: "Tourmaline",
     logo: "/images/client-logos/tourmaline.png",
+    metric: "1 source",
+    metricLabel: "of truth",
   },
   {
     image: "/images/portrait-casestudy-banner.webp",
@@ -113,14 +115,12 @@ export default function TestimonialSlider() {
             <div className="testimonial-content-grid">
               {/* Left: Image */}
               <div className="testimonial-image-section">
-                <div className="testimonial-image-wrapper" style={{ width: '200px', height: '200px', aspectRatio: '1', overflow: 'hidden' }}>
+                <div className="testimonial-image-wrapper">
                   <img
                     src={current.image}
                     alt={current.name}
                     className="testimonial-image"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
-                  <div className="testimonial-image-ring" />
                 </div>
 
                 {/* Company logo */}
@@ -215,8 +215,8 @@ export default function TestimonialSlider() {
             </div>
             <div className="trust-divider" />
             <div className="trust-stat">
-              <span className="trust-stat-value">500+</span>
-              <span className="trust-stat-label">companies</span>
+              <span className="trust-stat-value">100k+</span>
+              <span className="trust-stat-label">projects</span>
             </div>
           </div>
         </div>

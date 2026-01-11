@@ -3711,8 +3711,8 @@ button.lay-tab-link {
 }
 
 .blog-hero {
-  padding-top: 10rem;
-  padding-bottom: 4rem;
+  padding-top: 7rem;
+  padding-bottom: 3rem;
   background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
 }
 
@@ -4558,7 +4558,7 @@ button.lay-tab-link {
 
 @media (max-width: 767px) {
   .blog-hero {
-    padding-top: 8rem;
+    padding-top: 6rem;
   }
 
   .blog-hero-title {

@@ -7,8 +7,8 @@ export const metadata = {
 };
 
 const clientLogos = [
-  { src: "/images/client-logos/summit.svg", alt: "Summit Real Estate Group" },
-  { src: "/images/client-logos/greystar.svg", alt: "Greystar" },
+  { src: "/images/client-logos/livcor.svg", alt: "Livcor" },
+  { src: "/images/client-logos/morgan-properties.png", alt: "Morgan Properties" },
   { src: "/images/client-logos/fcp.svg", alt: "FCP" },
   { src: "/images/client-logos/starwood.svg", alt: "Starwood Capital Group" },
   { src: "/images/client-logos/kennedy-wilson.svg", alt: "Kennedy Wilson" },

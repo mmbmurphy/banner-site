@@ -43,7 +43,6 @@ export default function LandingAltPage() {
             <div className="hero-trust-row">
               <div className="trust-logos-alt">
                 <img src="/images/client-logos/morgan-properties.png" alt="Morgan Properties" />
-                <img src="/images/client-logos/greystar.svg" alt="Greystar" />
                 <img src="/images/client-logos/fcp.svg" alt="FCP" />
                 <img src="/images/client-logos/starwood.svg" alt="Starwood" />
               </div>
@@ -109,7 +108,6 @@ export default function LandingAltPage() {
           <p className="logos-title-alt">Trusted by industry-leading real estate teams</p>
           <div className="logos-grid-alt">
             <img src="/images/client-logos/morgan-properties.png" alt="Morgan Properties" />
-            <img src="/images/client-logos/greystar.svg" alt="Greystar" />
             <img src="/images/client-logos/fcp.svg" alt="FCP" />
             <img src="/images/client-logos/starwood.svg" alt="Starwood" />
             <img src="/images/client-logos/kennedy-wilson.svg" alt="Kennedy Wilson" />

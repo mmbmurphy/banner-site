@@ -312,9 +312,6 @@ export default function AboutPage() {
                     <img src="/images/client-logos/summit.svg" alt="Summit" />
                   </div>
                   <div className="about-logo-item">
-                    <img src="/images/client-logos/greystar.svg" alt="Greystar" />
-                  </div>
-                  <div className="about-logo-item">
                     <img src="/images/client-logos/avenue5.svg" alt="Avenue5" />
                   </div>
                 </div>

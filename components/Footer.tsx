@@ -62,7 +62,13 @@ export default function Footer() {
                         <div className="text-weight-semibold">Navigate</div>
                       </div>
                       <div className="footer2_link-list">
-                        <Link href="/" className="footer2_link">Product</Link>
+                        <a
+                          href="/#features"
+                          className="footer2_link"
+                          onClick={(e) => scrollToSection(e, "features")}
+                        >
+                          Product
+                        </a>
                         <a
                           href="/#features"
                           className="footer2_link"

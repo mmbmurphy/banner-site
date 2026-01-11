@@ -6,7 +6,7 @@ const steps = [
   {
     number: "01",
     title: "Connect Your Systems",
-    description: "Integrate with Yardi, RealPage, QuickBooks, and other accounting systems in minutes.",
+    description: "Integrate easily with Yardi, RealPage, Entrata, MRI and many other systems",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
@@ -47,7 +47,7 @@ export default function HowItWorks() {
           <div className="padding-section-large">
             <ScrollReveal>
               <div className="how-it-works-header">
-                <h2 className="heading-style-h2">Get Started in Days, Not Months</h2>
+                <h2 className="heading-style-h2">Get Started Quickly</h2>
                 <p className="text-size-medium how-it-works-subtitle">
                   Banner is designed for rapid deployment with minimal IT overhead
                 </p>

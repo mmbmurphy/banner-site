@@ -371,7 +371,9 @@ export type MockupVariant =
   | "vendor-management"
   | "dev-draw-management"
   | "dev-budget-control"
-  | "dev-portfolio-view";
+  | "dev-portfolio-view"
+  | "opex-contracts"
+  | "opex-insights";
 
 // Main component with variants
 export default function DashboardMockup({ variant }: { variant: MockupVariant }) {
@@ -1069,6 +1071,155 @@ export default function DashboardMockup({ variant }: { variant: MockupVariant })
                   <div className="dm-month-stat">
                     <span className="dm-month-value">4</span>
                     <span className="dm-month-label">Pending</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "opex-contracts":
+        return (
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact">
+              <h3 className="dm-card-title">Service Contracts</h3>
+              <div className="dm-contract-list">
+                {[
+                  { vendor: "Elite Landscaping", service: "Grounds Maintenance", monthly: "$4,200", status: "active", renewal: "Mar 2026" },
+                  { vendor: "CleanPro Services", service: "Janitorial", monthly: "$8,500", status: "active", renewal: "Jun 2026" },
+                  { vendor: "SecureWatch", service: "Security Patrol", monthly: "$6,800", status: "expiring", renewal: "Feb 2026" },
+                  { vendor: "HVAC Masters", service: "HVAC Maintenance", monthly: "$3,200", status: "active", renewal: "Sep 2026" },
+                ].map((contract, i) => (
+                  <div key={i} className="dm-contract-row">
+                    <div className="dm-contract-info">
+                      <span className="dm-contract-vendor">{contract.vendor}</span>
+                      <span className="dm-contract-service">{contract.service}</span>
+                    </div>
+                    <div className="dm-contract-details">
+                      <span className="dm-contract-amount">{contract.monthly}/mo</span>
+                      <span className={`dm-contract-status dm-status-${contract.status}`}>
+                        {contract.status === "expiring" ? "Expiring Soon" : "Active"}
+                      </span>
+                    </div>
+                    <span className="dm-contract-renewal">Renews {contract.renewal}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="dm-button-group">
+                <button className="dm-btn dm-btn-primary">Add Contract</button>
+                <button className="dm-btn dm-btn-secondary">View All</button>
+              </div>
+            </div>
+            <div className="dm-right-stack">
+              <div className="dm-card dm-card-compact">
+                <h3 className="dm-card-title">Invoice Validation</h3>
+                <div className="dm-validation-stats">
+                  <div className="dm-validation-item dm-validation-match">
+                    <span className="dm-validation-icon">✓</span>
+                    <div className="dm-validation-content">
+                      <span className="dm-validation-count">24</span>
+                      <span className="dm-validation-label">Matched</span>
+                    </div>
+                  </div>
+                  <div className="dm-validation-item dm-validation-mismatch">
+                    <span className="dm-validation-icon">!</span>
+                    <div className="dm-validation-content">
+                      <span className="dm-validation-count">3</span>
+                      <span className="dm-validation-label">Mismatched</span>
+                    </div>
+                  </div>
+                  <div className="dm-validation-item dm-validation-pending">
+                    <span className="dm-validation-icon">○</span>
+                    <div className="dm-validation-content">
+                      <span className="dm-validation-count">8</span>
+                      <span className="dm-validation-label">Pending</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <MiniStatusCard
+                title="Contracts by Status"
+                segments={[
+                  { value: 45, color: colors.green },
+                  { value: 8, color: colors.orange },
+                  { value: 3, color: colors.red },
+                ]}
+                sideLabel="Active"
+                sideValue="56"
+              />
+            </div>
+          </div>
+        );
+
+      case "opex-insights":
+        return (
+          <div className="dm-layout dm-layout-asymmetric">
+            <div className="dm-card dm-card-compact">
+              <h3 className="dm-card-title">Vendor Performance</h3>
+              <div className="dm-vendor-performance-list">
+                {[
+                  { name: "Elite Landscaping", score: 94, trend: "+2", contracts: 12, spend: "$504K" },
+                  { name: "CleanPro Services", score: 88, trend: "-1", contracts: 8, spend: "$816K" },
+                  { name: "SecureWatch", score: 91, trend: "+4", contracts: 15, spend: "$1.2M" },
+                  { name: "HVAC Masters", score: 96, trend: "+1", contracts: 6, spend: "$230K" },
+                ].map((vendor, i) => (
+                  <div key={i} className="dm-vendor-perf-row">
+                    <div className="dm-vendor-perf-info">
+                      <span className="dm-vendor-perf-name">{vendor.name}</span>
+                      <span className="dm-vendor-perf-contracts">{vendor.contracts} contracts · {vendor.spend}/yr</span>
+                    </div>
+                    <div className="dm-vendor-perf-score">
+                      <span className="dm-score-value">{vendor.score}</span>
+                      <span className={`dm-score-trend ${parseInt(vendor.trend) >= 0 ? "up" : "down"}`}>
+                        {parseInt(vendor.trend) >= 0 ? "↑" : "↓"} {vendor.trend.replace("-", "")}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="dm-right-stack">
+              <div className="dm-card dm-card-compact">
+                <h3 className="dm-card-title">Annual OpEx Spend</h3>
+                <div className="dm-spend-breakdown">
+                  <div className="dm-spend-total">
+                    <span className="dm-spend-label">Total Contracted</span>
+                    <span className="dm-spend-value">$2.75M</span>
+                  </div>
+                  <div className="dm-spend-bars">
+                    {[
+                      { category: "Maintenance", amount: "$980K", percent: 36, color: colors.blue },
+                      { category: "Security", amount: "$720K", percent: 26, color: colors.teal },
+                      { category: "Janitorial", amount: "$540K", percent: 20, color: colors.purple },
+                      { category: "Landscaping", amount: "$510K", percent: 18, color: colors.green },
+                    ].map((item, i) => (
+                      <div key={i} className="dm-spend-bar-row">
+                        <div className="dm-spend-bar-header">
+                          <span className="dm-spend-category">{item.category}</span>
+                          <span className="dm-spend-amount">{item.amount}</span>
+                        </div>
+                        <div className="dm-progress-track">
+                          <div className="dm-progress-fill" style={{ width: `${item.percent}%`, backgroundColor: item.color }} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="dm-card dm-card-compact">
+                <h3 className="dm-card-title">Upcoming Renewals</h3>
+                <div className="dm-renewal-list">
+                  <div className="dm-renewal-item dm-renewal-urgent">
+                    <span className="dm-renewal-date">Feb 15</span>
+                    <span className="dm-renewal-vendor">SecureWatch</span>
+                  </div>
+                  <div className="dm-renewal-item">
+                    <span className="dm-renewal-date">Mar 1</span>
+                    <span className="dm-renewal-vendor">Elite Landscaping</span>
+                  </div>
+                  <div className="dm-renewal-item">
+                    <span className="dm-renewal-date">Apr 10</span>
+                    <span className="dm-renewal-vendor">Waste Solutions</span>
                   </div>
                 </div>
               </div>

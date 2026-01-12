@@ -2589,6 +2589,66 @@ details[open] .faq4_icon-wrappper {
   border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Use Cases Section */
+.fp-use-cases-section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.fp-use-cases-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.fp-use-cases-title {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+}
+
+.fp-use-cases-subtitle {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fp-use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.fp-use-case-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.fp-use-case-card:hover {
+  border-color: #f25e53;
+  box-shadow: 0 4px 16px rgba(242, 94, 83, 0.1);
+}
+
+.fp-use-case-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+
+.fp-use-case-description {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* CTA Section */
 .fp-cta-section {
   padding: 5rem 0 6rem;
@@ -2687,6 +2747,10 @@ details[open] .faq4_icon-wrappper {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .fp-use-cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .fp-benefits-content {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -2712,6 +2776,10 @@ details[open] .faq4_icon-wrappper {
   }
 
   .fp-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fp-use-cases-grid {
     grid-template-columns: 1fr;
   }
 
@@ -11860,6 +11928,293 @@ a:focus-visible {
 .dm-month-label {
   font-size: 10px;
   color: #64748b;
+}
+
+/* OpEx Contracts Mockup Styles */
+.dm-contract-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-contract-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.dm-contract-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dm-contract-vendor {
+  font-size: 11px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dm-contract-service {
+  font-size: 9px;
+  color: #64748b;
+}
+
+.dm-contract-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dm-contract-amount {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dm-contract-status {
+  font-size: 8px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.dm-contract-status.dm-status-active {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.dm-contract-status.dm-status-expiring {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+.dm-contract-renewal {
+  font-size: 9px;
+  color: #94a3b8;
+}
+
+/* Validation Stats */
+.dm-validation-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-validation-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.dm-validation-match {
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.dm-validation-mismatch {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.dm-validation-pending {
+  background: rgba(100, 116, 139, 0.1);
+}
+
+.dm-validation-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.dm-validation-match .dm-validation-icon {
+  background: #22c55e;
+  color: white;
+}
+
+.dm-validation-mismatch .dm-validation-icon {
+  background: #ef4444;
+  color: white;
+}
+
+.dm-validation-pending .dm-validation-icon {
+  background: #94a3b8;
+  color: white;
+}
+
+.dm-validation-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.dm-validation-count {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dm-validation-label {
+  font-size: 9px;
+  color: #64748b;
+}
+
+/* Vendor Performance List */
+.dm-vendor-performance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-vendor-perf-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.dm-vendor-perf-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dm-vendor-perf-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dm-vendor-perf-contracts {
+  font-size: 9px;
+  color: #64748b;
+}
+
+.dm-vendor-perf-score {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dm-score-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dm-score-trend {
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.dm-score-trend.up {
+  color: #22c55e;
+}
+
+.dm-score-trend.down {
+  color: #ef4444;
+}
+
+/* Spend Breakdown */
+.dm-spend-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dm-spend-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dm-spend-label {
+  font-size: 10px;
+  color: #64748b;
+}
+
+.dm-spend-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dm-spend-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-spend-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dm-spend-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dm-spend-category {
+  font-size: 10px;
+  color: #64748b;
+}
+
+.dm-spend-amount {
+  font-size: 10px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Renewal List */
+.dm-renewal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dm-renewal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: #f8fafc;
+}
+
+.dm-renewal-item.dm-renewal-urgent {
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.dm-renewal-date {
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.dm-renewal-urgent .dm-renewal-date {
+  color: #f97316;
+}
+
+.dm-renewal-vendor {
+  font-size: 10px;
+  color: #0f172a;
 }
 
 @media (max-width: 600px) {

@@ -371,7 +371,7 @@ export default function Home() {
                         <h3 className="heading-style-h5-3">Multifamily</h3>
                       </div>
                       <div className="solution-stat">
-                        <span className="solution-stat-number">1M+</span>
+                        <span className="solution-stat-number">2M+</span>
                         <span className="solution-stat-label">units managed</span>
                       </div>
                       <div className="margin-bottom margin-small">

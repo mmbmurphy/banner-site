@@ -9,9 +9,9 @@ export const metadata = {
 };
 
 const stats = [
-  { value: "1M+", label: "Units on Platform" },
+  { value: "2M+", label: "Units on Platform" },
   { value: "50+", label: "Enterprise Clients" },
-  { value: "$10B+", label: "CapEx Managed" },
+  { value: "$15B+", label: "CapEx Managed" },
   { value: "99.9%", label: "Platform Uptime" },
 ];
 

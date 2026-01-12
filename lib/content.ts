@@ -102,7 +102,7 @@ export const solutions: Solution[] = [
     heroImage: "/images/Imagery.png",
     icon: "/images/Frame-34375601.png",
     trustIndicators: [
-      { value: "1M+", label: "units managed on Banner" },
+      { value: "2M+", label: "units managed on Banner" },
       { value: "$10B+", label: "in CapEx spend processed" },
       { value: "20+", label: "of top 50 NMHC trust Banner" },
     ],

@@ -210,7 +210,7 @@ export default function TestimonialSlider() {
             </div>
             <div className="trust-divider" />
             <div className="trust-stat">
-              <span className="trust-stat-value">1M+</span>
+              <span className="trust-stat-value">2M+</span>
               <span className="trust-stat-label">units</span>
             </div>
             <div className="trust-divider" />

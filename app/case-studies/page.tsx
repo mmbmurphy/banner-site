@@ -24,7 +24,7 @@ export default function CaseStudiesPage() {
                   <span>Customer Stories</span>
                 </div>
                 <h1 className="csl-hero-title">
-                  Real results from real estate leaders
+                  Real Results from Real Estate Leaders
                 </h1>
                 <p className="csl-hero-description">
                   See how owners and operators are transforming their CapEx management with Banner.

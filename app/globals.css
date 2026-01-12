@@ -3866,7 +3866,7 @@ button.lay-tab-link {
   display: inline-block;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #ff6b35;
+  color: #d94d43;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
@@ -3918,7 +3918,7 @@ button.lay-tab-link {
 }
 
 .blog-category-pill.active {
-  background: #ff6b35;
+  background: #d94d43;
   color: #ffffff;
 }
 
@@ -3985,7 +3985,7 @@ button.lay-tab-link {
   font-size: 0.75rem;
   font-weight: 600;
   color: #ffffff;
-  background: #ff6b35;
+  background: #d94d43;
   border-radius: 100px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -4187,7 +4187,7 @@ button.lay-tab-link {
   font-size: 0.75rem;
   font-weight: 600;
   color: #ffffff;
-  background: #ff6b35;
+  background: #d94d43;
   border-radius: 100px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -4363,7 +4363,7 @@ button.lay-tab-link {
   margin: 2rem 0;
   padding: 1.5rem 2rem;
   background: #f8f9fa;
-  border-left: 4px solid #ff6b35;
+  border-left: 4px solid #d94d43;
   border-radius: 0 12px 12px 0;
   font-style: italic;
   color: #444444;
@@ -4374,7 +4374,7 @@ button.lay-tab-link {
 }
 
 .blog-link {
-  color: #ff6b35;
+  color: #d94d43;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -4535,7 +4535,7 @@ button.lay-tab-link {
 .blog-author-social-link {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #ff6b35;
+  color: #d94d43;
   text-decoration: none;
 }
 
@@ -4603,7 +4603,7 @@ button.lay-tab-link {
   font-size: 0.6875rem;
   font-weight: 600;
   color: #ffffff;
-  background: #ff6b35;
+  background: #d94d43;
   border-radius: 100px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -4640,7 +4640,7 @@ button.lay-tab-link {
 }
 
 .blog-back-link:hover {
-  color: #ff6b35;
+  color: #d94d43;
 }
 
 /* Pagination */
@@ -4668,7 +4668,7 @@ button.lay-tab-link {
 }
 
 .blog-pagination-arrow:hover {
-  background: #ff6b35;
+  background: #d94d43;
   color: white;
 }
 
@@ -4705,7 +4705,7 @@ button.lay-tab-link {
 }
 
 .blog-pagination-page.active {
-  background: #ff6b35;
+  background: #d94d43;
   color: white;
 }
 

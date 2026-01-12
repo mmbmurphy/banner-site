@@ -302,9 +302,40 @@ export async function getPosts(): Promise<Post[]> {
   return client.fetch(postsQuery);
 }
 
-export async function getPaginatedPosts(page: number = 1, category?: string): Promise<PaginatedPostsResult> {
+export async function getPaginatedPosts(page: number = 1, category?: string, search?: string): Promise<PaginatedPostsResult> {
   const start = (page - 1) * POSTS_PER_PAGE;
   const end = start + POSTS_PER_PAGE;
+
+  if (search) {
+    // Search query - searches in title and excerpt
+    const searchQuery = `{
+      "posts": *[_type == "post" && isInfoPost != true && (title match $search || excerpt match $search)] | order(publishedAt desc)[$start...$end] {
+        _id,
+        title,
+        slug,
+        excerpt,
+        mainImage,
+        publishedAt,
+        readTime,
+        featured,
+        "author": author->{
+          _id,
+          name,
+          slug,
+          role,
+          image
+        },
+        "category": category->{
+          _id,
+          title,
+          slug,
+          color
+        }
+      },
+      "total": count(*[_type == "post" && isInfoPost != true && (title match $search || excerpt match $search)])
+    }`;
+    return client.fetch(searchQuery, { start, end, search: `*${search}*` });
+  }
 
   if (category) {
     return client.fetch(paginatedPostsByCategoryQuery, { start, end, category });

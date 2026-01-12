@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Banner LinkedIn Headers - 3 Options</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #1a1a2e;
+      padding: 40px;
+      font-family: 'Lexend', sans-serif;
+      min-height: 100vh;
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .option-label {
+      color: #E85A4F;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .description {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 20px;
+      max-width: 600px;
+    }
+
+    .banner-wrapper {
+      margin-bottom: 60px;
+    }
+
+    .banner {
+      width: 1584px;
+      height: 396px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ========== OPTION 1: Product Screenshot ========== */
+    .banner-1 {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      display: flex;
+      align-items: center;
+      padding: 0 70px;
+    }
+
+    .banner-1 .left-content {
+      flex: 0 0 500px;
+      z-index: 2;
+    }
+
+    .banner-1 .logo {
+      height: 44px;
+      margin-bottom: 24px;
+      filter: brightness(0) invert(1);
+    }
+
+    .banner-1 .tagline {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .banner-1 .tagline span {
+      color: #E85A4F;
+    }
+
+    .banner-1 .subtitle {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      font-weight: 400;
+    }
+
+    .banner-1 .product-screenshot {
+      position: absolute;
+      right: -50px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+      opacity: 0.95;
+    }
+
+    .banner-1 .glow {
+      position: absolute;
+      right: 200px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(232, 90, 79, 0.3) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    /* ========== OPTION 2: Social Proof ========== */
+    .banner-2 {
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 80px;
+      position: relative;
+    }
+
+    .banner-2::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #E85A4F 0%, #D64545 50%, #c23a3a 100%);
+    }
+
+    .banner-2 .top-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .banner-2 .logo {
+      height: 48px;
+    }
+
+    .banner-2 .tagline {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1a1a2e;
+      line-height: 1.2;
+    }
+
+    .banner-2 .divider-dot {
+      width: 8px;
+      height: 8px;
+      background: #E85A4F;
+      border-radius: 50%;
+    }
+
+    .banner-2 .subtitle {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+
+    .banner-2 .trusted-by {
+      font-size: 12px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .banner-2 .client-logos {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      opacity: 0.7;
+    }
+
+    .banner-2 .client-logos img {
+      height: 28px;
+      filter: grayscale(100%);
+    }
+
+    /* ========== OPTION 3: Bold Minimalist ========== */
+    .banner-3 {
+      background: linear-gradient(135deg, #E85A4F 0%, #D64545 50%, #b83232 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner-3 .pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.1;
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2) 0%, transparent 40%);
+    }
+
+    .banner-3 .content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      z-index: 1;
+    }
+
+    .banner-3 .logo-mark {
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .banner-3 .logo-mark svg {
+      width: 50px;
+      height: 50px;
+    }
+
+    .banner-3 .text-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .banner-3 .company-name {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    .banner-3 .tagline {
+      font-size: 42px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .banner-3 .stats {
+      display: flex;
+      gap: 40px;
+      z-index: 1;
+    }
+
+    .banner-3 .stat {
+      text-align: center;
+      padding: 16px 24px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+    }
+
+    .banner-3 .stat-value {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .banner-3 .stat-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Instructions */
+    .instructions {
+      margin-top: 20px;
+      padding: 24px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      max-width: 1584px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .instructions h3 {
+      margin-bottom: 12px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .instructions ol {
+      margin-left: 20px;
+      color: #888;
+      line-height: 2;
+    }
+
+    .instructions code {
+      background: rgba(232, 90, 79, 0.2);
+      color: #E85A4F;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- OPTION 1: Product Screenshot -->
+  <div class="banner-wrapper">
+    <div class="option-label">Option 1</div>
+    <h2>Product-Focused</h2>
+    <p class="description">Shows your actual product, builds credibility by demonstrating what Banner looks like. Best for attracting prospects who want to see the solution.</p>
+    <div class="banner banner-1">
+      <div class="glow"></div>
+      <div class="left-content">
+        <img src="/images/logo.png" alt="Banner" class="logo">
+        <div class="tagline">CapEx Management<br><span>Built for Real Estate</span></div>
+        <div class="subtitle">Plans. Budgets. Execution. One platform.</div>
+      </div>
+      <img src="/images/dashboard.png" alt="Banner Dashboard" class="product-screenshot">
+    </div>
+  </div>
+
+  <!-- OPTION 2: Social Proof -->
+  <div class="banner-wrapper">
+    <div class="option-label">Option 2</div>
+    <h2>Value Prop + Social Proof</h2>
+    <p class="description">Clean, professional look with client logos for credibility. Centers your main message with trusted-by section. Best for building trust with enterprise buyers.</p>
+    <div class="banner banner-2">
+      <div class="top-row">
+        <img src="/images/logo.png" alt="Banner" class="logo">
+        <div class="divider-dot"></div>
+        <div class="tagline">Real Estate CapEx, Simplified</div>
+      </div>
+      <div class="subtitle">One platform for plans, budgets, and day-to-day execution</div>
+      <div class="trusted-by">Trusted by industry leaders</div>
+      <div class="client-logos">
+        <img src="/images/client-logos/starwood.svg" alt="Starwood">
+        <img src="/images/client-logos/kennedy-wilson.svg" alt="Kennedy Wilson">
+        <img src="/images/client-logos/fcp.svg" alt="FCP">
+        <img src="/images/client-logos/cardinal.svg" alt="Cardinal">
+        <img src="/images/client-logos/harbor-group.svg" alt="Harbor Group">
+        <img src="/images/client-logos/industrious.svg" alt="Industrious">
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION 3: Bold Minimalist -->
+  <div class="banner-wrapper">
+    <div class="option-label">Option 3</div>
+    <h2>Bold & Confident</h2>
+    <p class="description">High-impact, brand-forward design with your signature red. Stats reinforce scale and credibility. Best for standing out and appearing established.</p>
+    <div class="banner banner-3">
+      <div class="pattern"></div>
+      <div class="content">
+        <div class="logo-mark">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M8 8h8v8H8V8zm0 16h8v8H8v-8zm16-16h8v8h-8V8zm0 16h8v8h-8v-8zm-8 8h8v8h-8v-8zm0-16h8v8h-8v-8z" fill="white"/>
+          </svg>
+        </div>
+        <div class="text-content">
+          <div class="company-name">Banner</div>
+          <div class="tagline">Manage CapEx.<br>Move Faster.</div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value">100k+</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">1M+</div>
+          <div class="stat-label">Units</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">$15B+</div>
+          <div class="stat-label">Managed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <h3>How to download any banner:</h3>
+    <ol>
+      <li>Right-click on the banner you want and select <code>Inspect</code></li>
+      <li>In DevTools, find the <code>&lt;div class="banner banner-X"&gt;</code> element</li>
+      <li>Right-click it and select <code>Capture node screenshot</code></li>
+      <li>It downloads at exactly 1584x396px - perfect for LinkedIn!</li>
+    </ol>
+  </div>
+
+</body>
+</html>

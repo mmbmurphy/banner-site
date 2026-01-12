@@ -1401,6 +1401,16 @@ details[open] .faq4_icon-wrappper {
   .meetings-iframe-container {
     min-height: 700px;
   }
+
+  .contact-section-padding {
+    padding-top: 5rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-section-padding {
+    padding-top: 3.5rem !important;
+  }
 }
 
 /* Offset for sticky navbar on internal pages */

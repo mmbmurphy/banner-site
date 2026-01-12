@@ -686,7 +686,7 @@ export const caseStudies: CaseStudy[] = [
     title: "FCP gains one source of truth for CapEx",
     subtitle:
       "How FCP aligned asset managers, vendors, and property managers in one system with real-time visibility",
-    heroImage: "/images/portrait-casestudy-banner.webp",
+    heroImage: "/images/fcp-case-study.jpg",
     detailImage: "/images/fcp-case-study.jpg",
     stats: [
       { value: "5%", label: "reduction in CapEx cost" },
@@ -731,8 +731,8 @@ export const caseStudies: CaseStudy[] = [
     title: "Tourmaline scales CapEx operations across a growing portfolio",
     subtitle:
       "How Tourmaline streamlined capital project management and gained real-time visibility across their multifamily investments",
-    heroImage: "/images/portrait-casestudy-banner.webp",
-    detailImage: "/images/fcp-case-study.jpg",
+    heroImage: "/images/tourmaline-property.jpg",
+    detailImage: "/images/tourmaline-property.jpg",
     stats: [
       { value: "40%", label: "faster project approvals" },
       { value: "60%", label: "reduction in reporting time" },
@@ -776,8 +776,8 @@ export const caseStudies: CaseStudy[] = [
     title: "Industrious transforms capital project delivery across locations",
     subtitle:
       "How Industrious achieved consistent project execution and cost control across their nationwide flexible workspace portfolio",
-    heroImage: "/images/portrait-casestudy-banner.webp",
-    detailImage: "/images/fcp-case-study.jpg",
+    heroImage: "/images/industrious-property.webp",
+    detailImage: "/images/industrious-property.webp",
     stats: [
       { value: "30%", label: "reduction in project costs" },
       { value: "50%", label: "faster project delivery" },

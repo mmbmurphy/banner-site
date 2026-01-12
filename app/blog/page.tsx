@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { getPaginatedPosts, getCategories, urlFor, Post, Category, POSTS_PER_PAGE } from "@/lib/sanity";
 import ScrollReveal from "@/components/ScrollReveal";
-import LibrarySearch from "@/components/LibrarySearch";
+import LibraryHero from "@/components/LibraryHero";
+import SubscribeCTA from "@/components/SubscribeCTA";
 
 export const metadata: Metadata = {
   title: "Resource Library | Banner",
@@ -247,27 +248,6 @@ function EmptyState() {
   );
 }
 
-function StatsBar() {
-  return (
-    <div className="library-stats">
-      <div className="library-stat">
-        <span className="library-stat-number">50+</span>
-        <span className="library-stat-label">Articles</span>
-      </div>
-      <div className="library-stat-divider" />
-      <div className="library-stat">
-        <span className="library-stat-number">15+</span>
-        <span className="library-stat-label">Guides</span>
-      </div>
-      <div className="library-stat-divider" />
-      <div className="library-stat">
-        <span className="library-stat-number">10+</span>
-        <span className="library-stat-label">Case Studies</span>
-      </div>
-    </div>
-  );
-}
-
 export default async function BlogPage({
   searchParams,
 }: {
@@ -303,32 +283,7 @@ export default async function BlogPage({
   return (
     <main className="library-page">
       {/* Hero Section */}
-      <section className="library-hero">
-        <div className="library-hero-bg" />
-        <div className="padding-global">
-          <div className="container-large">
-            <ScrollReveal>
-              <div className="library-hero-content">
-                <div className="library-hero-badge">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
-                  </svg>
-                  Resource Library
-                </div>
-                <h1 className="library-hero-title">
-                  Insights & Resources for<br />
-                  <span className="library-hero-gradient">CapEx Excellence</span>
-                </h1>
-                <p className="library-hero-subtitle">
-                  Expert perspectives on capital expenditure management, real estate technology, and strategies for optimizing your construction projects.
-                </p>
-                <LibrarySearch />
-                <StatsBar />
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      <LibraryHero />
 
       {/* Filter Section */}
       <section className="library-filter-section">
@@ -407,31 +362,7 @@ export default async function BlogPage({
       </section>
 
       {/* Newsletter CTA */}
-      <section className="library-cta">
-        <div className="padding-global">
-          <div className="container-large">
-            <ScrollReveal>
-              <div className="library-cta-card">
-                <div className="library-cta-content">
-                  <h2 className="library-cta-title">Stay informed on CapEx best practices</h2>
-                  <p className="library-cta-text">
-                    Get the latest insights on real estate capital management delivered to your inbox.
-                  </p>
-                </div>
-                <div className="library-cta-action">
-                  <Link href="/contact" className="library-cta-button">
-                    Subscribe to Updates
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14" />
-                      <path d="m12 5 7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      <SubscribeCTA />
     </main>
   );
 }

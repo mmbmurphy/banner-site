@@ -788,8 +788,28 @@ details[open] .faq4_icon-wrappper {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
 
+.csl-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
 .csl-hero-content {
   max-width: 800px;
+}
+
+.csl-hero-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.csl-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .csl-hero-badge {
@@ -1152,6 +1172,11 @@ details[open] .faq4_icon-wrappper {
 @media (max-width: 991px) {
   .csl-hero {
     padding: 5rem 0 3rem;
+  }
+
+  .csl-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
   .csl-hero-title {

@@ -18,19 +18,29 @@ export default function CaseStudiesPage() {
       <header className="csl-hero">
         <div className="padding-global">
           <div className="container-large">
-            <ScrollReveal>
-              <div className="csl-hero-content">
-                <div className="csl-hero-badge">
-                  <span>Customer Stories</span>
+            <div className="csl-hero-grid">
+              <ScrollReveal>
+                <div className="csl-hero-content">
+                  <div className="csl-hero-badge">
+                    <span>Customer Stories</span>
+                  </div>
+                  <h1 className="csl-hero-title">
+                    Real Results from Real Estate Leaders
+                  </h1>
+                  <p className="csl-hero-description">
+                    See how owners and operators are transforming their CapEx management with Banner.
+                  </p>
                 </div>
-                <h1 className="csl-hero-title">
-                  Real Results from Real Estate Leaders
-                </h1>
-                <p className="csl-hero-description">
-                  See how owners and operators are transforming their CapEx management with Banner.
-                </p>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <div className="csl-hero-image">
+                  <img
+                    src="/images/fcp-case-study.jpg"
+                    alt="FCP Property"
+                  />
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </header>
